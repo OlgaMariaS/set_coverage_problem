@@ -1,4 +1,4 @@
-# Unique set coverage Problem
+# Unique set coverage problem
 The objective of this operational research project is to implement an ILP (Integer Linear Programming) algorithm, using a solver, to find solutions to the unique set covering problem, which is a variation of the set covering problem.
 
 This project was done during the modeling and algorithmic optimization classes, in the computer science degree at UEM
