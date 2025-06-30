@@ -5,8 +5,12 @@ This project was done during the modeling and algorithmic optimization classes, 
 
 ### Used:
   - 🐍 Python
-  - 📚 [OR-Library](https://developers.google.com/optimization/introduction/python?hl=pt-br)<br/>
-  - 📍 [Instances](https://people.brunel.ac.uk/~mastjjb/jeb/info.html)<br/>
+  - 📚 [OR-Tools](https://developers.google.com/optimization/introduction/python?hl=pt-br)<br/>
+  
+       ```bash
+         pip install ortools
+       ```
+  - 📍 [OR-Library](https://people.brunel.ac.uk/~mastjjb/jeb/info.html)<br/> 
 
 ### Reference article:
 
