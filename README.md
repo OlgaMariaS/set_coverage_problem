@@ -8,4 +8,4 @@ The objective of this operational research project is to implement an ILP (Integ
 
 ### Reference article:
 
- [Unique Coverage Problem](http://www.din.uem.br/sbpo/sbpo2011/pdf/88121.pdf )<br/> by Regina Beretta Mazaro
+ [Unique Coverage Problem](http://www.din.uem.br/sbpo/sbpo2011/pdf/88121.pdf ) by Regina Beretta Mazaro <br/>
