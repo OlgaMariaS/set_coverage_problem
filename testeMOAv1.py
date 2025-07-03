@@ -106,10 +106,10 @@ def ler_conteudo(l, c, arquivo):
     return v, m, num_coberturas
 
 def main():
-    nome = "scp41.txt"
+    nome = ["scp41.txt", "scp51.txt"]
 
 
-    arquivo = abrir_arquivo(nome)
+    arquivo = abrir_arquivo(nome[0])
 
     linhas, colunas = ler_cabecalho(arquivo)
 
@@ -119,13 +119,15 @@ def main():
     arquivo.close()
 
     
-    # for i in range(colunas):
-    #     print(f"\nVetor[{i}]\nID = {vetor[i].id} \nPeso = {vetor[i].peso}")
+    for i in range(colunas):
+        print(f"\nVetor[{i}]\nID = {vetor[i].id} \nPeso = {vetor[i].peso}")
+
 
     print("\nMatriz: ")
-    for i in range(10):
-        for j in range(10):
-            print(("a", i+1, j+1 ) + (" = ", matriz[i][j]))
+    for i in range(linhas):
+        for j in range(colunas):
+            if matriz[i][j] == 1:   
+                print(('a', i+1, j+1 ) + (' = ', matriz[i][j]))
 
 if __name__ == "__main__":
     main()

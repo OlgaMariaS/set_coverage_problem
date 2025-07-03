@@ -1,0 +1,281 @@
+O arquivo foi aberto com sucesso!
+linhas:  200
+colunas:  1000
+Number of variables = 1400
+Número de restrições = 600
+Solving with Cbc 2.10.12
+
+Solução ótima encontrada!
+Valor da Função Objetivo (elementos cobertos unicamente) = 200.0
+
+Conjuntos selecionados:
+- Conjunto S3
+- Conjunto S12
+- Conjunto S22
+- Conjunto S40
+- Conjunto S54
+- Conjunto S68
+- Conjunto S73
+- Conjunto S97
+- Conjunto S111
+- Conjunto S114
+- Conjunto S132
+- Conjunto S133
+- Conjunto S147
+- Conjunto S154
+- Conjunto S171
+- Conjunto S179
+- Conjunto S187
+- Conjunto S197
+- Conjunto S200
+- Conjunto S204
+- Conjunto S225
+- Conjunto S249
+- Conjunto S264
+- Conjunto S284
+- Conjunto S290
+- Conjunto S301
+- Conjunto S305
+- Conjunto S335
+- Conjunto S337
+- Conjunto S362
+- Conjunto S384
+- Conjunto S394
+- Conjunto S398
+- Conjunto S401
+- Conjunto S416
+- Conjunto S441
+- Conjunto S449
+- Conjunto S458
+- Conjunto S473
+- Conjunto S485
+- Conjunto S503
+- Conjunto S512
+- Conjunto S534
+- Conjunto S554
+- Conjunto S570
+- Conjunto S575
+- Conjunto S583
+- Conjunto S610
+- Conjunto S611
+- Conjunto S614
+- Conjunto S634
+- Conjunto S650
+- Conjunto S658
+- Conjunto S770
+- Conjunto S777
+- Conjunto S797
+- Conjunto S817
+- Conjunto S831
+- Conjunto S837
+- Conjunto S850
+- Conjunto S861
+- Conjunto S868
+- Conjunto S919
+- Conjunto S949
+- Conjunto S951
+- Conjunto S976
+- Conjunto S977
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1 vez(es). Cobertura única: Sim
+Elemento 2: coberto 1 vez(es). Cobertura única: Sim
+Elemento 3: coberto 1 vez(es). Cobertura única: Sim
+Elemento 4: coberto 1 vez(es). Cobertura única: Sim
+Elemento 5: coberto 1 vez(es). Cobertura única: Sim
+Elemento 6: coberto 1 vez(es). Cobertura única: Sim
+Elemento 7: coberto 1 vez(es). Cobertura única: Sim
+Elemento 8: coberto 1 vez(es). Cobertura única: Sim
+Elemento 9: coberto 1 vez(es). Cobertura única: Sim
+Elemento 10: coberto 1 vez(es). Cobertura única: Sim
+Elemento 11: coberto 1 vez(es). Cobertura única: Sim
+Elemento 12: coberto 1 vez(es). Cobertura única: Sim
+Elemento 13: coberto 1 vez(es). Cobertura única: Sim
+Elemento 14: coberto 1 vez(es). Cobertura única: Sim
+Elemento 15: coberto 1 vez(es). Cobertura única: Sim
+Elemento 16: coberto 1 vez(es). Cobertura única: Sim
+Elemento 17: coberto 1 vez(es). Cobertura única: Sim
+Elemento 18: coberto 1 vez(es). Cobertura única: Sim
+Elemento 19: coberto 1 vez(es). Cobertura única: Sim
+Elemento 20: coberto 1 vez(es). Cobertura única: Sim
+Elemento 21: coberto 1 vez(es). Cobertura única: Sim
+Elemento 22: coberto 1 vez(es). Cobertura única: Sim
+Elemento 23: coberto 1 vez(es). Cobertura única: Sim
+Elemento 24: coberto 1 vez(es). Cobertura única: Sim
+Elemento 25: coberto 1 vez(es). Cobertura única: Sim
+Elemento 26: coberto 1 vez(es). Cobertura única: Sim
+Elemento 27: coberto 1 vez(es). Cobertura única: Sim
+Elemento 28: coberto 1 vez(es). Cobertura única: Sim
+Elemento 29: coberto 1 vez(es). Cobertura única: Sim
+Elemento 30: coberto 1 vez(es). Cobertura única: Sim
+Elemento 31: coberto 1 vez(es). Cobertura única: Sim
+Elemento 32: coberto 1 vez(es). Cobertura única: Sim
+Elemento 33: coberto 1 vez(es). Cobertura única: Sim
+Elemento 34: coberto 1 vez(es). Cobertura única: Sim
+Elemento 35: coberto 1 vez(es). Cobertura única: Sim
+Elemento 36: coberto 1 vez(es). Cobertura única: Sim
+Elemento 37: coberto 1 vez(es). Cobertura única: Sim
+Elemento 38: coberto 1 vez(es). Cobertura única: Sim
+Elemento 39: coberto 1 vez(es). Cobertura única: Sim
+Elemento 40: coberto 1 vez(es). Cobertura única: Sim
+Elemento 41: coberto 1 vez(es). Cobertura única: Sim
+Elemento 42: coberto 1 vez(es). Cobertura única: Sim
+Elemento 43: coberto 1 vez(es). Cobertura única: Sim
+Elemento 44: coberto 1 vez(es). Cobertura única: Sim
+Elemento 45: coberto 1 vez(es). Cobertura única: Sim
+Elemento 46: coberto 1 vez(es). Cobertura única: Sim
+Elemento 47: coberto 1 vez(es). Cobertura única: Sim
+Elemento 48: coberto 1 vez(es). Cobertura única: Sim
+Elemento 49: coberto 1 vez(es). Cobertura única: Sim
+Elemento 50: coberto 1 vez(es). Cobertura única: Sim
+Elemento 51: coberto 1 vez(es). Cobertura única: Sim
+Elemento 52: coberto 1 vez(es). Cobertura única: Sim
+Elemento 53: coberto 1 vez(es). Cobertura única: Sim
+Elemento 54: coberto 1 vez(es). Cobertura única: Sim
+Elemento 55: coberto 1 vez(es). Cobertura única: Sim
+Elemento 56: coberto 1 vez(es). Cobertura única: Sim
+Elemento 57: coberto 1 vez(es). Cobertura única: Sim
+Elemento 58: coberto 1 vez(es). Cobertura única: Sim
+Elemento 59: coberto 1 vez(es). Cobertura única: Sim
+Elemento 60: coberto 1 vez(es). Cobertura única: Sim
+Elemento 61: coberto 1 vez(es). Cobertura única: Sim
+Elemento 62: coberto 1 vez(es). Cobertura única: Sim
+Elemento 63: coberto 1 vez(es). Cobertura única: Sim
+Elemento 64: coberto 1 vez(es). Cobertura única: Sim
+Elemento 65: coberto 1 vez(es). Cobertura única: Sim
+Elemento 66: coberto 1 vez(es). Cobertura única: Sim
+Elemento 67: coberto 1 vez(es). Cobertura única: Sim
+Elemento 68: coberto 1 vez(es). Cobertura única: Sim
+Elemento 69: coberto 1 vez(es). Cobertura única: Sim
+Elemento 70: coberto 1 vez(es). Cobertura única: Sim
+Elemento 71: coberto 1 vez(es). Cobertura única: Sim
+Elemento 72: coberto 1 vez(es). Cobertura única: Sim
+Elemento 73: coberto 1 vez(es). Cobertura única: Sim
+Elemento 74: coberto 1 vez(es). Cobertura única: Sim
+Elemento 75: coberto 1 vez(es). Cobertura única: Sim
+Elemento 76: coberto 1 vez(es). Cobertura única: Sim
+Elemento 77: coberto 1 vez(es). Cobertura única: Sim
+Elemento 78: coberto 1 vez(es). Cobertura única: Sim
+Elemento 79: coberto 1 vez(es). Cobertura única: Sim
+Elemento 80: coberto 1 vez(es). Cobertura única: Sim
+Elemento 81: coberto 1 vez(es). Cobertura única: Sim
+Elemento 82: coberto 1 vez(es). Cobertura única: Sim
+Elemento 83: coberto 1 vez(es). Cobertura única: Sim
+Elemento 84: coberto 1 vez(es). Cobertura única: Sim
+Elemento 85: coberto 1 vez(es). Cobertura única: Sim
+Elemento 86: coberto 1 vez(es). Cobertura única: Sim
+Elemento 87: coberto 1 vez(es). Cobertura única: Sim
+Elemento 88: coberto 1 vez(es). Cobertura única: Sim
+Elemento 89: coberto 1 vez(es). Cobertura única: Sim
+Elemento 90: coberto 1 vez(es). Cobertura única: Sim
+Elemento 91: coberto 1 vez(es). Cobertura única: Sim
+Elemento 92: coberto 1 vez(es). Cobertura única: Sim
+Elemento 93: coberto 1 vez(es). Cobertura única: Sim
+Elemento 94: coberto 1 vez(es). Cobertura única: Sim
+Elemento 95: coberto 1 vez(es). Cobertura única: Sim
+Elemento 96: coberto 1 vez(es). Cobertura única: Sim
+Elemento 97: coberto 1 vez(es). Cobertura única: Sim
+Elemento 98: coberto 1 vez(es). Cobertura única: Sim
+Elemento 99: coberto 1 vez(es). Cobertura única: Sim
+Elemento 100: coberto 1 vez(es). Cobertura única: Sim
+Elemento 101: coberto 1 vez(es). Cobertura única: Sim
+Elemento 102: coberto 1 vez(es). Cobertura única: Sim
+Elemento 103: coberto 1 vez(es). Cobertura única: Sim
+Elemento 104: coberto 1 vez(es). Cobertura única: Sim
+Elemento 105: coberto 1 vez(es). Cobertura única: Sim
+Elemento 106: coberto 1 vez(es). Cobertura única: Sim
+Elemento 107: coberto 1 vez(es). Cobertura única: Sim
+Elemento 108: coberto 1 vez(es). Cobertura única: Sim
+Elemento 109: coberto 1 vez(es). Cobertura única: Sim
+Elemento 110: coberto 1 vez(es). Cobertura única: Sim
+Elemento 111: coberto 1 vez(es). Cobertura única: Sim
+Elemento 112: coberto 1 vez(es). Cobertura única: Sim
+Elemento 113: coberto 1 vez(es). Cobertura única: Sim
+Elemento 114: coberto 1 vez(es). Cobertura única: Sim
+Elemento 115: coberto 1 vez(es). Cobertura única: Sim
+Elemento 116: coberto 1 vez(es). Cobertura única: Sim
+Elemento 117: coberto 1 vez(es). Cobertura única: Sim
+Elemento 118: coberto 1 vez(es). Cobertura única: Sim
+Elemento 119: coberto 1 vez(es). Cobertura única: Sim
+Elemento 120: coberto 1 vez(es). Cobertura única: Sim
+Elemento 121: coberto 1 vez(es). Cobertura única: Sim
+Elemento 122: coberto 1 vez(es). Cobertura única: Sim
+Elemento 123: coberto 1 vez(es). Cobertura única: Sim
+Elemento 124: coberto 1 vez(es). Cobertura única: Sim
+Elemento 125: coberto 1 vez(es). Cobertura única: Sim
+Elemento 126: coberto 1 vez(es). Cobertura única: Sim
+Elemento 127: coberto 1 vez(es). Cobertura única: Sim
+Elemento 128: coberto 1 vez(es). Cobertura única: Sim
+Elemento 129: coberto 1 vez(es). Cobertura única: Sim
+Elemento 130: coberto 1 vez(es). Cobertura única: Sim
+Elemento 131: coberto 1 vez(es). Cobertura única: Sim
+Elemento 132: coberto 1 vez(es). Cobertura única: Sim
+Elemento 133: coberto 1 vez(es). Cobertura única: Sim
+Elemento 134: coberto 1 vez(es). Cobertura única: Sim
+Elemento 135: coberto 1 vez(es). Cobertura única: Sim
+Elemento 136: coberto 1 vez(es). Cobertura única: Sim
+Elemento 137: coberto 1 vez(es). Cobertura única: Sim
+Elemento 138: coberto 1 vez(es). Cobertura única: Sim
+Elemento 139: coberto 1 vez(es). Cobertura única: Sim
+Elemento 140: coberto 1 vez(es). Cobertura única: Sim
+Elemento 141: coberto 1 vez(es). Cobertura única: Sim
+Elemento 142: coberto 1 vez(es). Cobertura única: Sim
+Elemento 143: coberto 1 vez(es). Cobertura única: Sim
+Elemento 144: coberto 1 vez(es). Cobertura única: Sim
+Elemento 145: coberto 1 vez(es). Cobertura única: Sim
+Elemento 146: coberto 1 vez(es). Cobertura única: Sim
+Elemento 147: coberto 1 vez(es). Cobertura única: Sim
+Elemento 148: coberto 1 vez(es). Cobertura única: Sim
+Elemento 149: coberto 1 vez(es). Cobertura única: Sim
+Elemento 150: coberto 1 vez(es). Cobertura única: Sim
+Elemento 151: coberto 1 vez(es). Cobertura única: Sim
+Elemento 152: coberto 1 vez(es). Cobertura única: Sim
+Elemento 153: coberto 1 vez(es). Cobertura única: Sim
+Elemento 154: coberto 1 vez(es). Cobertura única: Sim
+Elemento 155: coberto 1 vez(es). Cobertura única: Sim
+Elemento 156: coberto 1 vez(es). Cobertura única: Sim
+Elemento 157: coberto 1 vez(es). Cobertura única: Sim
+Elemento 158: coberto 1 vez(es). Cobertura única: Sim
+Elemento 159: coberto 1 vez(es). Cobertura única: Sim
+Elemento 160: coberto 1 vez(es). Cobertura única: Sim
+Elemento 161: coberto 1 vez(es). Cobertura única: Sim
+Elemento 162: coberto 1 vez(es). Cobertura única: Sim
+Elemento 163: coberto 1 vez(es). Cobertura única: Sim
+Elemento 164: coberto 1 vez(es). Cobertura única: Sim
+Elemento 165: coberto 1 vez(es). Cobertura única: Sim
+Elemento 166: coberto 1 vez(es). Cobertura única: Sim
+Elemento 167: coberto 1 vez(es). Cobertura única: Sim
+Elemento 168: coberto 1 vez(es). Cobertura única: Sim
+Elemento 169: coberto 1 vez(es). Cobertura única: Sim
+Elemento 170: coberto 1 vez(es). Cobertura única: Sim
+Elemento 171: coberto 1 vez(es). Cobertura única: Sim
+Elemento 172: coberto 1 vez(es). Cobertura única: Sim
+Elemento 173: coberto 1 vez(es). Cobertura única: Sim
+Elemento 174: coberto 1 vez(es). Cobertura única: Sim
+Elemento 175: coberto 1 vez(es). Cobertura única: Sim
+Elemento 176: coberto 1 vez(es). Cobertura única: Sim
+Elemento 177: coberto 1 vez(es). Cobertura única: Sim
+Elemento 178: coberto 1 vez(es). Cobertura única: Sim
+Elemento 179: coberto 1 vez(es). Cobertura única: Sim
+Elemento 180: coberto 1 vez(es). Cobertura única: Sim
+Elemento 181: coberto 1 vez(es). Cobertura única: Sim
+Elemento 182: coberto 1 vez(es). Cobertura única: Sim
+Elemento 183: coberto 1 vez(es). Cobertura única: Sim
+Elemento 184: coberto 1 vez(es). Cobertura única: Sim
+Elemento 185: coberto 1 vez(es). Cobertura única: Sim
+Elemento 186: coberto 1 vez(es). Cobertura única: Sim
+Elemento 187: coberto 1 vez(es). Cobertura única: Sim
+Elemento 188: coberto 1 vez(es). Cobertura única: Sim
+Elemento 189: coberto 1 vez(es). Cobertura única: Sim
+Elemento 190: coberto 1 vez(es). Cobertura única: Sim
+Elemento 191: coberto 1 vez(es). Cobertura única: Sim
+Elemento 192: coberto 1 vez(es). Cobertura única: Sim
+Elemento 193: coberto 1 vez(es). Cobertura única: Sim
+Elemento 194: coberto 1 vez(es). Cobertura única: Sim
+Elemento 195: coberto 1 vez(es). Cobertura única: Sim
+Elemento 196: coberto 1 vez(es). Cobertura única: Sim
+Elemento 197: coberto 1 vez(es). Cobertura única: Sim
+Elemento 198: coberto 1 vez(es). Cobertura única: Sim
+Elemento 199: coberto 1 vez(es). Cobertura única: Sim
+Elemento 200: coberto 1 vez(es). Cobertura única: Sim
+Tempo de execução da instância: 4137.4852 segundos
