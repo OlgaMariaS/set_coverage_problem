@@ -1,7 +1,7 @@
 from ortools.linear_solver import pywraplp
 import time
 
-#LEITURA E RESOLUÇÃO DE INSTANCIAS SCP
+#LEITURA, RESOLUÇÃO E ESCRITA DE INSTANCIAS SCP
 
 class Subconjunto:
     id: int
