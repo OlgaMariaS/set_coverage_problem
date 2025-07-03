@@ -1,8 +1,7 @@
-from dataclasses import dataclass
-from typing import List, Tuple
-from ortools.init.python import init
 from ortools.linear_solver import pywraplp
 import time
+
+#LEITURA E RESOLUÇÃO DE INSTANCIAS SCP
 
 class Subconjunto:
     id: int
@@ -218,7 +217,7 @@ def main():
     #parametros básicos para a execução
     nome = "scp41.txt" #nome do arquivo a ser lido (opcional para testes).
     tempo_max = 60000 #tempo máximo de excução em milisegundos (Ex: 60.000 milisegundos -> 60 segundos * 1000, ou seja, são 60 segundo de execução do solver.)
-    teste = 1 #avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "ma" (teste=1)
+    teste = 0 #avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "ma" (teste=1)
     ma = [[1, 0, 0, 0, 1],  
           [0, 1, 0, 0, 0],  
           [1, 1, 0, 0, 0],  
@@ -227,7 +226,7 @@ def main():
     
     if not teste:
         arquivo = abrir_arquivo(nome)
-        escrita.write("\n\nNome do arquivo: " + nome)
+        escrita.write("\n\n\n\nNome do arquivo: " + nome)
 
         linhas, colunas = ler_cabecalho(arquivo)
         escrita.write("\nLinhas: " + str(linhas))
@@ -244,7 +243,7 @@ def main():
         elementos = [Elemento() for _ in range(5)]
 
         print("Matriz: ", ma)
-        escrita.write("\n\nMatriz: " +  str(ma))
+        escrita.write("\n\n\n\nMatriz: " +  str(ma))
 
         print("Linhas: 5")
         print("Colunas: 5")

@@ -1,3 +1,5 @@
+#APENAS LEITURA DE INSTANCIAS SCP
+
 class Subconjunto:
     def __init__(self, id=0, peso=0):
         self.id = id
