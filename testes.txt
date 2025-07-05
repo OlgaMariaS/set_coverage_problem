@@ -583,3 +583,1449 @@ Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
 
 Tempo de execucao da instancia: 0.0064 segundos
+
+
+
+Nome do arquivo: scp41.txt
+Linhas: 200
+Colunas: 1000
+Solver CBC criado com sucesso!
+Numero de variaveis = 1400
+Numero de restricoes = 600
+Resolvendo com o solver Cbc 2.10.12
+
+Uma solucao factivel foi encontrada.
+
+Valor da Funcao Objetivo (elementos cobertos unicamente) = 194.0
+
+Conjuntos selecionados:
+- Conjunto S3
+- Conjunto S12
+- Conjunto S39
+- Conjunto S65
+- Conjunto S66
+- Conjunto S99
+- Conjunto S100
+- Conjunto S134
+- Conjunto S135
+- Conjunto S155
+- Conjunto S173
+- Conjunto S187
+- Conjunto S196
+- Conjunto S204
+- Conjunto S230
+- Conjunto S252
+- Conjunto S253
+- Conjunto S264
+- Conjunto S298
+- Conjunto S300
+- Conjunto S301
+- Conjunto S306
+- Conjunto S339
+- Conjunto S362
+- Conjunto S385
+- Conjunto S394
+- Conjunto S397
+- Conjunto S439
+- Conjunto S453
+- Conjunto S468
+- Conjunto S469
+- Conjunto S504
+- Conjunto S509
+- Conjunto S522
+- Conjunto S524
+- Conjunto S534
+- Conjunto S564
+- Conjunto S570
+- Conjunto S575
+- Conjunto S583
+- Conjunto S602
+- Conjunto S611
+- Conjunto S639
+- Conjunto S664
+- Conjunto S682
+- Conjunto S696
+- Conjunto S699
+- Conjunto S703
+- Conjunto S770
+- Conjunto S783
+- Conjunto S793
+- Conjunto S862
+- Conjunto S872
+- Conjunto S884
+- Conjunto S896
+- Conjunto S900
+- Conjunto S905
+- Conjunto S916
+- Conjunto S919
+- Conjunto S925
+- Conjunto S937
+- Conjunto S946
+- Conjunto S976
+- Conjunto S977
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 6: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 7: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 8: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 9: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 10: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 11: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 12: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 13: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 14: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 15: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 16: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 17: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 18: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 19: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 20: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 21: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 22: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 23: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 24: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 25: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 26: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 27: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 28: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 29: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 30: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 31: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 32: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 33: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 34: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 35: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 36: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 37: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 38: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 39: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 40: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 41: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 42: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 43: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 44: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 45: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 46: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 47: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 48: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 49: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 50: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 51: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 52: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 53: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 54: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 55: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 56: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 57: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 58: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 59: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 60: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 61: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 62: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 63: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 64: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 65: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 66: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 67: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 68: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 69: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 70: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 71: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 72: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 73: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 74: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 75: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 76: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 77: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 78: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 79: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 80: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 81: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 82: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 83: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 84: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 85: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 86: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 87: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 88: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 89: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 90: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 91: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 92: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 93: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 94: coberto 0.0 vez(es). Cobertura unica: N�o
+Elemento 95: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 96: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 97: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 98: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 99: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 100: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 101: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 102: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 103: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 104: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 105: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 106: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 107: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 108: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 109: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 110: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 111: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 112: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 113: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 114: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 115: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 116: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 117: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 118: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 119: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 120: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 121: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 122: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 123: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 124: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 125: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 126: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 127: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 128: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 129: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 130: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 131: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 132: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 133: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 134: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 135: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 136: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 137: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 138: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 139: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 140: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 141: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 142: coberto 5.0 vez(es). Cobertura unica: N�o
+Elemento 143: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 144: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 145: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 146: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 147: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 148: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 149: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 150: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 151: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 152: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 153: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 154: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 155: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 156: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 157: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 158: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 159: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 160: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 161: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 162: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 163: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 164: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 165: coberto 0.0 vez(es). Cobertura unica: N�o
+Elemento 166: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 167: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 168: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 169: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 170: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 171: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 172: coberto 0.0 vez(es). Cobertura unica: N�o
+Elemento 173: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 174: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 175: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 176: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 177: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 178: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 179: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 180: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 181: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 182: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 183: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 184: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 185: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 186: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 187: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 188: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 189: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 190: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 191: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 192: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 193: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 194: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 195: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 196: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 197: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 198: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 199: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 200: coberto 1.0 vez(es). Cobertura unica: Sim
+
+Tempo de execucao da instancia: 60.0288 segundos
+
+
+
+Nome do arquivo: scp41.txt
+Linhas: 200
+Colunas: 1000
+Solver CBC criado com sucesso!
+Numero de variaveis = 1400
+Numero de restricoes = 600
+Resolvendo com o solver Cbc 2.10.12
+
+Uma solucao factivel foi encontrada.
+
+Valor da Funcao Objetivo (elementos cobertos unicamente) = 156.0
+
+Conjuntos selecionados:
+- Conjunto S12
+- Conjunto S28
+- Conjunto S39
+- Conjunto S77
+- Conjunto S81
+- Conjunto S82
+- Conjunto S105
+- Conjunto S115
+- Conjunto S122
+- Conjunto S123
+- Conjunto S136
+- Conjunto S144
+- Conjunto S157
+- Conjunto S173
+- Conjunto S189
+- Conjunto S226
+- Conjunto S266
+- Conjunto S275
+- Conjunto S316
+- Conjunto S337
+- Conjunto S432
+- Conjunto S469
+- Conjunto S490
+- Conjunto S502
+- Conjunto S519
+- Conjunto S533
+- Conjunto S534
+- Conjunto S554
+- Conjunto S567
+- Conjunto S576
+- Conjunto S580
+- Conjunto S582
+- Conjunto S585
+- Conjunto S598
+- Conjunto S611
+- Conjunto S617
+- Conjunto S639
+- Conjunto S664
+- Conjunto S685
+- Conjunto S706
+- Conjunto S707
+- Conjunto S722
+- Conjunto S734
+- Conjunto S741
+- Conjunto S775
+- Conjunto S799
+- Conjunto S816
+- Conjunto S844
+- Conjunto S845
+- Conjunto S846
+- Conjunto S877
+- Conjunto S903
+- Conjunto S935
+- Conjunto S966
+- Conjunto S989
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 6: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 7: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 8: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 9: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 10: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 11: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 12: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 13: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 14: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 15: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 16: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 17: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 18: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 19: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 20: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 21: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 22: coberto 0.0 vez(es). Cobertura unica: N�o
+Elemento 23: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 24: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 25: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 26: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 27: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 28: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 29: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 30: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 31: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 32: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 33: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 34: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 35: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 36: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 37: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 38: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 39: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 40: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 41: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 42: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 43: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 44: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 45: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 46: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 47: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 48: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 49: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 50: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 51: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 52: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 53: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 54: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 55: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 56: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 57: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 58: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 59: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 60: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 61: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 62: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 63: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 64: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 65: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 66: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 67: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 68: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 69: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 70: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 71: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 72: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 73: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 74: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 75: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 76: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 77: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 78: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 79: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 80: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 81: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 82: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 83: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 84: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 85: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 86: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 87: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 88: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 89: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 90: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 91: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 92: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 93: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 94: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 95: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 96: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 97: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 98: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 99: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 100: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 101: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 102: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 103: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 104: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 105: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 106: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 107: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 108: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 109: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 110: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 111: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 112: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 113: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 114: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 115: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 116: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 117: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 118: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 119: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 120: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 121: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 122: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 123: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 124: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 125: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 126: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 127: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 128: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 129: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 130: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 131: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 132: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 133: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 134: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 135: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 136: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 137: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 138: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 139: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 140: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 141: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 142: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 143: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 144: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 145: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 146: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 147: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 148: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 149: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 150: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 151: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 152: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 153: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 154: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 155: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 156: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 157: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 158: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 159: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 160: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 161: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 162: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 163: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 164: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 165: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 166: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 167: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 168: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 169: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 170: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 171: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 172: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 173: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 174: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 175: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 176: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 177: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 178: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 179: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 180: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 181: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 182: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 183: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 184: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 185: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 186: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 187: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 188: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 189: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 190: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 191: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 192: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 193: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 194: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 195: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 196: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 197: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 198: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 199: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 200: coberto 1.0 vez(es). Cobertura unica: Sim
+
+Tempo de execucao da instancia: 5.0722 segundos
+
+
+
+Nome do arquivo: scp41.txt
+Linhas: 200
+Colunas: 1000
+Solver CBC criado com sucesso!
+Numero de variaveis = 1400
+Numero de restricoes = 600
+Resolvendo com o solver Cbc 2.10.12
+
+Uma solucao factivel foi encontrada.
+
+Valor da Funcao Objetivo (elementos cobertos unicamente) = 156.0
+
+Conjuntos selecionados:
+- Conjunto S12
+- Conjunto S28
+- Conjunto S39
+- Conjunto S77
+- Conjunto S81
+- Conjunto S82
+- Conjunto S105
+- Conjunto S115
+- Conjunto S122
+- Conjunto S123
+- Conjunto S136
+- Conjunto S144
+- Conjunto S157
+- Conjunto S173
+- Conjunto S189
+- Conjunto S226
+- Conjunto S266
+- Conjunto S275
+- Conjunto S316
+- Conjunto S337
+- Conjunto S432
+- Conjunto S469
+- Conjunto S490
+- Conjunto S502
+- Conjunto S519
+- Conjunto S533
+- Conjunto S534
+- Conjunto S554
+- Conjunto S567
+- Conjunto S576
+- Conjunto S580
+- Conjunto S582
+- Conjunto S585
+- Conjunto S598
+- Conjunto S611
+- Conjunto S617
+- Conjunto S639
+- Conjunto S664
+- Conjunto S685
+- Conjunto S706
+- Conjunto S707
+- Conjunto S722
+- Conjunto S734
+- Conjunto S741
+- Conjunto S775
+- Conjunto S799
+- Conjunto S816
+- Conjunto S844
+- Conjunto S845
+- Conjunto S846
+- Conjunto S877
+- Conjunto S903
+- Conjunto S935
+- Conjunto S966
+- Conjunto S989
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 6: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 7: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 8: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 9: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 10: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 11: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 12: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 13: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 14: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 15: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 16: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 17: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 18: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 19: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 20: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 21: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 22: coberto 0.0 vez(es). Cobertura unica: N�o
+Elemento 23: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 24: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 25: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 26: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 27: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 28: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 29: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 30: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 31: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 32: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 33: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 34: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 35: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 36: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 37: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 38: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 39: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 40: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 41: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 42: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 43: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 44: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 45: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 46: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 47: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 48: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 49: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 50: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 51: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 52: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 53: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 54: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 55: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 56: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 57: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 58: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 59: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 60: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 61: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 62: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 63: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 64: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 65: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 66: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 67: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 68: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 69: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 70: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 71: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 72: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 73: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 74: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 75: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 76: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 77: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 78: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 79: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 80: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 81: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 82: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 83: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 84: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 85: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 86: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 87: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 88: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 89: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 90: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 91: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 92: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 93: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 94: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 95: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 96: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 97: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 98: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 99: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 100: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 101: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 102: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 103: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 104: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 105: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 106: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 107: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 108: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 109: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 110: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 111: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 112: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 113: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 114: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 115: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 116: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 117: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 118: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 119: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 120: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 121: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 122: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 123: coberto 1.0 vez(es). Cobertura unica: Sim
+
+
+
+Nome do arquivo: scp41.txt
+Linhas: 200
+Colunas: 1000
+Solver CBC criado com sucesso!
+Numero de variaveis = 1400
+Numero de restricoes = 600
+Resolvendo com o solver Cbc 2.10.12
+
+Uma solucao factivel foi encontrada.
+
+Valor da Funcao Objetivo (elementos cobertos unicamente) = 156.0
+
+Conjuntos selecionados:
+- Conjunto S12
+- Conjunto S28
+- Conjunto S39
+- Conjunto S77
+- Conjunto S81
+- Conjunto S82
+- Conjunto S105
+- Conjunto S115
+- Conjunto S122
+- Conjunto S123
+- Conjunto S136
+- Conjunto S144
+- Conjunto S157
+- Conjunto S173
+- Conjunto S189
+- Conjunto S226
+- Conjunto S266
+- Conjunto S275
+- Conjunto S316
+- Conjunto S337
+- Conjunto S432
+- Conjunto S469
+- Conjunto S490
+- Conjunto S502
+- Conjunto S519
+- Conjunto S533
+- Conjunto S534
+- Conjunto S554
+- Conjunto S567
+- Conjunto S576
+- Conjunto S580
+- Conjunto S582
+- Conjunto S585
+- Conjunto S598
+- Conjunto S611
+- Conjunto S617
+- Conjunto S639
+- Conjunto S664
+- Conjunto S685
+- Conjunto S706
+- Conjunto S707
+- Conjunto S722
+- Conjunto S734
+- Conjunto S741
+- Conjunto S775
+- Conjunto S799
+- Conjunto S816
+- Conjunto S844
+- Conjunto S845
+- Conjunto S846
+- Conjunto S877
+- Conjunto S903
+- Conjunto S935
+- Conjunto S966
+- Conjunto S989
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 6: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 7: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 8: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 9: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 10: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 11: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 12: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 13: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 14: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 15: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 16: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 17: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 18: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 19: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 20: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 21: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 22: coberto 0.0 vez(es). Cobertura unica: N�o
+Elemento 23: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 24: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 25: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 26: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 27: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 28: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 29: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 30: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 31: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 32: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 33: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 34: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 35: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 36: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 37: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 38: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 39: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 40: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 41: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 42: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 43: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 44: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 45: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 46: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 47: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 48: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 49: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 50: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 51: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 52: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 53: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 54: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 55: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 56: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 57: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 58: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 59: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 60: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 61: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 62: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 63: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 64: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 65: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 66: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 67: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 68: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 69: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 70: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 71: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 72: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 73: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 74: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 75: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 76: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 77: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 78: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 79: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 80: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 81: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 82: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 83: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 84: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 85: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 86: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 87: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 88: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 89: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 90: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 91: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 92: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 93: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 94: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 95: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 96: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 97: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 98: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 99: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 100: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 101: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 102: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 103: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 104: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 105: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 106: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 107: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 108: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 109: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 110: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 111: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 112: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 113: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 114: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 115: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 116: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 117: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 118: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 119: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 120: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 121: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 122: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 123: coberto 1.0 vez(es). Cobertura unica: Sim
+
+
+
+Nome do arquivo: scp41.txt
+Linhas: 200
+Colunas: 1000
+Solver CBC criado com sucesso!
+Numero de variaveis = 1400
+Numero de restricoes = 600
+Resolvendo com o solver Cbc 2.10.12
+O problema nao tem solucao.
+Tempo de execucao da instancia: 0.0654 segundos
+
+
+
+Nome do arquivo: scp41.txt
+Linhas: 200
+Colunas: 1000
+Solver CBC criado com sucesso!
+Numero de variaveis = 1400
+Numero de restricoes = 600
+Resolvendo com o solver Cbc 2.10.12
+O problema nao tem solucao.
+Tempo de execucao da instancia: 0.1442 segundos
+
+
+
+Nome do arquivo: scp41.txt
+Linhas: 200
+Colunas: 1000
+Solver CBC criado com sucesso!
+Numero de variaveis = 1400
+Numero de restricoes = 600
+Resolvendo com o solver Cbc 2.10.12
+
+Uma solucao factivel foi encontrada.
+
+Valor da Funcao Objetivo (elementos cobertos unicamente) = 156.0
+
+Conjuntos selecionados:
+- Conjunto S12
+- Conjunto S28
+- Conjunto S39
+- Conjunto S77
+- Conjunto S81
+- Conjunto S82
+- Conjunto S105
+- Conjunto S115
+- Conjunto S122
+- Conjunto S123
+- Conjunto S136
+- Conjunto S144
+- Conjunto S157
+- Conjunto S173
+- Conjunto S189
+- Conjunto S226
+- Conjunto S266
+- Conjunto S275
+- Conjunto S316
+- Conjunto S337
+- Conjunto S432
+- Conjunto S469
+- Conjunto S490
+- Conjunto S502
+- Conjunto S519
+- Conjunto S533
+- Conjunto S534
+- Conjunto S554
+- Conjunto S567
+- Conjunto S576
+- Conjunto S580
+- Conjunto S582
+- Conjunto S585
+- Conjunto S598
+- Conjunto S611
+- Conjunto S617
+- Conjunto S639
+- Conjunto S664
+- Conjunto S685
+- Conjunto S706
+- Conjunto S707
+- Conjunto S722
+- Conjunto S734
+- Conjunto S741
+- Conjunto S775
+- Conjunto S799
+- Conjunto S816
+- Conjunto S844
+- Conjunto S845
+- Conjunto S846
+- Conjunto S877
+- Conjunto S903
+- Conjunto S935
+- Conjunto S966
+- Conjunto S989
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 6: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 7: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 8: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 9: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 10: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 11: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 12: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 13: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 14: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 15: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 16: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 17: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 18: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 19: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 20: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 21: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 22: coberto 0.0 vez(es). Cobertura unica: N�o
+Elemento 23: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 24: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 25: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 26: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 27: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 28: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 29: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 30: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 31: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 32: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 33: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 34: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 35: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 36: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 37: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 38: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 39: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 40: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 41: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 42: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 43: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 44: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 45: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 46: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 47: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 48: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 49: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 50: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 51: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 52: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 53: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 54: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 55: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 56: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 57: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 58: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 59: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 60: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 61: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 62: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 63: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 64: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 65: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 66: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 67: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 68: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 69: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 70: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 71: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 72: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 73: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 74: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 75: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 76: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 77: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 78: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 79: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 80: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 81: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 82: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 83: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 84: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 85: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 86: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 87: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 88: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 89: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 90: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 91: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 92: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 93: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 94: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 95: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 96: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 97: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 98: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 99: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 100: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 101: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 102: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 103: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 104: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 105: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 106: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 107: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 108: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 109: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 110: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 111: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 112: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 113: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 114: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 115: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 116: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 117: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 118: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 119: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 120: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 121: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 122: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 123: coberto 1.0 vez(es). Cobertura unica: Sim
+
+
+
+Nome do arquivo: scp41.txt
+Linhas: 200
+Colunas: 1000
+Solver CBC criado com sucesso!
+Numero de variaveis = 1400  
+Numero de restricoes = 600
+Resolvendo com o solver Cbc 2.10.12
+
+Uma solucao factivel foi encontrada.
+
+Valor da Funcao Objetivo (elementos cobertos unicamente) = 156.0
+
+Conjuntos selecionados:
+- Conjunto S12
+- Conjunto S28
+- Conjunto S39
+- Conjunto S77
+- Conjunto S81
+- Conjunto S82
+- Conjunto S105
+- Conjunto S115
+- Conjunto S122
+- Conjunto S123
+- Conjunto S136
+- Conjunto S144
+- Conjunto S157
+- Conjunto S173
+- Conjunto S189
+- Conjunto S226
+- Conjunto S266
+- Conjunto S275
+- Conjunto S316
+- Conjunto S337
+- Conjunto S432
+- Conjunto S469
+- Conjunto S490
+- Conjunto S502
+- Conjunto S519
+- Conjunto S533
+- Conjunto S534
+- Conjunto S554
+- Conjunto S567
+- Conjunto S576
+- Conjunto S580
+- Conjunto S582
+- Conjunto S585
+- Conjunto S598
+- Conjunto S611
+- Conjunto S617
+- Conjunto S639
+- Conjunto S664
+- Conjunto S685
+- Conjunto S706
+- Conjunto S707
+- Conjunto S722
+- Conjunto S734
+- Conjunto S741
+- Conjunto S775
+- Conjunto S799
+- Conjunto S816
+- Conjunto S844
+- Conjunto S845
+- Conjunto S846
+- Conjunto S877
+- Conjunto S903
+- Conjunto S935
+- Conjunto S966
+- Conjunto S989
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 6: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 7: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 8: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 9: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 10: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 11: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 12: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 13: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 14: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 15: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 16: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 17: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 18: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 19: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 20: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 21: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 22: coberto 0.0 vez(es). Cobertura unica: N�o
+Elemento 23: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 24: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 25: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 26: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 27: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 28: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 29: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 30: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 31: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 32: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 33: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 34: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 35: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 36: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 37: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 38: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 39: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 40: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 41: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 42: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 43: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 44: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 45: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 46: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 47: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 48: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 49: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 50: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 51: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 52: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 53: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 54: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 55: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 56: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 57: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 58: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 59: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 60: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 61: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 62: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 63: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 64: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 65: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 66: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 67: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 68: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 69: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 70: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 71: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 72: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 73: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 74: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 75: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 76: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 77: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 78: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 79: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 80: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 81: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 82: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 83: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 84: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 85: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 86: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 87: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 88: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 89: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 90: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 91: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 92: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 93: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 94: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 95: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 96: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 97: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 98: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 99: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 100: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 101: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 102: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 103: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 104: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 105: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 106: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 107: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 108: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 109: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 110: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 111: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 112: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 113: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 114: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 115: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 116: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 117: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 118: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 119: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 120: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 121: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 122: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 123: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 124: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 125: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 126: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 127: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 128: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 129: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 130: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 131: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 132: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 133: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 134: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 135: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 136: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 137: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 138: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 139: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 140: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 141: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 142: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 143: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 144: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 145: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 146: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 147: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 148: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 149: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 150: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 151: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 152: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 153: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 154: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 155: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 156: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 157: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 158: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 159: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 160: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 161: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 162: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 163: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 164: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 165: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 166: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 167: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 168: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 169: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 170: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 171: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 172: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 173: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 174: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 175: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 176: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 177: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 178: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 179: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 180: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 181: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 182: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 183: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 184: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 185: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 186: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 187: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 188: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 189: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 190: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 191: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 192: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 193: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 194: coberto 3.0 vez(es). Cobertura unica: N�o
+Elemento 195: coberto 2.0 vez(es). Cobertura unica: N�o
+Elemento 196: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 197: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 198: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 199: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 200: coberto 1.0 vez(es). Cobertura unica: Sim
+Cobertura media dos elementos: 1.25
+Tempo de execucao da instancia: 1.0100 segundos

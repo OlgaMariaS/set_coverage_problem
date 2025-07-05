@@ -19,12 +19,14 @@ def ler_cabecalho(arquivo):
     coluna = []
     
     # Ler a primeira linha até espaço
-    arquivo.read(1)
     while True:
         aux = arquivo.read(1)
         if aux == ' ':
-            linha = ''.join(linha)
-            break
+            if not linha:
+                continue
+            else:
+                linha = ''.join(linha)
+                break
         linha.append(aux)  
     l = int(linha)
     print("linhas: ", linha)
@@ -52,12 +54,15 @@ def ler_conteudo(l, c, arquivo):
 
     i = 0
     arquivo.read(1)
-    while i < c:
+    for i in range(c):
         buffer = []
         while True:
             aux = arquivo.read(1)
             if aux == ' ':
-                buffer = ''.join(buffer)
+                if not buffer:
+                    continue
+                else:
+                    buffer = ''.join(buffer)
                 break
             elif aux == '\n':
                 arquivo.read(1)
@@ -67,33 +72,38 @@ def ler_conteudo(l, c, arquivo):
         v[i].id = i
         v[i].peso = int(buffer)
         i += 1
-    arquivo.read(1)
-    
 
     for i in range(l):
-        
-        arquivo.read(1)
+
         buffer = []
         while True:
             aux = arquivo.read(1)
             if aux == ' ':
-                buffer = ''.join(buffer)
-                arquivo.read(1)
+                if not buffer:
+                    continue
+                else:   
+                    buffer = ''.join(buffer)
+                    arquivo.read(1)
                 break
+            elif aux == '\n':
+                arquivo.read(1)
+                continue
             else:
                 buffer.append(aux)
         num_coberturas[i] = int(buffer)
         #print(f"coberturas da linha {i} = {num_coberturas[i]}")
 
 
-        arquivo.read(1)
         for _ in range(num_coberturas[i]):
             buffer = []
             while True:
                 aux = arquivo.read(1)
                 if aux == ' ':
-                    buffer = ''.join(buffer)
-                    break
+                    if not buffer:
+                        continue
+                    else:
+                        buffer = ''.join(buffer)
+                        break
                 elif aux == '\n':
                     arquivo.read(1)
                     continue
@@ -102,8 +112,6 @@ def ler_conteudo(l, c, arquivo):
 
             aux_num = int(buffer)
             m[i][aux_num-1] = 1
-
-        arquivo.read(1)
 
     return v, m, num_coberturas
 
