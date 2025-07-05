@@ -1,136 +1,82 @@
 from ortools.linear_solver import pywraplp
 import time
+from typing import List
 
-#LEITURA, RESOLUÇÃO E ESCRITA DE INSTANCIAS SCP
+# LEITURA, RESOLUÇÃO E ESCRITA DE INSTÂNCIAS SCP
 
 class Subconjunto:
-    id: int
-    peso: int
-    elementos_cobertos = []
-    var_escolha: int
+    def __init__(self):
+        self.id = 0
+        self.peso = 0
+        self.elementos_cobertos = []
+        self.var_escolha = 0
 
 class Elemento:
-    id: int
-    num_coberturas: int
-    var_cobertura_unica: int
-    var_cobertura_total: int
+    def __init__(self):
+        self.id = 0
+        self.num_coberturas = 0
+        self.var_cobertura_unica = 0
+        self.var_cobertura_total = 0
 
 def abrir_arquivo(nome):
     try:
-        arquivo = open(nome, "r")
+        with open(nome, "r") as arquivo:
+            linhas_arquivo = arquivo.readlines()
         print("\nO arquivo foi aberto com sucesso!")
-        return arquivo
+        return arquivo, linhas_arquivo
     except FileNotFoundError:
-        print("\nERRO! O arquivo n�o foi aberto!")
+        print("\nERRO! O arquivo não foi aberto!")
         exit(1)
 
-def ler_cabecalho(arquivo):
-    linha = []
-    coluna = []
-
-    #arquivo.read(1)
-    while True:
-        aux = arquivo.read(1)
-        if aux == ' ':
-            if not linha:
-                continue
-            else:
-                linha = ''.join(linha)
-                break
-        linha.append(aux)
-    l = int(linha)
-    #print("linhas: ", linha)
-
-    while True:
-        aux = arquivo.read(1)
-        if aux == ' ':
-            if not coluna:
-                continue
-            else:
-                coluna = ''.join(coluna)
-                arquivo.read(1)
-            break
-        elif aux == '\n':
-            aux = arquivo.read(1)
-            continue
-        else:
-            coluna.append(aux)
-    c = int(coluna)
-    #print("colunas: ", coluna)
-
+def ler_cabecalho(linhas_arquivo):
+    primeira_linha = linhas_arquivo[0].strip().split()
+    l = int(primeira_linha[0])
+    c = int(primeira_linha[1])
     return l, c
 
-def ler_conteudo(l, c, arquivo):
+def ler_conteudo(l, c, linhas_arquivo):
+    # Inicializa variaveis
     subconjuntos = [Subconjunto() for _ in range(c)]
-    m = [[0 for _ in range(c)] for _ in range(l)]
+    matriz = [[0 for _ in range(c)] for _ in range(l)]
     elementos = [Elemento() for _ in range(l)]
+    num_cobertos_atual = 0
+    num_cobertos_total = 0
+    i = 0
+    j = 0
 
-    #arquivo.read(1)
-    for i in range(c):
-        buffer = []
-        while True:
-            aux = arquivo.read(1)
-            if aux == ' ':
-                if not buffer:
-                    continue
-                else:
-                    buffer = ''.join(buffer)
-                    break
-            elif aux == '\n':
-                arquivo.read(1)
-                continue
-            else:
-                buffer.append(aux)
-        subconjuntos[i].id = i
-        subconjuntos[i].peso = int(buffer)
-    #arquivo.read(1)
+    # Leitura dos pesos dos subconjuntos
+    linha_atual = 1
+    while i<c:
+        j = 0
+        pesos = list(map(int, linhas_arquivo[linha_atual].strip().split()))
+        while j<len(pesos):
+            subconjuntos[i].id = i
+            subconjuntos[i].peso = pesos[j]
+            j += 1
+            i += 1
+        linha_atual += 1
+        
 
+    # Leitura das coberturas de cada elemento
+    i = -1
+    while linha_atual < len(linhas_arquivo):
+        
+        info = list(map(int, linhas_arquivo[linha_atual].strip().split()))
 
-    for i in range(l):
-
-        #arquivo.read(1)
-        buffer = []
-        while True:
-            aux = arquivo.read(1)
-            if aux == ' ':
-                if not buffer:
-                    continue
-                else:
-                    buffer = ''.join(buffer)
-                break
-            elif aux == '\n':
-                arquivo.read(1)
-                continue
-            else:
-                buffer.append(aux)
-        elementos[i].num_coberturas = int(buffer)
-        #print("coberturas da linha {i} = {elementos[i].num_coberturas}")
-
-
-        #arquivo.read(1)
-        for _ in range(elementos[i].num_coberturas):
-            buffer = []
-            while True:
-                aux = arquivo.read(1)
-                if aux == ' ':
-                    if not buffer:
-                        continue
-                    else:
-                        buffer = ''.join(buffer)
-                        break
-                elif aux == '\n':
-                    arquivo.read(1)
-                    continue
-                else:
-                    buffer.append(aux)
-
-            aux_num = int(buffer)
-            m[i][aux_num-1] = 1
-            subconjuntos[aux_num-1].elementos_cobertos.append(i)
-
-        #arquivo.read(1)
-
-    return subconjuntos, m, elementos
+        if num_cobertos_atual == num_cobertos_total:
+            elementos[i].num_coberturas = info[0]
+            num_cobertos_total = info[0]
+            num_cobertos_atual = 0
+            i += 1
+        else:
+            for j in info:
+                matriz[i][j-1] = 1
+                subconjuntos[j-1].elementos_cobertos.append(i)
+                num_cobertos_atual += 1
+        
+        linha_atual += 1
+        
+    return subconjuntos, matriz, elementos
 
 def escreve_teste(linhas, colunas, elementos:Elemento, subconjuntos:Subconjunto, matriz, teste, arquivo_leitura, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo,  media_cobertura_total, tempo_execucao):
     
@@ -180,8 +126,7 @@ def escreve_teste(linhas, colunas, elementos:Elemento, subconjuntos:Subconjunto,
     escrita.close()
 
 
-def executa_solver(linhas, colunas, elementos:Elemento , subconjuntos:Subconjunto, matriz, tempo_max, output):
-
+def executa_solver(linhas, colunas, elementos: List[Elemento], subconjuntos: List[Subconjunto], matriz, tempo_max, output):
     M = colunas
     media_cobertura_total = 0
 
@@ -191,8 +136,6 @@ def executa_solver(linhas, colunas, elementos:Elemento , subconjuntos:Subconjunt
         return 0 
     else:
         print("Solver CBC criado com sucesso!")
-        
-
 
     infinity = solver.infinity()
     for j in range(colunas):
@@ -200,8 +143,6 @@ def executa_solver(linhas, colunas, elementos:Elemento , subconjuntos:Subconjunt
 
     for i in range(linhas):
         elementos[i].var_cobertura_unica = solver.BoolVar(f'y{i+1}')
-        
-    for i in range(linhas):
         elementos[i].var_cobertura_total = solver.IntVar(0, infinity, ('z' + str(i+1)))
 
     num_vars = solver.NumVariables()
@@ -212,12 +153,11 @@ def executa_solver(linhas, colunas, elementos:Elemento , subconjuntos:Subconjunt
 
     for i in range(linhas):
         solver.Add(elementos[i].var_cobertura_unica <= elementos[i].var_cobertura_total)
-
         solver.Add((M-1) * elementos[i].var_cobertura_unica + elementos[i].var_cobertura_total <= M)
-    
+
     num_restricoes = solver.NumConstraints()
     print("Número de restrições =", num_restricoes)
-    
+
     funcao_objetivo = solver.Objective()
     for i in range(linhas):
         funcao_objetivo.SetCoefficient(elementos[i].var_cobertura_unica, 1)
@@ -228,8 +168,8 @@ def executa_solver(linhas, colunas, elementos:Elemento , subconjuntos:Subconjunt
         solver.EnableOutput()
 
     versao_solver = solver.SolverVersion()
-    print("Resolvendo com o solver ", versao_solver)
-    
+    print("Resolvendo com o solver", versao_solver)
+
     start_time = time.time()
     resultado = solver.Solve()
     end_time = time.time()
@@ -237,65 +177,63 @@ def executa_solver(linhas, colunas, elementos:Elemento , subconjuntos:Subconjunt
     tempo_execucao = end_time - start_time
 
     if resultado == pywraplp.Solver.OPTIMAL or resultado == pywraplp.Solver.FEASIBLE:
-        
         if resultado == pywraplp.Solver.OPTIMAL:
             print("\nSolução ótima encontrada!")
-            
         else:
             print("\nUma solução factível foi encontrada")
-           
-        funcao_objetivo = funcao_objetivo.Value()
-        print("\nValor da Função Objetivo (elementos cobertos unicamente) = ", funcao_objetivo)
-        
-        
-        print("\nConjuntos selecionados:")
 
+        funcao_objetivo = funcao_objetivo.Value()
+        print("\nValor da Função Objetivo (elementos cobertos unicamente) =", funcao_objetivo)
+
+        print("\nConjuntos selecionados:")
         for j in range(colunas):
             subconjuntos[j].var_escolha = subconjuntos[j].var_escolha.solution_value()
             if subconjuntos[j].var_escolha > 0.5:
-                print(f"- Conjunto S {j+1}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}")
-                
+                print(f"- Conjunto S{j+1}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}")
 
         print("\nDetalhes da cobertura por elemento:")
-        
         for i in range(linhas):
             elementos[i].var_cobertura_total = elementos[i].var_cobertura_total.solution_value()
             elementos[i].var_cobertura_unica = elementos[i].var_cobertura_unica.solution_value()
             coberto_unicamente = "Sim" if elementos[i].var_cobertura_unica > 0.5 else "Não"
             print(f'Elemento {i+1}: coberto {int(elementos[i].var_cobertura_total)} vez(es). Cobertura única: {coberto_unicamente}')
-            
             media_cobertura_total += elementos[i].var_cobertura_total
-        
-        media_cobertura_total = media_cobertura_total/linhas
-        print(f"\nCobertura média dos elementos:  {media_cobertura_total:.2f}")
-        
 
+        media_cobertura_total /= linhas
+        print(f"\nCobertura média dos elementos: {media_cobertura_total:.2f}")
     else:
         print('O problema não tem solução.')
-        
 
     print(f"Tempo de execução da instância: {tempo_execucao:.4f} segundos")
 
     return num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao
-    
 
 def main():
-    #Parametros básicos para a execução:
+    # Parametros básicos para a execução:
 
-    #Nome do arquivo no qual o resultado dos testes poderá ser escrito (opcional).
+    # Nome do arquivo no qual o resultado dos testes poderá ser escrito (opcional).
     arquivo_escrita = "testes.txt"
 
-    #Nome do arquivo a ser lido (opcional para testes).
+    # Nome do arquivo a ser lido (opcional para testes).
     arquivo_leitura = "scp41.txt"
     
-    #Tempo máximo de excução em milisegundos (milissegundos -> segundos/1000).
+    # Tempo máximo de excução em milisegundos (milissegundos -> segundos/1000).
     tempo_max = 1000     
     
-    #Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "ma" (teste=1).
-    teste = 0 
+    # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "ma" (teste=1).
+    teste = 1 
 
-    #Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
+    # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
     escrita = 0 
+
+    # Define a saida de uma descrição detalhada do funcionamento do solver (opicional)
+    output = 0
+
+    # Total de linhas da matriz (calculado automaticamente para as instancias, uso predefinido apenas para testes)   
+    linhas = 5
+
+    # Total de colunas da matriz (calculado automaticamente para as instancias, uso predefinido apenas para testes)
+    colunas = 5
 
     #Matriz 'ma' utilizada em testes.
     ma = [[1, 0, 0, 0, 1],  
@@ -306,35 +244,33 @@ def main():
     
 
     if not teste:
-        #Abertura do 'arquivo_leitura'
-        arquivo = abrir_arquivo(arquivo_leitura)
 
-        #Leitura do cabeçalho do 'arquivo_leitura'
-        linhas, colunas = ler_cabecalho(arquivo)
+        # Abertura do 'arquivo_leitura'
+        arquivo, linhas_arquivo = abrir_arquivo(arquivo_leitura)
 
-        #Leitura do conteúdo do 'arquivo_leitura'
-        subconjuntos, matriz, elementos = ler_conteudo(linhas, colunas, arquivo)
+        # Leitura do cabeçalho do 'arquivo_leitura'
+        linhas, colunas = ler_cabecalho(linhas_arquivo)
 
-        #fechamento do 'arquivo_leitura'
-        arquivo.close()
+        # Leitura do conteúdo do 'arquivo_leitura'
+        subconjuntos, matriz, elementos = ler_conteudo(linhas, colunas, linhas_arquivo)
 
-        #Chamada da função executa_solver para gerar um solução a partir da matriz presente no 'arquivo_escrita'
-        num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao = executa_solver(linhas, colunas, elementos, subconjuntos, matriz, tempo_max, 0)
+        # Execução do solver
+        num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao = executa_solver(linhas, colunas, elementos, subconjuntos, matriz, tempo_max, output)
     else:
-        linhas = 5
-        colunas = 5
 
-        subconjuntos = [Subconjunto() for _ in range(colunas)]
-        elementos = [Elemento() for _ in range(linhas)]
+        # Inicialização das listas de subconjuntos e elementos
+        subconjuntos = [Subconjunto() for j in range(colunas)]
+        elementos = [Elemento() for i in range(linhas)]
+
+        
 
         print("Matriz: ", ma)
-
         print("Linhas: ", linhas)
         print("Colunas: ", colunas)
 
-        num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao = executa_solver(5, 5, elementos, subconjuntos, ma, tempo_max, 0)
+        num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao = executa_solver(linhas, colunas, elementos, subconjuntos, ma, tempo_max, output)
 
-    #Chamada da função de escrita, para gravar os resultados da execução do solver no 'arquivo_escrita'
+    # Chamada da função de escrita, para gravar os resultados da execução do solver no 'arquivo_escrita'
     if escrita:
         if not teste:
             escreve_teste(linhas, colunas, elementos, subconjuntos, matriz, teste, arquivo_leitura, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao)
