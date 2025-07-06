@@ -10,6 +10,7 @@ class Subconjunto:
         self.id = 0
         self.peso = 0
         self.elementos_cobertos = []
+        # Variáveis x
         self.var_escolha = 0
 
 # Classe que representa um elemento e suas variáveis de cobertura
@@ -17,18 +18,19 @@ class Elemento:
     def __init__(self, id):
         self.id = 0
         self.num_coberturas = 0
+        # Variáveis y
         self.var_cobertura_unica = 0
+        # Variáveis z
         self.var_cobertura_total = 0
 
 # Classe que representa um arquivo scp.txt
 class Arquivo_scp:
-    def __init__(self, id=0):
+    def __init__(self, id):
         self.id = 0
         self.arquivo = 0
         self.nome = []
         self.linhas = 0
         self.colunas = 0
-        self.conteudo = []
         self.conjuntos_escolhidos = []
 
 # Função que abre o arquivo de entrada e lê todas as linhas
@@ -45,6 +47,7 @@ def abrir_arquivo(arquivo_leitura):
                 # Leitura do conteúdo do 'arquivo_leitura'
                 subconjuntos, matriz, elementos = ler_conteudo(arquivo_leitura.linhas, arquivo_leitura.colunas, linhas_arquivo)
 
+                # Fechamento do arquivo
                 arquivo_leitura.arquivo.close()
             print("\nO arquivo foi aberto com sucesso!")
             return subconjuntos, matriz, elementos
@@ -54,8 +57,8 @@ def abrir_arquivo(arquivo_leitura):
         
 
 # Função que lê a primeira linha do arquivo contendo:
-# - número de linhas (elementos)
-# - número de colunas (subconjuntos)
+# - número de linhas (elementos);
+# - número de colunas (subconjuntos);
 # Retorna os dois valores como inteiros
 def ler_cabecalho(linhas_arquivo):
     primeira_linha = linhas_arquivo[0].strip().split()
@@ -63,6 +66,12 @@ def ler_cabecalho(linhas_arquivo):
     colunas = int(primeira_linha[1])
     return linhas, colunas
 
+
+# Lê o conteudo da instância, armazenado no 'linhas_arquivo', contendo:
+# - pesos dos subconjuntos;
+# - quantidades de cobertura de cada elemento;
+# - subconjuntos que cobrem cada elemento;
+# Retorna: Lista de subconjuntos, Lista de elementos e Matriz de cobertura, nesta ordem.
 def ler_conteudo(l, c, linhas_arquivo):
     # Inicializa variaveis:
 
@@ -126,8 +135,9 @@ def ler_conteudo(l, c, linhas_arquivo):
         # Avança para a próxima linha]
         linha_atual += 1
         
-    return subconjuntos, matriz, elementos
+    return subconjuntos, elementos, matriz
 
+# Função executada para a gravação das execuções do solver no 'arquivo_escrita', definido na main()
 def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconjuntos: List[Subconjunto], matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo,  media_cobertura_total, tempo_execucao):
 
     # Abertura do arquivo de escrita
@@ -217,7 +227,20 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
     print("            (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas")
     print("            y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ")
     
-    for qtd in range(qtd_arquivos):
+    # Verifica se a execução é um teste
+    if qtd_arquivos == -1:
+
+        # Garante a leitura apenas do ultimo elemento do vetor arquivo_leitura, sendo ele o teste
+        qtd_arquivos = len(arquivo_leitura)
+        qtd = len(arquivo_leitura)-1
+
+        # Inicialização das listas de subconjuntos e elementos do teste
+        subconjuntos = [Subconjunto(id=j) for j in range(arquivo_leitura[qtd].colunas)]
+        elementos = [Elemento(id = i) for i in range(arquivo_leitura[qtd].linhas)]
+    else:
+        qtd = 0
+
+    while qtd < qtd_arquivos:
         i = 0
         j = 0
 
@@ -232,15 +255,11 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
 
         infinity = solver.infinity()
         
-        if qtd_arquivos == 1:
-            qtd = 5
-            # Inicialização das listas de subconjuntos e elementos
-            subconjuntos = [Subconjunto(id=j) for j in range(arquivo_leitura[qtd].colunas)]
-            elementos = [Elemento(id = i) for i in range(arquivo_leitura[qtd].linhas)]
+        if arquivo_leitura[qtd].nome == "TESTE":       
             print(f'\n\n1)')
         else:
             # Abertura do 'arquivo_leitura'
-            subconjuntos, matriz, elementos = abrir_arquivo(arquivo_leitura[qtd])
+            subconjuntos, elementos, matriz  = abrir_arquivo(arquivo_leitura[qtd])
             print(f'\n\n{qtd+1})')
 
         print(f'Instância = {arquivo_leitura[qtd].nome}')
@@ -323,9 +342,10 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
                 media_cobertura_total += elementos[i].var_cobertura_total
             media_cobertura_total /= arquivo_leitura[qtd].linhas
 
+            # Descreve todos os subconjuntos selecionados e seus respectivos elementos cobertos
             if output_padrao_completo == 1:
                 print('\nConjuntos selecionados:')
-                if subconjuntos[j][qtd].var_escolha > 0.5:
+                if subconjuntos[j].var_escolha > 0.5:
                     print(f'- Conjunto S{j+1}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}')
 
                 print(f'\nDetalhes da cobertura por elemento da instancia {arquivo_leitura[qtd].nome}:')
@@ -343,15 +363,20 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
         if escrita:
             # Grava o retorno do solver no 'arquivo_escrita'
             escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao)
- 
 
-    print(f"\nTempo total de execução da(s) {qtd+1} instância(s): {sum(tempo_execucao):.4f} segundos")
-    
-    with open(arquivo_escrita, "a", encoding="utf-8") as arquivo:
-        arquivo.write(f"\n\nTempo total de execção da(s) {qtd+1} instância(s): {sum(tempo_execucao):.4f} segundos")
-        arquivo.close()
+        qtd += 1
 
-    return subconjuntos, elementos, matriz, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao
+    # Verifica se mais de 1 execução foi realizada para a impressão da soma dos tempos de execução
+    if not (arquivo_leitura[qtd-1].nome == "TESTE" or qtd_arquivos == 1):
+        print(f"\nTempo total de execução da(s) {qtd} instância(s): {sum(tempo_execucao):.4f} segundos")
+
+        if escrita:
+            with open(arquivo_escrita, "a", encoding="utf-8") as arquivo:
+                arquivo.write(f"\n\nTempo total de execção da(s) {qtd} instância(s): {sum(tempo_execucao):.4f} segundos")
+                arquivo.close()
+
+
+    return
 
 def main():
     # Parametros básicos para a execução:
@@ -365,7 +390,7 @@ def main():
     # Inicialização dos arquivos de leitura.
     arquivo_leitura = [Arquivo_scp(id=i) for i in range(qtd_arquivos_leitura + 1)]
 
-    # Nome dos arquivos a serem lidos (arquivo_leitura[qtd_arquivos_leitura + 1] para testes).
+    # Nome dos arquivos a serem lidos (arquivo_leitura[qtd_arquivos_leitura] reservada para testes).
     arquivo_leitura[0].nome = "scp49.txt"
     arquivo_leitura[1].nome = "scp51.txt"
     arquivo_leitura[2].nome = "scp57.txt"
@@ -377,8 +402,8 @@ def main():
     # Tempo máximo de excução em milisegundos (milissegundos -> segundos/1000).
     tempo_max = 1000     
     
-    # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "ma" (teste=1).
-    teste = 1
+    # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "matriz" (teste=1).
+    teste = 0
 
     # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
     escrita = 0
@@ -397,28 +422,22 @@ def main():
 
     #Matriz utilizada em testes (reescrita ao ler um arquivo)
     matriz = [[1, 0, 0, 0, 1],  
-          [0, 1, 0, 0, 0],  
-          [1, 1, 0, 0, 0],  
-          [1, 0, 0, 0, 1],  
-          [0, 0, 1, 0, 0]]
+              [0, 1, 0, 0, 0],  
+              [1, 1, 0, 0, 0],  
+              [1, 0, 0, 0, 1],  
+              [0, 0, 1, 0, 0]]
     
 
     if not teste:
-        # Define o ID do 'arquivo_leitura' de testes para a quantidade de arquivos, utilizado para a automatização da execução.
-        for i in range(qtd_arquivos_leitura):    
-            arquivo_leitura[i].id = i
+        # Define o ID do 'arquivo_leitura' de testes para a quantidade de arquivos definidos anteriormente, utilizado para a automatização da execução.
         arquivo_leitura[qtd_arquivos_leitura].id = qtd_arquivos_leitura
-
 
     else:
         # Define o ID do 'arquivo_leitura' de testes para a 1, utilizado para a automatização da execução.
-        arquivo_leitura[qtd_arquivos_leitura].id = 1
+        arquivo_leitura[qtd_arquivos_leitura].id = -1
 
     # Execução do solver
     executa_solver(arquivo_leitura, matriz, tempo_max, output_branch_and_bound, output_padrao_completo, escrita, arquivo_escrita)
-    
-
-    
 
 if __name__ == "__main__":
     main()  
