@@ -255,7 +255,17 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
 
         infinity = solver.infinity()
         
-        if arquivo_leitura[qtd].nome == "TESTE":       
+        if arquivo_leitura[qtd].nome == "TESTE":
+
+            # Verifica a cobertura de cada elemento, gravando os elementos cobertos por cada conjunto do TESTE
+            for i in range(arquivo_leitura[qtd].linhas):
+                for j in range(arquivo_leitura[qtd].colunas):
+                    aux = matriz[i][j]
+
+                    if aux == 1:
+                        elementos[i].num_coberturas += 1
+                        subconjuntos[j].elementos_cobertos.append(i+1)
+
             print(f'\n\n1)')
         else:
             # Abertura do 'arquivo_leitura'
@@ -345,8 +355,9 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             # Descreve todos os subconjuntos selecionados e seus respectivos elementos cobertos
             if output_padrao_completo == 1:
                 print('\nConjuntos selecionados:')
-                if subconjuntos[j].var_escolha > 0.5:
-                    print(f'- Conjunto S{j+1}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}')
+                for j in range(arquivo_leitura[qtd].colunas):
+                    if subconjuntos[j].var_escolha > 0.5:
+                        print(f'- Conjunto S{j+1}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}')
 
                 print(f'\nDetalhes da cobertura por elemento da instancia {arquivo_leitura[qtd].nome}:')
                 for i in range(arquivo_leitura[qtd].linhas):
@@ -403,13 +414,13 @@ def main():
     tempo_max = 1000     
     
     # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "matriz" (teste=1).
-    teste = 0
+    teste = 1
 
     # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
     escrita = 0
 
     # Define a saida de uma descrição detalhada dos subconjuntos escolhidos e elementos cobertos (opicional)
-    output_padrao_completo = 0
+    output_padrao_completo = 1
 
     # Define a saida de uma descrição detalhada do funcionamento do solver (opicional)
     output_branch_and_bound = 0
