@@ -1,5 +1,6 @@
 from ortools.linear_solver import pywraplp
 import time
+import os
 from typing import List
 
 # LEITURA, RESOLUÇÃO E ESCRITA DE INSTÂNCIAS SCP
@@ -7,7 +8,7 @@ from typing import List
 # Classe que representa um subconjunto, com seu ID, peso, elementos cobertos e variável de decisão
 class Subconjunto:
     def __init__(self, id):
-        self.id = 0
+        self.id = id
         self.peso = 0
         self.elementos_cobertos = []
         # Variáveis x
@@ -16,7 +17,7 @@ class Subconjunto:
 # Classe que representa um elemento e suas variáveis de cobertura
 class Elemento:
     def __init__(self, id):
-        self.id = 0
+        self.id = id
         self.num_coberturas = 0
         # Variáveis y
         self.var_cobertura_unica = 0
@@ -26,8 +27,9 @@ class Elemento:
 # Classe que representa um arquivo scp.txt
 class Arquivo_scp:
     def __init__(self, id):
-        self.id = 0
+        self.id = id
         self.arquivo = 0
+        self.caminho = []
         self.nome = []
         self.linhas = 0
         self.colunas = 0
@@ -38,7 +40,7 @@ class Arquivo_scp:
 # Se não conseguir abrir, encerra o programa
 def abrir_arquivo(arquivo_leitura):
         try:
-            with open(arquivo_leitura.nome, "r") as arquivo_leitura.arquivo:
+            with open(arquivo_leitura.caminho, "r") as arquivo_leitura.arquivo:
                 linhas_arquivo = arquivo_leitura.arquivo.readlines()
 
                 # Leitura do cabeçalho do 'arquivo_leitura'
@@ -129,7 +131,7 @@ def ler_conteudo(l, c, linhas_arquivo):
             # Seta em 1 a cobertura do elemento aij na matriz para cada j presente em conteudo linha
             for j in conteudo_linha:
                 matriz[i-1][j-1] = 1
-                subconjuntos[j-1].elementos_cobertos.append(i-1)
+                subconjuntos[j-1].elementos_cobertos.append(i)
                 num_cobertos_atual += 1
         
         # Avança para a próxima linha]
@@ -140,10 +142,18 @@ def ler_conteudo(l, c, linhas_arquivo):
 # Função executada para a gravação das execuções do solver no 'arquivo_escrita', definido na main()
 def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconjuntos: List[Subconjunto], matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo,  media_cobertura_total, tempo_execucao):
 
+    if arquivo_leitura.id == 0:
+        tipo_leitura = "w"
+    else:
+        tipo_leitura = "a"
+
     # Abertura do arquivo de escrita
     try:
-        with open(arquivo_escrita, "a", encoding="utf-8") as escrita:
+        with open(arquivo_escrita, tipo_leitura, encoding="utf-8") as escrita:
             # Alterna a escrita inicial dependendo se for um teste ou não
+
+            if arquivo_leitura.nome == "TESTE":
+                escrita.write(f"\n\n\n\t*****TESTE*****")
 
             # Elementos centrais do solver 
             escrita.write("\n\n\n\nFunção Objetiva:")
@@ -161,9 +171,7 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
                 exit(1)
             escrita.write("\nSolver CBC criado com sucesso!")
 
-            if arquivo_leitura.nome == "TESTE":
-                escrita.write(f"\n\n\n{1})")
-            else:
+            if not arquivo_leitura.nome == "TESTE":
                 escrita.write(f"\n\n\n{arquivo_leitura.id+1})")
 
             escrita.write("\nInstancia: " + arquivo_leitura.nome)
@@ -219,6 +227,23 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
     # Vetor  que armazena o tempo de execução de cada instância.
     tempo_execucao = [0 for _ in range(len(arquivo_leitura))]
 
+    if escrita:
+        try:
+            with open(arquivo_escrita, "r", encoding="utf-8") as arquivo:
+                linhas_arquivo = arquivo.readlines()
+
+                if not linhas_arquivo:
+                    escrita_permitida = 1
+                else:
+                    escrita_permitida = 0
+
+                arquivo.close()
+        except FileNotFoundError:
+            escrita_permitida = 1 
+    
+    if qtd_arquivos == -1:
+        print(f"\n\t*TESTE*")
+
     print("\nFuncao objetivo:")
     print("            Max ∑ yᵢ                             para i=1 até Linhas")
     print("Sujeito a:") 
@@ -251,7 +276,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             print("\n\nNao foi possivel criar o solver CBC")
             return 0 
         else:
-            print("\n\nSolver CBC criado com sucesso!")
+            print("\n\nSolver CBC criado com sucesso!\n")
 
         infinity = solver.infinity()
         
@@ -265,8 +290,6 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
                     if aux == 1:
                         elementos[i].num_coberturas += 1
                         subconjuntos[j].elementos_cobertos.append(i+1)
-
-            print(f'\n\n1)')
         else:
             # Abertura do 'arquivo_leitura'
             subconjuntos, elementos, matriz  = abrir_arquivo(arquivo_leitura[qtd])
@@ -370,10 +393,30 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             funcao_objetivo = 0
             media_cobertura_total = 0
 
-        print(f"Tempo de execução da instância: {tempo_execucao[qtd]:.4f} segundos")
+        print(f"Tempo de execução da instância: {tempo_execucao[qtd]:.4f} segundos") 
+
         if escrita:
-            # Grava o retorno do solver no 'arquivo_escrita'
-            escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao)
+            if qtd == len(arquivo_leitura) - 1:
+                arquivo_escrita = "testes.txt"
+                # Grava o retorno do solver no 'arquivo_escrita'
+                escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao)
+            else:
+                if escrita_permitida:
+                    # Grava o retorno do solver no 'arquivo_escrita'
+                    escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao)
+                else:
+                    while True:
+                        resposta = input("Deseja sobrescrever o arquivo atual? (s/n): ").strip().lower()
+                        if resposta in ["s", "n"]:
+                            break
+                        print("Por favor, digite 's' para sim ou 'n' para não.")
+
+                    if resposta == "s":
+                        # Grava o retorno do solver no 'arquivo_escrita'
+                        escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao)
+                        escrita_permitida = 1
+                    else:
+                        escrita = 0
 
         qtd += 1
 
@@ -393,23 +436,44 @@ def main():
     # Parametros básicos para a execução:
     
     # Nome do arquivo no qual o resultado dos testes poderá ser escrito (opcional).
-    arquivo_escrita = "testes.txt"
+    arquivo_escrita = "resultados.txt"
 
     # Quantidade de Arquivos a serem lidos.
-    qtd_arquivos_leitura = 5
+    #qtd_arquivos_leitura = 5
 
-    # Inicialização dos arquivos de leitura.
-    arquivo_leitura = [Arquivo_scp(id=i) for i in range(qtd_arquivos_leitura + 1)]
 
     # Nome dos arquivos a serem lidos (arquivo_leitura[qtd_arquivos_leitura] reservada para testes).
-    arquivo_leitura[0].nome = "scp49.txt"
-    arquivo_leitura[1].nome = "scp51.txt"
-    arquivo_leitura[2].nome = "scp57.txt"
-    arquivo_leitura[3].nome = "scp63.txt"
-    arquivo_leitura[4].nome = "scp65.txt"
+    #arquivo_leitura[0].nome = "scp49.txt"
+    #arquivo_leitura[1].nome = "scp51.txt"
+    #arquivo_leitura[2].nome = "scp57.txt"
+    #arquivo_leitura[3].nome = "scp63.txt"
+    #arquivo_leitura[4].nome = "scp65.txt"
+
+    # Caminho da pasta onde o script está
+    pasta_script = os.path.dirname(os.path.abspath(__file__))
+
+    # Caminho completo da subpasta "instancias"
+    pasta_instancias = os.path.join(pasta_script, "Instâncias")
+
+    # Lista os arquivos .txt dentro da pasta "instancias"
+    lista_instancias = os.listdir(pasta_instancias)
+
+    # Inicialização de 'qtd_arquivos_leitura', que representa a quantidade de instâncias utilizadas;
+    qtd_arquivos_leitura = 0
+
+    # Inicialização dos arquivos de leitura.
+    arquivo_leitura = [Arquivo_scp(id=i) for i in range(len(lista_instancias)+1)]
+
+    for nome_arquivo in lista_instancias:
+        if nome_arquivo.endswith(".txt"):
+            caminho_completo = os.path.join(pasta_instancias, nome_arquivo)
+            arquivo_leitura[qtd_arquivos_leitura].caminho = caminho_completo
+            arquivo_leitura[qtd_arquivos_leitura].nome = nome_arquivo
+            qtd_arquivos_leitura += 1
+
+    # Definição do 'arquivo' de teste
     arquivo_leitura[qtd_arquivos_leitura].nome = "TESTE"
 
-    
     # Tempo máximo de excução em milisegundos (milissegundos -> segundos/1000).
     tempo_max = 1000     
     
@@ -417,7 +481,7 @@ def main():
     teste = 1
 
     # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
-    escrita = 0
+    escrita = 1
 
     # Define a saida de uma descrição detalhada dos subconjuntos escolhidos e elementos cobertos (opicional)
     output_padrao_completo = 1
