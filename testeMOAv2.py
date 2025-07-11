@@ -1,8 +1,5 @@
 from ortools.linear_solver import pywraplp
-import time
 import os
-import contextlib
-import sys
 import re
 from typing import List
 
@@ -200,15 +197,33 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
                     escrita.write("\n\nUma solucao factivel foi encontrada.")
         
                 if padrao_log:
-
                     # Iniciação variáveis do log
+
+                    # Status da solução
                     status = padrao_log.group("status")
-                    limitante_superior = float(padrao_log.group("upper")) if padrao_log.group("upper") else 0.0 
+
+                    # Limitante superior (LS) do Branch-and-Bound (Branch-and-cut nesse caso)
+                    limitante_superior = float(padrao_log.group("LS")) if padrao_log.group("LS") else 0.0 
+
+                    # Gap de integralidade -> Diferença percentual entre o valor da função objetivo e o limitante superior
                     gap = abs(float(padrao_log.group("gap"))) if padrao_log.group("gap") else 0.0
 
+                    # Número de nós criados pelo Branch-and-Bound (Branch-and-cut nesse caso)
+                    num_nos = padrao_log.group("nos") if padrao_log.group("nos") else 0.0
+
+                    # Número de iterações realizadas pelo Solver
+                    num_iteracoes = padrao_log.group("iteracoes") if padrao_log.group("iteracoes") else 0.0
+
+                    # Tempo de execução em cpu do solver (Tempo efetivo do software sendo processado) 
                     tempo_execucao.cpu_time_solver = float(padrao_log.group("cpu"))
+
+                    # Tempo de wallclock do solver (Tempo real do software sendo processado)
                     tempo_execucao.wall_time_solver = float(padrao_log.group("wall"))
+
+                    # Tempo de execução em cpu no total (Tempo efetivo do software sendo processado, incluindo alocação de variáveis, pré-processamento, entre outros.) 
                     tempo_execucao.total_cpu_time = float(padrao_log.group("total_cpu"))
+
+                    # Tempo de wallclock do solver (Tempo real do software sendo processado), incluindo alocação de variáveis, pré-processamento, entre outros.) 
                     tempo_execucao.total_wall_time = float(padrao_log.group("total_wall"))
 
                     escrita.write(f"\n\nStatus: {status}")
@@ -216,10 +231,19 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
                     if limitante_superior > 0:
                         escrita.write(f"\nLimitante Superior: {limitante_superior:.2f}")
                     escrita.write(f"\nGap de integralidade: {(gap * 100):.2f}%")
+                    escrita.write(f"\nNúmero de nós gerados: {num_nos}")
+                    escrita.write(f"\nNúmero de iterações: {num_iteracoes}")
                     escrita.write(f"\nTime (CPU seconds): {tempo_execucao.cpu_time_solver:.2f}")
                     escrita.write(f"\nTime (Wallclock seconds): {tempo_execucao.wall_time_solver:.2f}")
                     escrita.write(f"\nTotal time (CPU seconds): {tempo_execucao.total_cpu_time:.2f}")
                     escrita.write(f"\nTotal time (Wallclock seconds): {tempo_execucao.total_wall_time:.2f}")
+
+                    h_c, m_c, s_c, ms_c = converter_tempo(tempo_execucao.total_cpu_time)
+                    h_w, m_w, s_w, ms_w = converter_tempo(tempo_execucao.total_wall_time)
+
+                    escrita.write(f"\n\nTempo em horas:")
+                    escrita.write(f"\nTempo de execução em horas (CPU): {h_c}h {m_c}min {s_c}s {ms_c}ms")
+                    escrita.write(f"\nTempo total de execução em horas (Wallclock): {h_w}h {m_w}min {s_w}s {ms_w}ms")
                 else:
                     escrita.write("\n\nERRO AO LER O LOG")
 
@@ -244,11 +268,27 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
                 escrita.write(f"\nTotal time (CPU seconds): {tempo_execucao.total_cpu_time:.2f}")
                 escrita.write(f"\nTotal time (Wallclock seconds): {tempo_execucao.total_wall_time:.2f}")
 
+                h_c, m_c, s_c, ms_c = converter_tempo(tempo_execucao.total_cpu_time)
+                h_w, m_w, s_w, ms_w = converter_tempo(tempo_execucao.total_wall_time)
+
+                escrita.write(f"\n\nTempo em horas:")
+                escrita.write(f"\nTempo de execução em horas (CPU): {h_c}h {m_c}min {s_c}s {ms_c}ms")
+                escrita.write(f"\nTempo total de execução em horas (Wallclock): {h_w}h {m_w}min {s_w}s {ms_w}ms")
+
+
     except FileNotFoundError:
         print("\nERRO! O arquivo de escrita não foi aberto!")
         exit(1)
 
+def converter_tempo(segundos_totais):
+    horas = int(segundos_totais // 3600)
+    minutos = int((segundos_totais % 3600) // 60)
+    segundos = int(segundos_totais % 60)
+    milissegundos = int((segundos_totais - segundos) * 1000)
 
+    return horas, minutos, segundos, milissegundos
+
+# Executa o solver
 def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output_padrao_completo, escrita, arquivo_escrita):
     # Inicialização das variaveis:
 
@@ -434,16 +474,36 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
 
         if indice != -1:
         # Leituta do log gerado na execução do solver
-            padrao_log = re.search(r"Result - (?P<status>.*)\n+(?:No feasible solution found\n+)?(?:Objective value:\s+(?P<objective>\d*\.?\d+)\n+)?(?:Upper bound:\s+(?P<upper>\d*\.?\d+)\n+)?(?:Gap:\s+(?P<gap>-?\d*\.?\d+)\n+)?(?:Enumerated nodes:\s+(?P<nodes>\d+)\n+)?(?:Total iterations:\s+(?P<iterations>\d+)\n+)?Time \(CPU seconds\):\s+(?P<cpu>\d*\.?\d+)\n+Time \(Wallclock seconds\):\s+(?P<wall>\d*\.?\d+)\n+Total time \(CPU seconds\):\s+(?P<total_cpu>\d*\.?\d+)\s+\(Wallclock seconds\):\s+(?P<total_wall>\d*\.?\d+)", trecho_dados)
+            padrao_log = re.search(r"Result - (?P<status>.*)\n+(?:No feasible solution found\n+)?(?:Objective value:\s+(?P<f_objetivo>\d*\.?\d+)\n+)?(?:Upper bound:\s+(?P<LS>\d*\.?\d+)\n+)?(?:Gap:\s+(?P<gap>-?\d*\.?\d+)\n+)?(?:Enumerated nodes:\s+(?P<nos>\d+)\n+)?(?:Total iterations:\s+(?P<iteracoes>\d+)\n+)?Time \(CPU seconds\):\s+(?P<cpu>\d*\.?\d+)\n+Time \(Wallclock seconds\):\s+(?P<wall>\d*\.?\d+)\n+Total time \(CPU seconds\):\s+(?P<total_cpu>\d*\.?\d+)\s+\(Wallclock seconds\):\s+(?P<total_wall>\d*\.?\d+)", trecho_dados)
                             
+            # Status da solução
             status = padrao_log.group("status")
+
+            # Valor da função objetivo
             funcao_objetivo = funcao_objetivo.Value()
-            limitante_superior = float(padrao_log.group("upper")) if padrao_log.group("upper") else 0.0 
+
+            # Limitante superior (LS) do Branch-and-Bound (Branch-and-cut nesse caso)
+            limitante_superior = float(padrao_log.group("LS")) if padrao_log.group("LS") else 0.0 
+
+            # Gap de integralidade -> Diferença percentual entre o valor da função objetivo e o limitante superior
             gap = abs(float(padrao_log.group("gap"))) if padrao_log.group("gap") else 0.0
 
+            # Número de nós criados pelo Branch-and-Bound (Branch-and-cut nesse caso)
+            num_nos = padrao_log.group("nos") if padrao_log.group("nos") else 0.0
+
+            # Número de iterações realizadas pelo Solver
+            num_iteracoes = padrao_log.group("iteracoes") if padrao_log.group("iteracoes") else 0.0
+
+            # Tempo de execução em cpu do solver (Tempo efetivo do software sendo processado) 
             tempo_execucao[qtd].cpu_time_solver = float(padrao_log.group("cpu"))
+
+            # Tempo de wallclock do solver (Tempo real do software sendo processado)
             tempo_execucao[qtd].wall_time_solver = float(padrao_log.group("wall"))
+
+            # Tempo de execução em cpu no total (Tempo efetivo do software sendo processado, incluindo alocação de variáveis, pré-processamento, entre outros.) 
             tempo_execucao[qtd].total_cpu_time = float(padrao_log.group("total_cpu"))
+
+            # Tempo de wallclock do solver (Tempo real do software sendo processado), incluindo alocação de variáveis, pré-processamento, entre outros.) 
             tempo_execucao[qtd].total_wall_time = float(padrao_log.group("total_wall"))
 
         if resultado == pywraplp.Solver.OPTIMAL or resultado == pywraplp.Solver.FEASIBLE:
@@ -458,6 +518,8 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
                 if limitante_superior > 0:
                     print(f"Limitante Superior: {limitante_superior:.2f}") 
                 print(f"Gap: {(gap * 100):.2f}%")
+                print(f"Número de nós gerados: {num_nos}")
+                print(f"Número de iterações: {num_iteracoes}")
                 print(f"Time (CPU seconds): {tempo_execucao[qtd].cpu_time_solver:.2f}")
                 print(f"Time (Wallclock seconds): {tempo_execucao[qtd].wall_time_solver:.2f}")
                 print(f"Total time (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.2f}")
@@ -513,13 +575,27 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
         tempo_total_cpu = sum(tempo_execucao[i].total_cpu_time for i in range(len(tempo_execucao) - 1))
         tempo_total_wall = sum(tempo_execucao[i].total_wall_time for i in range(len(tempo_execucao) - 1))
 
-        print(f"\n⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
+        h_c, m_c, s_c, ms_c = converter_tempo(tempo_total_cpu)
+        h_w, m_w, s_w, ms_w = converter_tempo(tempo_total_wall)
+
+        print(f"\nTempo em segundos:")
+        print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
         print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")
+        
+        print(f"\nTempo em horas:")
+        print(f"⚙️  Tempo total de execção da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
+        print(f"⏱️  Tempo total de execção da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
 
         if escrita_permitida:
             with open(arquivo_escrita, "a", encoding="utf-8") as arquivo:
-                arquivo.write(f"\n\nTempo total de execção da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
-                arquivo.write(f"\n\nTempo total de execção da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")
+                arquivo.write(f"\n\nTempo em segundos:")
+                arquivo.write(f"\nTempo total de execção da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
+                arquivo.write(f"\nTempo total de execção da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")                
+
+                arquivo.write(f"\n\nTempo em horas:")
+                arquivo.write(f"\nTempo total de execção da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
+                arquivo.write(f"\nTempo total de execção da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
+
 
 
     return
@@ -529,17 +605,6 @@ def main():
     
     # Nome do arquivo no qual o resultado dos testes poderá ser escrito (opcional).
     arquivo_escrita = "resultados.txt"
-
-    # Quantidade de Arquivos a serem lidos.
-    #qtd_arquivos_leitura = 5
-
-
-    # Nome dos arquivos a serem lidos (arquivo_leitura[qtd_arquivos_leitura] reservada para testes).
-    #arquivo_leitura[0].nome = "scp49.txt"
-    #arquivo_leitura[1].nome = "scp51.txt"
-    #arquivo_leitura[2].nome = "scp57.txt"
-    #arquivo_leitura[3].nome = "scp63.txt"
-    #arquivo_leitura[4].nome = "scp65.txt"
 
     # Caminho da pasta onde o script está
     pasta_script = os.path.dirname(os.path.abspath(__file__))
