@@ -1,0 +1,1527 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.12 
+Build Date: Jun 17 2025 
+
+command line - cbc -solve -quit (default strategy 1)
+Presolve 900 (0) rows, 3561 (-40) columns and 19533 (-39) elements
+Perturbing problem by 0.001% of 0.13512002 - largest nonzero change 5.0643443e-05 ( 0.037480341%) - largest zero change 5.064107e-05
+0  Obj -0 Dual inf 40.524004 (300)
+93  Obj 299.91293 Primal inf 234.56872 (282)
+186  Obj 299.91246 Primal inf 173.91636 (277)
+279  Obj 299.91198 Primal inf 110.32332 (264)
+361  Obj 299.91185 Primal inf 477.0376 (266)
+408  Obj 299.91185 Primal inf 357.73015 (270)
+458  Obj 299.91184 Primal inf 84.725734 (230)
+515  Obj 299.91184 Primal inf 165.56093 (254)
+574  Obj 299.91183 Primal inf 505.34025 (293)
+640  Obj 299.91183 Primal inf 74.145982 (248)
+713  Obj 299.91183 Primal inf 181.99984 (282)
+795  Obj 299.91183 Primal inf 24.614588 (233)
+884  Obj 299.91183 Primal inf 12.357031 (192)
+972  Obj 299.91183 Primal inf 2.8135403 (121)
+1062  Obj 299.91183 Primal inf 0.2894041 (54)
+1135  Obj 299.91183
+Optimal - objective value 300
+After Postsolve, objective 300, infeasibilities - dual 0 (0), primal 0 (0)
+Optimal objective 300 - 1135 iterations time 0.232, Presolve 0.01
+Continuous objective value is 300 - 0.23 seconds
+Optimal - objective value 300
+Optimal - objective value 300
+Presolve 623 (-277) rows, 3298 (-303) columns and 35430 (15858) elements
+Perturbing problem by 0.001% of 0.13512002 - largest nonzero change 5.7269399e-06 ( 0.0042384097%) - largest zero change 5.7268697e-06
+0  Obj 300.00964 Primal inf 17.842906 (174)
+28  Obj 300.00964
+Optimal - objective value 300
+Presolve 623 (0) rows, 3298 (0) columns and 35430 (0) elements
+0  Obj 300
+Optimal - objective value 300
+Optimal - objective value 300
+processed model has 623 rows, 3298 columns (3298 integer (3274 of which binary)) and 35430 elements
+0  Obj 300
+Optimal - objective value 300
+Optimal - objective value 300
+Cutoff increment increased from 1e-05 to 0.9999
+Optimal - objective value -300
+Initial state - 282 integers unsatisfied sum - 33.5005
+Optimal - objective value -300
+Optimal - objective value -300
+0  Obj 19.873225 Dual inf 27571.857 (1439)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.3072467e-05 ( 0.00056197121%) - largest zero change 3.5406171e-06
+93  Obj 17.846374 Dual inf 11722.391 (1216)
+186  Obj 17.006696 Dual inf 17443.357 (1314)
+279  Obj 16.224292 Dual inf 29339.945 (1440)
+369  Obj 15.745704 Dual inf 38257.353 (1490)
+460  Obj 15.450055 Dual inf 11496.453 (1200)
+553  Obj 15.171672 Dual inf 25937.062 (1448)
+646  Obj 14.99725 Dual inf 16688.782 (1323)
+737  Obj 14.777281 Dual inf 4831.0238 (895)
+830  Obj 14.614876 Dual inf 827.70478 (467)
+923  Obj 14.47486 Dual inf 6177.5622 (981)
+1016  Obj 14.417188 Dual inf 98.701701 (46)
+1082  Obj 14.410561
+1082  Obj 14.410604 Primal inf 1.5921693e-05 (1) Dual inf 5.1271549e+11 (1564)
+1084  Obj 14.410604
+Optimal - objective value 14.410604
+Pass   1: suminf.   28.67816 (278) obj. 299.998 iterations 1084
+0  Obj 14.346001 Dual inf 3802.9994 (851)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.2982479e-05 ( 0.00054065952%) - largest zero change 6.9105722e-06
+93  Obj 14.114501 Dual inf 1682.792 (595)
+186  Obj 13.764371 Dual inf 1498.0722 (559)
+279  Obj 13.700228 Dual inf 67.341682 (124)
+300  Obj 13.697705
+300  Obj 13.69772
+Optimal - objective value 13.69772
+Pass   2: suminf.   28.31372 (280) obj. 299.996 iterations 300
+0  Obj 19.669382 Dual inf 47138.524 (1464)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.2499602e-05 ( 0.0016526712%) - largest zero change 1.0814008e-05
+90  Obj 17.310909 Dual inf 145607.8 (1523)
+175  Obj 15.58258 Dual inf 11643.166 (1050)
+254  Obj 13.739147 Dual inf 174554.4 (1556)
+338  Obj 12.411682 Dual inf 34526.281 (1338)
+412  Obj 10.942503 Dual inf 167211.38 (1502)
+483  Obj 9.5327611 Dual inf 230848.06 (1456)
+556  Obj 8.6597753 Dual inf 138026.05 (1452)
+622  Obj 7.5012927 Dual inf 313461.94 (1544)
+694  Obj 7.045264 Dual inf 37473.271 (1143)
+759  Obj 5.9948448 Dual inf 26272.773 (1193)
+819  Obj 4.9241972 Dual inf 62965.966 (1350)
+884  Obj 4.5530726 Dual inf 128586.42 (1365)
+945  Obj 3.749767 Dual inf 21616.332 (1071)
+1003  Obj 3.2631885 Dual inf 7157.184 (663)
+1070  Obj 2.8919533 Dual inf 2490.1034 (426)
+1130  Obj 2.7584452 Dual inf 3021.3723 (470)
+1193  Obj 2.6298874 Dual inf 384.24022 (124)
+1259  Obj 2.5251265 Dual inf 1837.4701 (543)
+1311  Obj 2.5018437
+1311  Obj 2.5019828
+Optimal - objective value 2.5019828
+Pass   3: suminf.   20.24897 (274) obj. 299.969 iterations 1311
+0  Obj 2.1829814 Dual inf 2027.1687 (557)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.3056751e-05 ( 0.00074507617%) - largest zero change 1.6091225e-05
+60  Obj 1.4168467 Dual inf 13851.695 (1003)
+121  Obj 0.52481801 Dual inf 1776.2768 (480)
+189  Obj 0.3007592 Dual inf 2506.1638 (574)
+260  Obj 0.23788185 Dual inf 41.169152 (54)
+287  Obj 0.23266742
+287  Obj 0.23280752
+Optimal - objective value 0.23280752
+Pass   4: suminf.   17.32539 (259) obj. 299.965 iterations 287
+0  Obj -0.026586154 Dual inf 12918.516 (962)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.2972942e-05 ( 0.0017195487%) - largest zero change 1.0407024e-05
+64  Obj -0.51707743 Dual inf 6803.3984 (646)
+129  Obj -1.2728879 Dual inf 3223.7588 (599)
+194  Obj -1.437952 Dual inf 2016.4734 (466)
+250  Obj -1.467267
+250  Obj -1.4669681
+Optimal - objective value -1.4669681
+Pass   5: suminf.   16.09501 (257) obj. 299.963 iterations 250
+0  Obj -1.6592425 Dual inf 3824.2069 (672)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.2905281e-05 ( 0.0018566902%) - largest zero change 1.1311969e-05
+64  Obj -2.0716064 Dual inf 2978.2454 (556)
+129  Obj -2.4067628 Dual inf 84.953356 (89)
+185  Obj -2.4498326
+185  Obj -2.4497915
+Optimal - objective value -2.4497915
+Pass   6: suminf.   14.84366 (251) obj. 299.964 iterations 185
+0  Obj 0.10010962 Dual inf 22203.829 (1040)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.3002077e-05 ( 0.0017893722%) - largest zero change 1.0907134e-05
+65  Obj -2.2495229 Dual inf 75228.779 (1281)
+130  Obj -3.2366751 Dual inf 56751.775 (1191)
+203  Obj -3.9043258 Dual inf 24095.505 (1079)
+274  Obj -5.2325202 Dual inf 46315.159 (1353)
+343  Obj -7.5916557 Dual inf 119318.17 (1155)
+408  Obj -8.3878694 Dual inf 54481.646 (1390)
+473  Obj -10.632288 Dual inf 8350.5227 (819)
+535  Obj -12.793345 Dual inf 35038.465 (1326)
+590  Obj -12.79481 Dual inf 15908.353 (1102)
+642  Obj -12.795946 Dual inf 11884.791 (920)
+692  Obj -12.796852 Dual inf 1408.6624 (461)
+743  Obj -12.796947 Dual inf 1641.4632 (453)
+800  Obj -12.796993 Dual inf 158.74419 (107)
+854  Obj -12.870897 Dual inf 4.1778667 (23)
+890  Obj -12.887139
+890  Obj -12.886729
+Optimal - objective value -12.886729
+Pass   7: suminf.    0.05300 (126) obj. 299.947 iterations 890
+0  Obj -17.001929 Dual inf 51093.389 (1321)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.2888149e-05 ( 0.0019971408%) - largest zero change 1.9939206e-05
+47  Obj -17.002216 Dual inf 55040.003 (1215)
+102  Obj -17.002268 Dual inf 242.66284 (182)
+158  Obj -17.002274
+158  Obj -17.001929
+Optimal - objective value -17.001929
+Pass   8: suminf.    0.05300 (126) obj. 299.947 iterations 158
+0  Obj -13.715422 Dual inf 0.057444842 (3)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.3099572e-05 ( 0.0019783809%) - largest zero change 1.7427589e-05
+3  Obj -16.858676
+3  Obj -16.858676
+Optimal - objective value -16.858676
+Pass   9: suminf.    0.05000 (123) obj. 296.95 iterations 3
+0  Obj -16.858676
+Optimal - objective value -16.858676
+Pass  10: suminf.    0.05000 (123) obj. 296.95 iterations 0
+0  Obj 238.8013 Dual inf 33226.349 (1319)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 6.3148682e-05 ( 0.0019017338%) - largest zero change 1.7493048e-05
+72  Obj 218.94881 Dual inf 272300.51 (1434)
+122  Obj 218.94651 Dual inf 174716.83 (1365)
+175  Obj 218.94396 Dual inf 150153.64 (1330)
+223  Obj 218.94095 Dual inf 296311.87 (1278)
+276  Obj 218.93737 Dual inf 288540.99 (1231)
+329  Obj 213.51317 Dual inf 36985.968 (961)
+394  Obj 194.46912 Dual inf 36752.917 (950)
+470  Obj 175.74302 Dual inf 6732.5745 (525)
+593  Obj 106.41935 Dual inf 3123.8825 (342)
+743  Obj -14.166296 Dual inf 0.20656917 (12)
+754  Obj -25.322745
+754  Obj -25.317836
+Optimal - objective value -25.317836
+Pass  11: suminf.    0.39833 (260) obj. 262.602 iterations 754
+0  Obj 1.2363119 Dual inf 0.46801415 (26)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 4.4180957e-05 ( 0.00046660295%) - largest zero change 1.0637859e-05
+24  Obj -24.040762
+24  Obj -24.040762
+Optimal - objective value -24.040762
+Pass  12: suminf.    0.32733 (236) obj. 238.673 iterations 24
+0  Obj -11.143877 Dual inf 0.23031141 (13)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 3.5093835e-05 ( 0.00024777177%) - largest zero change 8.7443464e-06
+12  Obj -23.592319
+12  Obj -23.592319
+Optimal - objective value -23.592319
+Pass  13: suminf.    0.29833 (224) obj. 226.702 iterations 12
+0  Obj 1.8597302 Dual inf 0.44843184 (25)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 5.2086209e-05 ( 0.0005632161%) - largest zero change 4.8604819e-06
+23  Obj -22.366295
+23  Obj -22.366295
+Optimal - objective value -22.366295
+Pass  14: suminf.    0.24733 (201) obj. 203.753 iterations 23
+0  Obj 6.4434834 Dual inf 0.50662107 (28)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 1.0796813e-05 ( 0.0001047213%) - largest zero change 9.5727374e-06
+26  Obj -20.961406
+26  Obj -20.961406
+Optimal - objective value -20.961406
+Pass  15: suminf.    0.19600 (175) obj. 177.804 iterations 26
+0  Obj 7.5875277 Dual inf 0.50139679 (27)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 5.8909959e-05 ( 0.00070123991%) - largest zero change 6.2545911e-06
+26  Obj -19.686939
+26  Obj -19.686939
+Optimal - objective value -19.686939
+Pass  16: suminf.    0.15267 (149) obj. 151.847 iterations 26
+0  Obj 2.4133165 Dual inf 0.3874268 (21)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 5.3696858e-05 ( 0.00049905305%) - largest zero change 9.7878883e-06
+20  Obj -18.636811
+20  Obj -18.636811
+Optimal - objective value -18.636811
+Pass  17: suminf.    0.12233 (129) obj. 131.878 iterations 20
+0  Obj 0.0329656 Dual inf 0.32860081 (18)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 3.8106145e-05 ( 0.00045359987%) - largest zero change 7.9141875e-06
+17  Obj -17.801923
+17  Obj -17.801923
+Optimal - objective value -17.801923
+Pass  18: suminf.    0.09967 (112) obj. 114.9 iterations 17
+0  Obj 5.316574 Dual inf 0.40696568 (23)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 2.7240218e-05 ( 0.00011566932%) - largest zero change 7.1130474e-06
+21  Obj -16.742674
+21  Obj -16.742674
+Optimal - objective value -16.742674
+Pass  19: suminf.    0.07167 (91) obj. 93.9283 iterations 21
+0  Obj 12.700622 Dual inf 0.52096111 (29)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 2.6629203e-05 ( 0.00031698308%) - largest zero change 6.0752993e-06
+27  Obj -15.521026
+27  Obj -15.521026
+Optimal - objective value -15.521026
+Pass  20: suminf.    0.04267 (64) obj. 66.9573 iterations 27
+0  Obj -0.2792972 Dual inf 0.27229933 (16)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 4.7529663e-05 ( 0.00056577355%) - largest zero change 5.2069347e-06
+14  Obj -14.900162
+14  Obj -14.900162
+Optimal - objective value -14.900162
+Pass  21: suminf.    0.02867 (50) obj. 52.9713 iterations 14
+0  Obj -9.5844877 Dual inf 0.094262552 (5)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 4.3488853e-05 ( 0.00038650724%) - largest zero change 9.8225248e-06
+5  Obj -14.742325
+5  Obj -14.742325
+Optimal - objective value -14.742325
+Pass  22: suminf.    0.02367 (45) obj. 47.9763 iterations 5
+0  Obj -14.742325
+Optimal - objective value -14.742325
+Pass  23: suminf.    0.02367 (45) obj. 47.9763 iterations 0
+0  Obj 228.1889 Dual inf 1769.0534 (241)
+Perturbing problem by 0.001% of 5.3153492 - largest nonzero change 5.6043832e-05 ( 0.00066712271%) - largest zero change 9.5336615e-06
+186  Obj 36.908015 Dual inf 303.83266 (59)
+245  Obj -24.651598
+245  Obj -24.651419
+Optimal - objective value -24.651419
+Pass  24: suminf.    0.13733 (62) obj. 61.8627 iterations 245
+0  Obj -4.0939381 Dual inf 0.3684463 (22)
+19  Obj -23.872679
+Optimal - objective value -23.872679
+Pass  25: suminf.    0.07533 (43) obj. 42.9247 iterations 19
+0  Obj -6.8930736 Dual inf 0.31201638 (20)
+16  Obj -23.382876
+Optimal - objective value -23.382876
+Pass  26: suminf.    0.03933 (27) obj. 26.9607 iterations 16
+0  Obj 2.9456938 Dual inf 0.46198491 (26)
+24  Obj -22.218591
+Optimal - objective value -22.218591
+Pass  27: suminf.    0.00200 (3) obj. 2.998 iterations 24
+0  Obj -22.218591
+Optimal - objective value -22.218591
+Pass  28: suminf.    0.00200 (3) obj. 2.998 iterations 0
+0  Obj 222.50361 Dual inf 1708.0957 (243)
+186  Obj 27.338172 Dual inf 263.70985 (57)
+243  Obj -31.656992
+Optimal - objective value -31.656992
+Pass  29: suminf.    0.09933 (26) obj. 25.9007 iterations 243
+0  Obj -11.306531 Dual inf 0.36334729 (20)
+19  Obj -30.981762
+Optimal - objective value -30.981762
+Pass  30: suminf.    0.01567 (7) obj. 6.98433 iterations 19
+Rounding solution of 174 is better than previous of -1e+50
+
+0  Obj -300
+Optimal - objective value -300
+Before mini branch and bound, 1948 integers at bound fixed and 0 continuous
+Presolve 622 (-1) rows, 1350 (-1948) columns and 14692 (-20738) elements
+Presolve 622 (-1) rows, 1350 (-1948) columns and 14692 (-20738) elements
+Presolve 622 (0) rows, 1350 (0) columns and 14692 (0) elements
+processed model has 622 rows, 1350 columns (1350 integer (1326 of which binary)) and 14692 elements
+Full problem 623 rows 3298 columns, reduced to 622 rows 1350 columns - too large
+Mini branch and bound did not improve solution (1.79 seconds)
+Round again with cutoff of 187.5
+Optimal - objective value -300
+Optimal - objective value -300
+0  Obj 14.410604
+Optimal - objective value 14.410604
+Pass  30: suminf.   28.67816 (278) obj. 299.998 iterations 0
+0  Obj 14.346001 Dual inf 3802.9994 (851)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.6884079e-05 ( 0.00072053929%) - largest zero change 9.225862e-06
+92  Obj 14.097553 Dual inf 15585.494 (1284)
+185  Obj 13.981403 Dual inf 22586.812 (1357)
+238  Obj 13.821276 Dual inf 2932.3805 (783)
+331  Obj 13.702924 Dual inf 2295.2749 (728)
+362  Obj 13.697703
+362  Obj 13.69772
+Optimal - objective value 13.69772
+Pass  31: suminf.   28.31372 (280) obj. 299.996 iterations 362
+0  Obj 17.490634 Dual inf 38611.355 (1416)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.6779288e-05 ( 0.00076381781%) - largest zero change 1.0227096e-05
+93  Obj 15.998593 Dual inf 23723.375 (1326)
+180  Obj 14.392364 Dual inf 193385.4 (1575)
+268  Obj 13.333181 Dual inf 296306.04 (1537)
+341  Obj 12.422852 Dual inf 66903.963 (1378)
+425  Obj 11.362233 Dual inf 110933.41 (1465)
+500  Obj 10.429007 Dual inf 53566.08 (1347)
+579  Obj 9.0362726 Dual inf 26161.736 (1232)
+653  Obj 8.4911319 Dual inf 586051.51 (1541)
+722  Obj 7.5302926 Dual inf 49450.711 (1355)
+788  Obj 6.5207196 Dual inf 8369.8627 (910)
+854  Obj 6.1623113 Dual inf 9323.2307 (870)
+928  Obj 5.8307129 Dual inf 12438.053 (1126)
+994  Obj 5.6369053 Dual inf 267.54888 (98)
+1064  Obj 5.5368728 Dual inf 75.455018 (51)
+1133  Obj 5.5172967
+1133  Obj 5.517406
+Optimal - objective value 5.517406
+Pass  32: suminf.   23.56891 (287) obj. 299.976 iterations 1133
+0  Obj 14.060767 Dual inf 24621.608 (1095)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.6054304e-05 ( 0.0010032675%) - largest zero change 1.6913095e-05
+66  Obj 11.000429 Dual inf 70415.176 (1330)
+135  Obj 9.6443804 Dual inf 47225.286 (1312)
+192  Obj 7.6150044 Dual inf 34579.656 (1194)
+256  Obj 5.1262142 Dual inf 33498.142 (1037)
+313  Obj 2.2437544 Dual inf 79777.662 (1206)
+372  Obj -0.13211032 Dual inf 55537.377 (1161)
+427  Obj -2.6275702 Dual inf 57448.857 (1209)
+497  Obj -4.2187749 Dual inf 235110.18 (1122)
+580  Obj -5.2644935 Dual inf 25197.851 (884)
+658  Obj -7.4885007 Dual inf 90011.989 (1148)
+732  Obj -7.551278 Dual inf 50175.125 (1057)
+808  Obj -7.5912192 Dual inf 61236.895 (1113)
+877  Obj -9.6438959 Dual inf 41899.533 (954)
+953  Obj -9.6651781 Dual inf 16566.079 (909)
+1007  Obj -10.215472 Dual inf 3729.3252 (543)
+1063  Obj -11.304381 Dual inf 8216.9354 (742)
+1115  Obj -11.522339 Dual inf 2271.6295 (591)
+1165  Obj -11.524311 Dual inf 2632.815 (439)
+1216  Obj -11.524625 Dual inf 97.928858 (72)
+1262  Obj -11.555332
+1262  Obj -11.554885
+Optimal - objective value -11.554885
+Pass  33: suminf.    4.31075 (171) obj. 299.939 iterations 1262
+0  Obj -13.722085 Dual inf 11824.954 (976)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.5528467e-05 ( 0.0019847111%) - largest zero change 1.9678165e-05
+55  Obj -13.72223 Dual inf 384.62444 (197)
+90  Obj -13.722235
+90  Obj -13.722085
+Optimal - objective value -13.722085
+Pass  34: suminf.    4.31075 (171) obj. 299.939 iterations 90
+0  Obj -13.857585 Dual inf 18577.934 (1036)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.6121326e-05 ( 0.0019122641%) - largest zero change 1.9310055e-05
+50  Obj -14.823812 Dual inf 270741.94 (1517)
+101  Obj -14.825224 Dual inf 1511714.2 (1393)
+153  Obj -16.23469 Dual inf 22085.627 (1097)
+203  Obj -16.235081 Dual inf 2733.1433 (541)
+252  Obj -16.235319 Dual inf 7395.6675 (836)
+302  Obj -16.235506 Dual inf 9480.6587 (822)
+360  Obj -16.265755 Dual inf 1.9103627 (12)
+375  Obj -16.266241
+375  Obj -16.26498
+Optimal - objective value -16.26498
+Pass  35: suminf.    0.06233 (147) obj. 299.938 iterations 375
+0  Obj -17.27158 Dual inf 36733.784 (1367)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.6698411e-05 ( 0.001865103%) - largest zero change 1.8704466e-05
+24  Obj -17.271624
+24  Obj -17.27158
+Optimal - objective value -17.27158
+Pass  36: suminf.    0.06233 (147) obj. 299.938 iterations 24
+0  Obj -13.956302 Dual inf 0.057707749 (3)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.6481019e-05 ( 0.0019806464%) - largest zero change 1.9481082e-05
+3  Obj -17.113941
+3  Obj -17.113941
+Optimal - objective value -17.113941
+Pass  37: suminf.    0.05933 (144) obj. 296.941 iterations 3
+0  Obj -17.113941
+Optimal - objective value -17.113941
+Pass  38: suminf.    0.05933 (144) obj. 296.941 iterations 0
+0  Obj 235.12449 Dual inf 5150.1613 (748)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.6668518e-05 ( 0.0019446654%) - largest zero change 1.9028545e-05
+58  Obj 228.85557 Dual inf 685621.81 (1518)
+107  Obj 228.85151 Dual inf 131898.89 (1237)
+158  Obj 228.84707 Dual inf 119617.25 (1194)
+214  Obj 228.83837 Dual inf 122970.97 (1002)
+292  Obj 202.32917 Dual inf 43988.558 (926)
+404  Obj 138.29394 Dual inf 2710.4055 (243)
+555  Obj 26.424575 Dual inf 868.59061 (111)
+614  Obj -25.998824
+614  Obj -25.995421
+Optimal - objective value -25.995421
+Pass  39: suminf.    0.45900 (271) obj. 272.541 iterations 614
+0  Obj 3.5274029 Dual inf 0.52011175 (28)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 5.9972522e-05 ( 0.00071388822%) - largest zero change 4.3691822e-06
+27  Obj -24.734009
+27  Obj -24.734009
+Optimal - objective value -24.734009
+Pass  40: suminf.    0.37300 (244) obj. 245.627 iterations 27
+0  Obj 1.4006194 Dual inf 0.46137911 (25)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.3405147e-05 ( 0.0004184205%) - largest zero change 9.4881706e-06
+24  Obj -23.666695
+24  Obj -23.666695
+Optimal - objective value -23.666695
+Pass  41: suminf.    0.31133 (220) obj. 221.689 iterations 24
+0  Obj -8.4388526 Dual inf 0.26992759 (15)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.0283852e-05 ( 0.00050174587%) - largest zero change 9.9616307e-06
+14  Obj -23.052774
+14  Obj -23.052774
+Optimal - objective value -23.052774
+Pass  42: suminf.    0.27867 (206) obj. 207.721 iterations 14
+0  Obj -10.258839 Dual inf 0.22685818 (12)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 5.6962057e-05 ( 0.0005516711%) - largest zero change 3.5088424e-06
+12  Obj -22.655806
+12  Obj -22.655806
+Optimal - objective value -22.655806
+Pass  43: suminf.    0.25100 (194) obj. 195.749 iterations 12
+0  Obj -11.913174 Dual inf 0.18973192 (10)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 3.320085e-05 ( 0.00020429236%) - largest zero change 6.6534124e-06
+13  Obj -20.55326
+13  Obj -20.55326
+Optimal - objective value -20.55326
+Pass  44: suminf.    0.50009 (186) obj. 187.5 iterations 13
+0  Obj -22.01572 Dual inf 0.15215799 (3)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 5.4349664e-05 ( 9.7417394e-05%) - largest zero change 2.298208e-06
+1  Obj -22.278889
+1  Obj -22.278889
+Optimal - objective value -22.278889
+Pass  45: suminf.    0.23700 (186) obj. 187.763 iterations 1
+0  Obj -4.6403099 Dual inf 0.31033391 (17)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 5.9085109e-05 ( 0.00070332482%) - largest zero change 9.9308484e-06
+32  Obj -5.684613
+32  Obj -5.684613
+Optimal - objective value -5.684613
+Pass  46: suminf.    0.50009 (186) obj. 187.5 iterations 32
+0  Obj -21.234586 Dual inf 0.1568035 (33)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 4.0457866e-05 ( 7.9669544e-05%) - largest zero change 7.5589246e-06
+1  Obj -21.492977
+1  Obj -21.492977
+Optimal - objective value -21.492977
+Pass  47: suminf.    0.24433 (186) obj. 187.756 iterations 1
+0  Obj 238.2909 Dual inf 1861.9095 (258)
+Perturbing problem by 0.001% of 5.697 - largest nonzero change 6.0190314e-05 ( 0.00040196655%) - largest zero change 1.1190532e-05
+186  Obj 44.735333 Dual inf 380.67812 (75)
+261  Obj -28.39038
+261  Obj -28.390368
+Optimal - objective value -28.390368
+Pass  48: suminf.    0.50009 (188) obj. 187.5 iterations 261
+0  Obj -30.396956 Dual inf 0.13976292 (35)
+1  Obj -30.408837
+Optimal - objective value -30.408837
+Pass  49: suminf.    0.48833 (188) obj. 187.512 iterations 1
+0  Obj -17.850158 Dual inf 0.22862301 (14)
+12  Obj -18.093554
+Optimal - objective value -18.093554
+Pass  50: suminf.    0.50009 (188) obj. 187.5 iterations 12
+0  Obj -30.165441 Dual inf 0.145649 (54)
+1  Obj -30.186217
+Optimal - objective value -30.186217
+Pass  51: suminf.    0.47967 (188) obj. 187.52 iterations 1
+0  Obj -11.497557 Dual inf 0.34125238 (20)
+13  Obj -11.669631
+Optimal - objective value -11.669631
+Pass  52: suminf.    0.50009 (188) obj. 187.5 iterations 13
+0  Obj -30.014144 Dual inf 0.15506167 (76)
+1  Obj -30.035086
+Optimal - objective value -30.035086
+Pass  53: suminf.    0.47967 (188) obj. 187.52 iterations 1
+0  Obj -6.2974752 Dual inf 0.43425836 (26)
+4  Obj -6.4186926
+Optimal - objective value -6.4186926
+Pass  54: suminf.    0.50009 (188) obj. 187.5 iterations 4
+0  Obj -29.913868 Dual inf 0.15812786 (81)
+1  Obj -29.935538
+Optimal - objective value -29.935538
+Pass  55: suminf.    0.47900 (188) obj. 187.521 iterations 1
+0  Obj -14.637903 Dual inf 0.28021594 (16)
+1  Obj -14.659529
+Optimal - objective value -14.659529
+Pass  56: suminf.    0.50009 (188) obj. 187.5 iterations 1
+0  Obj 223.55288 Dual inf 1767.4556 (320)
+186  Obj 28.605575 Dual inf 324.6955 (141)
+254  Obj -21.437388
+Optimal - objective value -21.437388
+Pass  57: suminf.    0.84524 (189) obj. 187.5 iterations 254
+0  Obj -36.957268
+Optimal - objective value -36.957268
+Pass  58: suminf.    0.84524 (189) obj. 187.5 iterations 0
+0  Obj -18.498476 Dual inf 0.81925312 (100)
+6  Obj -20.337054
+Optimal - objective value -20.337054
+Pass  59: suminf.    0.83924 (189) obj. 187.5 iterations 6
+No solution found this major pass
+0  Obj -300
+Optimal - objective value -300
+Before mini branch and bound, 1965 integers at bound fixed and 0 continuous
+Presolve 622 (-1) rows, 1333 (-1965) columns and 14437 (-20993) elements
+Presolve 622 (-1) rows, 1333 (-1965) columns and 14437 (-20993) elements
+Presolve 622 (0) rows, 1333 (0) columns and 14437 (0) elements
+processed model has 622 rows, 1333 columns (1333 integer (1309 of which binary)) and 14437 elements
+Full problem 623 rows 3298 columns, reduced to 622 rows 1333 columns - too large
+Mini branch and bound did not improve solution (2.69 seconds)
+After 2.70 seconds - Feasibility pump exiting with objective of 174 - took 2.33 seconds
+Optimal - objective value -174
+Integer solution of 174 found by feasibility pump after 0 iterations and 0 nodes (2.70 seconds)
+0  Obj -300 Primal inf 0.082173556 (1) Dual inf 487.84553 (1229)
+21  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.13271967 (1) Dual inf 627.85522 (965)
+23  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.24555612 (1) Dual inf 822.88245 (645)
+49  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.36486757 (1) Dual inf 969.90244 (318)
+39  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.3979239 (1) Dual inf 109.21399 (148)
+93  Obj -300 Primal inf 0.37170256 (6) Dual inf 11.331312 (69)
+167  Obj -300 Primal inf 0.37003617 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.3979239 (1) Dual inf 428.39739 (319)
+93  Obj -300 Primal inf 0.043293757 (4) Dual inf 506.8587 (299)
+124  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.43526427 (1) Dual inf 53.151401 (151)
+93  Obj -300 Primal inf 0.42280595 (3) Dual inf 14.509325 (67)
+171  Obj -300 Primal inf 0.4203827 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.43526427 (1) Dual inf 200.89385 (332)
+93  Obj -300 Primal inf 0.089548507 (1) Dual inf 124.35707 (287)
+145  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.038727427 (1) Dual inf 49.750236 (138)
+93  Obj -300 Primal inf 0.031978753 (5) Dual inf 3.6150235 (44)
+145  Obj -300 Primal inf 0.022787886 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.038727427 (1) Dual inf 199.87715 (296)
+12  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.065189055 (1) Dual inf 65.828632 (141)
+93  Obj -300 Primal inf 0.026540034 (5) Dual inf 8.2176474 (64)
+150  Obj -300 Primal inf 0.024711622 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.065189055 (1) Dual inf 257.98021 (328)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.074050011 (1) Dual inf 49.178328 (130)
+93  Obj -300 Primal inf 0.052703165 (3) Dual inf 5.4552256 (57)
+170  Obj -300 Primal inf 0.05214992 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.074050011 (1) Dual inf 193.15648 (300)
+10  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.020372942 (1) Dual inf 45.086097 (145)
+93  Obj -300 Primal inf 0.0010993209 (1) Dual inf 3.3684291 (66)
+103  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.020182763 (1) Dual inf 189.19178 (218)
+93  Obj -300 Primal inf 0.011603231 (5) Dual inf 8.0759706 (85)
+178  Obj -300 Primal inf 0.011586042 (4)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.020182763 (1) Dual inf 195.39882 (220)
+93  Obj -300 Primal inf 0.0099528203 (2) Dual inf 1.6787958 (33)
+127  Obj -300 Primal inf 0.0094464875 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.97981704 (1) Dual inf 20.638169 (59)
+85  Obj -300 Primal inf 0.95124665 (3)
+Primal infeasible - objective value -300
+Presolve 582 (-41) rows, 439 (-2859) columns and 5423 (-30007) elements
+Presolve 582 (-41) rows, 439 (-2859) columns and 5423 (-30007) elements
+Presolve 582 (0) rows, 439 (0) columns and 5423 (0) elements
+processed model has 582 rows, 439 columns (439 integer (434 of which binary)) and 5423 elements
+Full problem 623 rows 3298 columns, reduced to 582 rows 439 columns
+Exiting on maximum solutions
+Partial search - best objective -1e+50 (best possible 300), took 0 iterations and 0 nodes (3.27 seconds)
+Maximum depth 0, 0 variables fixed on reduced cost
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.082173556 (1) Dual inf 487.84553 (1229)
+21  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.13271967 (1) Dual inf 627.85522 (965)
+23  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.24555612 (1) Dual inf 822.88245 (645)
+49  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.36486757 (1) Dual inf 969.90244 (318)
+39  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.3979239 (1) Dual inf 109.21399 (148)
+93  Obj -300 Primal inf 0.37170256 (6) Dual inf 11.331312 (69)
+167  Obj -300 Primal inf 0.37003617 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.3979239 (1) Dual inf 428.39739 (319)
+93  Obj -300 Primal inf 0.043293757 (4) Dual inf 506.8587 (299)
+124  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.43526427 (1) Dual inf 53.151401 (151)
+93  Obj -300 Primal inf 0.42280595 (3) Dual inf 14.509325 (67)
+171  Obj -300 Primal inf 0.4203827 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.43526427 (1) Dual inf 200.89385 (332)
+93  Obj -300 Primal inf 0.089548507 (1) Dual inf 124.35707 (287)
+145  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.038727427 (1) Dual inf 49.750236 (138)
+93  Obj -300 Primal inf 0.031978753 (5) Dual inf 3.6150235 (44)
+145  Obj -300 Primal inf 0.022787886 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.038727427 (1) Dual inf 199.87715 (296)
+12  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.065189055 (1) Dual inf 65.828632 (141)
+93  Obj -300 Primal inf 0.026540034 (5) Dual inf 8.2176474 (64)
+150  Obj -300 Primal inf 0.024711622 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.065189055 (1) Dual inf 257.98021 (328)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.074050011 (1) Dual inf 49.178328 (130)
+93  Obj -300 Primal inf 0.052703165 (3) Dual inf 5.4552256 (57)
+170  Obj -300 Primal inf 0.05214992 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.074050011 (1) Dual inf 193.15648 (300)
+10  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.020372942 (1) Dual inf 45.086097 (145)
+93  Obj -300 Primal inf 0.0010993209 (1) Dual inf 3.3684291 (66)
+103  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.020182763 (1) Dual inf 189.19178 (218)
+93  Obj -300 Primal inf 0.011603231 (5) Dual inf 8.0759706 (85)
+178  Obj -300 Primal inf 0.011586042 (4)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.020182763 (1) Dual inf 195.39882 (220)
+93  Obj -300 Primal inf 0.0099528203 (2) Dual inf 1.6787958 (33)
+127  Obj -300 Primal inf 0.0094464875 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.97981704 (1) Dual inf 20.638169 (59)
+85  Obj -300 Primal inf 0.95124665 (3)
+Primal infeasible - objective value -300
+At root node, 0 cuts changed objective from 300 to 300 in 1 passes
+Cut generator 0 (Probing) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.007 seconds - new frequency is -100
+Cut generator 1 (Gomory) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.016 seconds - new frequency is -100
+Cut generator 2 (Knapsack) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is -100
+Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.001 seconds - new frequency is -100
+Cut generator 4 (MixedIntegerRounding2) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.003 seconds - new frequency is -100
+Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
+0  Obj -300 Primal inf 0.066634909 (1)
+0  Obj -300 Primal inf 0.068484906 (1)
+0  Obj -300 Primal inf 0.064458903 (1)
+0  Obj -300 Primal inf 0.070660912 (1)
+0  Obj -300 Primal inf 0.056903023 (1)
+0  Obj -300 Primal inf 0.078216793 (1)
+0  Obj -300 Primal inf 0.052482818 (1)
+0  Obj -300 Primal inf 0.082636998 (1)
+0  Obj -300 Primal inf 0.049085536 (1)
+0  Obj -300 Primal inf 0.08603428 (1)
+0  Obj -300 Primal inf 0.048927684 (1)
+0  Obj -300 Primal inf 0.086192132 (1)
+0  Obj -300 Primal inf 0.048312363 (1)
+0  Obj -300 Primal inf 0.086807452 (1)
+0  Obj -300 Primal inf 0.048304729 (1)
+0  Obj -300 Primal inf 0.086815087 (1)
+0  Obj -300 Primal inf 0.047327901 (1)
+0  Obj -300 Primal inf 0.087791915 (1)
+0  Obj -300 Primal inf 0.045599337 (1)
+0  Obj -300 Primal inf 0.089520479 (1)
+0  Obj -300 Primal inf 0.0435354 (1)
+0  Obj -300 Primal inf 0.091584416 (1)
+Optimal - objective value -300
+Optimal - objective value -300
+After 0 nodes, 1 on tree, 174 best solution, best possible 300 (4.46 seconds)
+Perturbing problem by 0.001% of 0.13512002 - largest nonzero change 5.7269399e-06 ( 0.0042384097%) - largest zero change 5.7268697e-06
+0  Obj -300.00964 Primal inf 0.49315415 (1)
+93  Obj -300.00964 Primal inf 1.9042926 (84)
+186  Obj -300.00964 Primal inf 0.67037976 (63)
+244  Obj -300.00966
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.073199913 (1) Dual inf 581.65857 (1352)
+18  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.11493081 (1) Dual inf 477.20173 (962)
+29  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.10825953 (1) Dual inf 1222.3885 (630)
+22  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.40945282 (1) Dual inf 278.9028 (328)
+35  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.40112899 (1) Dual inf 78.490326 (149)
+93  Obj -300 Primal inf 0.36762651 (7) Dual inf 34.982538 (115)
+186  Obj -300 Primal inf 0.35659737 (4) Dual inf 13.021572 (73)
+255  Obj -300 Primal inf 0.35526659 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.40112899 (1) Dual inf 330.50022 (334)
+77  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.029889642 (1) Dual inf 54.089138 (157)
+72  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0331986 (1) Dual inf 21.454428 (118)
+93  Obj -300 Primal inf 0.03293996 (1) Dual inf 1.1058433 (30)
+123  Obj -300 Primal inf 0.03293996 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0331986 (1) Dual inf 22.968552 (120)
+93  Obj -300 Primal inf 0.029825784 (2) Dual inf 0.79157199 (26)
+119  Obj -300 Primal inf 0.029825784 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.9668012 (1) Dual inf 39.117364 (164)
+93  Obj -300 Primal inf 0.96234202 (2) Dual inf 18.91985 (92)
+163  Obj -300 Primal inf 0.96199124 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.026212329 (1)
+0  Obj -300 Primal inf 0.10890749 (1)
+0  Obj -300 Primal inf 0.0079861596 (1)
+0  Obj -300 Primal inf 0.12713366 (1)
+0  Obj -300 Primal inf 0.010609786 (1)
+0  Obj -300 Primal inf 0.12451003 (1)
+0  Obj -300 Primal inf 0.020636913 (1)
+0  Obj -300 Primal inf 0.1144829 (1)
+Perturbing problem by 0.001% of 0.13512002 - largest nonzero change 5.7269399e-06 ( 0.0042384097%) - largest zero change 5.7268697e-06
+0  Obj -300.00964 Primal inf 0.58343578 (1)
+93  Obj -300.00964 Primal inf 11.824259 (124)
+181  Obj -300.00964 Primal inf 211.78734 (272)
+249  Obj -300.00964 Primal inf 3.0372447 (85)
+341  Obj -300.00966 Primal inf 3.4005063 (93)
+408  Obj -300.00966
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.10468197 (1) Dual inf 796.1569 (1287)
+18  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.25334496 (1) Dual inf 664.63395 (958)
+38  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.19853284 (1) Dual inf 753.95607 (626)
+16  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.20755703 (1) Dual inf 760.05078 (316)
+26  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.08492352 (1) Dual inf 68.731427 (149)
+93  Obj -300 Primal inf 0.072143462 (2) Dual inf 8.3886396 (69)
+184  Obj -300 Primal inf 0.066675123 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.08492352 (1) Dual inf 268.8249 (331)
+12  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.033964739 (1) Dual inf 64.056025 (137)
+93  Obj -300 Primal inf 0.027795313 (3) Dual inf 9.6661742 (84)
+178  Obj -300 Primal inf 0.024871964 (4)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.033964739 (1) Dual inf 268.79249 (311)
+15  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.042658827 (1) Dual inf 21.691274 (136)
+93  Obj -300 Primal inf 0.041141327 (1) Dual inf 6.3994969 (62)
+154  Obj -300 Primal inf 0.040474362 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.042658827 (1) Dual inf 86.63268 (302)
+8  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.077011752 (1) Dual inf 38.570173 (148)
+93  Obj -300 Primal inf 0.070247027 (3) Dual inf 7.6829366 (72)
+165  Obj -300 Primal inf 0.070247027 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.077011752 (1) Dual inf 142.28653 (314)
+15  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.071158556 (1) Dual inf 37.345992 (153)
+93  Obj -300 Primal inf 0.065341815 (2) Dual inf 6.2330121 (61)
+169  Obj -300 Primal inf 0.059258151 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.071158556 (1) Dual inf 128.8301 (336)
+23  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.26854834 (1) Dual inf 39.00689 (133)
+93  Obj -300 Primal inf 0.26509307 (2) Dual inf 12.458843 (84)
+180  Obj -300 Primal inf 0.26487372 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.26854834 (1) Dual inf 161.18574 (313)
+50  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.006257498 (1) Dual inf 53.676182 (130)
+93  Obj -300 Primal inf 0.0054027084 (1) Dual inf 2.4893947 (42)
+135  Obj -300 Primal inf 0.0054027084 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.006257498 (1) Dual inf 182.03074 (284)
+3  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0068254323 (1) Dual inf 20.086351 (138)
+93  Obj -300 Primal inf 0.0066318875 (1) Dual inf 2.7946728 (57)
+150  Obj -300 Primal inf 0.0064766714 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0068254323 (1) Dual inf 73.964701 (292)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.011594253 (1) Dual inf 30.644093 (131)
+93  Obj -300 Primal inf 0.0085600619 (2) Dual inf 3.7669953 (44)
+137  Obj -300 Primal inf 0.0085600619 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.011594253 (1) Dual inf 119.57967 (304)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.030297695 (1) Dual inf 45.778179 (150)
+93  Obj -300 Primal inf 0.023805289 (2) Dual inf 6.6830708 (48)
+158  Obj -300 Primal inf 0.023487077 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.030297695 (1) Dual inf 161.44728 (327)
+8  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.035273213 (1) Dual inf 27.456343 (141)
+93  Obj -300 Primal inf 0.032364665 (2) Dual inf 2.3711739 (43)
+135  Obj -300 Primal inf 0.031703051 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.035273213 (1) Dual inf 100.7592 (310)
+13  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0040086153 (1) Dual inf 32.559819 (133)
+93  Obj -300 Primal inf 0.0036657606 (1) Dual inf 3.5113814 (39)
+120  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.018909381 (1) Dual inf 333.92857 (262)
+81  Obj -300 Primal inf 0.012354014 (4)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.018909381 (1) Dual inf 336.62902 (263)
+81  Obj -300 Primal inf 0.015153342 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.98109042 (1) Dual inf 5.661306 (19)
+14  Obj -300 Primal inf 0.97901275 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.01231264 (1)
+0  Obj -300 Primal inf 0.12280718 (1)
+0  Obj -300 Primal inf 0.016478264 (1)
+0  Obj -300 Primal inf 0.11864155 (1)
+0  Obj -300 Primal inf 0.0013626285 (1)
+0  Obj -300 Primal inf 0.13375719 (1)
+0  Obj -300 Primal inf 0.029388262 (1)
+0  Obj -300 Primal inf 0.10573155 (1)
+0  Obj -300 Primal inf 0.10468197 (1) Dual inf 796.1569 (1287)
+18  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.25334496 (1) Dual inf 664.63395 (958)
+38  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.19853284 (1) Dual inf 753.95607 (626)
+16  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.20755703 (1) Dual inf 760.05078 (316)
+26  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.08492352 (1) Dual inf 68.731427 (149)
+93  Obj -300 Primal inf 0.072143462 (2) Dual inf 8.3886396 (69)
+184  Obj -300 Primal inf 0.066675123 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.08492352 (1) Dual inf 268.8249 (331)
+12  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.033964739 (1) Dual inf 64.056025 (137)
+93  Obj -300 Primal inf 0.027795313 (3) Dual inf 9.6661742 (84)
+178  Obj -300 Primal inf 0.024871964 (4)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.033964739 (1) Dual inf 268.79249 (311)
+15  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.042658827 (1) Dual inf 21.691274 (136)
+93  Obj -300 Primal inf 0.041141327 (1) Dual inf 6.3994969 (62)
+154  Obj -300 Primal inf 0.040474362 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.042658827 (1) Dual inf 86.63268 (302)
+8  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.077011752 (1) Dual inf 38.570173 (148)
+93  Obj -300 Primal inf 0.070247027 (3) Dual inf 7.6829366 (72)
+165  Obj -300 Primal inf 0.070247027 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.077011752 (1) Dual inf 142.28653 (314)
+15  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.071158556 (1) Dual inf 37.345992 (153)
+93  Obj -300 Primal inf 0.065341815 (2) Dual inf 6.2330121 (61)
+169  Obj -300 Primal inf 0.059258151 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.071158556 (1) Dual inf 128.8301 (336)
+23  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.26854834 (1) Dual inf 39.00689 (133)
+93  Obj -300 Primal inf 0.26509307 (2) Dual inf 12.458843 (84)
+180  Obj -300 Primal inf 0.26487372 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.26854834 (1) Dual inf 161.18574 (313)
+50  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.006257498 (1) Dual inf 53.676182 (130)
+93  Obj -300 Primal inf 0.0054027084 (1) Dual inf 2.4893947 (42)
+135  Obj -300 Primal inf 0.0054027084 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.006257498 (1) Dual inf 182.03074 (284)
+3  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0068254323 (1) Dual inf 20.086351 (138)
+93  Obj -300 Primal inf 0.0066318875 (1) Dual inf 2.7946728 (57)
+150  Obj -300 Primal inf 0.0064766714 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0068254323 (1) Dual inf 73.964701 (292)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.011594253 (1) Dual inf 30.644093 (131)
+93  Obj -300 Primal inf 0.0085600619 (2) Dual inf 3.7669953 (44)
+137  Obj -300 Primal inf 0.0085600619 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.011594253 (1) Dual inf 119.57967 (304)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.030297695 (1) Dual inf 45.778179 (150)
+93  Obj -300 Primal inf 0.023805289 (2) Dual inf 6.6830708 (48)
+158  Obj -300 Primal inf 0.023487077 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.030297695 (1) Dual inf 161.44728 (327)
+8  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.035273213 (1) Dual inf 27.456343 (141)
+93  Obj -300 Primal inf 0.032364665 (2) Dual inf 2.3711739 (43)
+135  Obj -300 Primal inf 0.031703051 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.035273213 (1) Dual inf 100.7592 (310)
+13  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0040086153 (1) Dual inf 32.559819 (133)
+93  Obj -300 Primal inf 0.0036657606 (1) Dual inf 3.5113814 (39)
+120  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.018909381 (1) Dual inf 333.92857 (262)
+81  Obj -300 Primal inf 0.012354014 (4)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.018909381 (1) Dual inf 336.62902 (263)
+81  Obj -300 Primal inf 0.015153342 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.98109042 (1) Dual inf 5.661306 (19)
+14  Obj -300 Primal inf 0.97901275 (1)
+Primal infeasible - objective value -300
+Perturbing problem by 0.001% of 0.13512002 - largest nonzero change 5.7269399e-06 ( 0.0042384097%) - largest zero change 5.7268697e-06
+0  Obj -300.00964 Primal inf 0.091124372 (1)
+93  Obj -300.00964 Primal inf 3.3085735 (87)
+186  Obj -300.00965 Primal inf 0.032543394 (12)
+232  Obj -300.00965
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.11105471 (1) Dual inf 415.66559 (1214)
+24  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.26385474 (1) Dual inf 305.92791 (932)
+52  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.42594888 (1) Dual inf 1188.8052 (652)
+21  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.028059751 (1) Dual inf 190.139 (325)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.43405768 (1) Dual inf 56.479328 (145)
+93  Obj -300 Primal inf 0.42997766 (1) Dual inf 5.8033748 (62)
+155  Obj -300 Primal inf 0.42997766 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.43405768 (1) Dual inf 206.35074 (319)
+43  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0065547469 (1) Dual inf 68.768043 (154)
+93  Obj -300 Primal inf 0.0062804079 (2) Dual inf 5.7340869 (58)
+151  Obj -300 Primal inf 0.0059518371 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0065547469 (1) Dual inf 252.78038 (331)
+4  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.011348736 (1) Dual inf 48.745481 (153)
+93  Obj -300 Primal inf 0.0036111658 (3) Dual inf 9.4725066 (72)
+165  Obj -300 Primal inf 0.0036111658 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.011348736 (1) Dual inf 191.9104 (342)
+6  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.040253118 (1) Dual inf 23.265169 (149)
+93  Obj -300 Primal inf 0.038822207 (1) Dual inf 2.6869218 (46)
+160  Obj -300 Primal inf 0.03703517 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.040253118 (1) Dual inf 79.589154 (304)
+16  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0367705 (1) Dual inf 22.371115 (145)
+93  Obj -300 Primal inf 0.035132185 (1) Dual inf 2.5824043 (52)
+145  Obj -300 Primal inf 0.035132185 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0367705 (1) Dual inf 79.443456 (313)
+11  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0030297201 (1) Dual inf 30.616141 (147)
+75  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.17407838 (1) Dual inf 63.268971 (175)
+93  Obj -300 Primal inf 0.17321479 (2) Dual inf 4.9180529 (64)
+158  Obj -300 Primal inf 0.172589 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.82592142 (1) Dual inf 29.924412 (108)
+93  Obj -300 Primal inf 0.81814989 (2) Dual inf 2.939525 (54)
+160  Obj -300 Primal inf 0.81753222 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.033011785 (1)
+0  Obj -300 Primal inf 0.10210803 (1)
+0  Obj -300 Primal inf 0.026333804 (1)
+0  Obj -300 Primal inf 0.10878601 (1)
+0  Obj -300 Primal inf 0.0090882222 (1)
+0  Obj -300 Primal inf 0.12603159 (1)
+0  Obj -300 Primal inf 0.00080345505 (1)
+0  Obj -300 Primal inf 0.13431636 (1)
+0  Obj -300 Primal inf 0.11105471 (1) Dual inf 415.66559 (1214)
+24  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.26385474 (1) Dual inf 305.92791 (932)
+52  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.42594888 (1) Dual inf 1188.8052 (652)
+21  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.028059751 (1) Dual inf 190.139 (325)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.43405768 (1) Dual inf 56.479328 (145)
+93  Obj -300 Primal inf 0.42997766 (1) Dual inf 5.8033748 (62)
+155  Obj -300 Primal inf 0.42997766 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.43405768 (1) Dual inf 206.35074 (319)
+43  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0065547469 (1) Dual inf 68.768043 (154)
+93  Obj -300 Primal inf 0.0062804079 (2) Dual inf 5.7340869 (58)
+151  Obj -300 Primal inf 0.0059518371 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0065547469 (1) Dual inf 252.78038 (331)
+4  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.011348736 (1) Dual inf 48.745481 (153)
+93  Obj -300 Primal inf 0.0036111658 (3) Dual inf 9.4725066 (72)
+165  Obj -300 Primal inf 0.0036111658 (3)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.011348736 (1) Dual inf 191.9104 (342)
+6  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.040253118 (1) Dual inf 23.265169 (149)
+93  Obj -300 Primal inf 0.038822207 (1) Dual inf 2.6869218 (46)
+160  Obj -300 Primal inf 0.03703517 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.040253118 (1) Dual inf 79.589154 (304)
+16  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0367705 (1) Dual inf 22.371115 (145)
+93  Obj -300 Primal inf 0.035132185 (1) Dual inf 2.5824043 (52)
+145  Obj -300 Primal inf 0.035132185 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0367705 (1) Dual inf 79.443456 (313)
+11  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0030297201 (1) Dual inf 30.616141 (147)
+75  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.17407838 (1) Dual inf 63.268971 (175)
+93  Obj -300 Primal inf 0.17321479 (2) Dual inf 4.9180529 (64)
+158  Obj -300 Primal inf 0.172589 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.82592142 (1) Dual inf 29.924412 (108)
+93  Obj -300 Primal inf 0.81814989 (2) Dual inf 2.939525 (54)
+160  Obj -300 Primal inf 0.81753222 (1)
+Primal infeasible - objective value -300
+Perturbing problem by 0.001% of 0.13512002 - largest nonzero change 5.7269399e-06 ( 0.0042384097%) - largest zero change 5.7268697e-06
+0  Obj -300.00964 Primal inf 0.24431518 (1)
+92  Obj -300.00964 Primal inf 2.473016 (74)
+182  Obj -300.00964 Primal inf 9.9388452 (126)
+275  Obj -300.00964 Primal inf 2.065189 (81)
+368  Obj -300.00965 Primal inf 0.050644486 (19)
+393  Obj -300.00965
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.095738858 (1) Dual inf 546.16735 (1239)
+24  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.2778259 (1) Dual inf 1170.6515 (993)
+71  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.3483404 (1) Dual inf 4695.4851 (630)
+52  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.4853295 (1) Dual inf 701.8382 (314)
+93  Obj -300 Primal inf 0.12240669 (2) Dual inf 82.848365 (302)
+165  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.050532843 (1) Dual inf 71.091125 (131)
+93  Obj -300 Primal inf 0.037245859 (4) Dual inf 15.499976 (60)
+186  Obj -300 Primal inf 0.030889372 (3) Dual inf 18.98857 (79)
+279  Obj -300 Primal inf 0.029589974 (3) Dual inf 23.688383 (89)
+336  Obj -300 Primal inf 0.02958926 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.050532843 (1) Dual inf 331.07471 (314)
+10  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.085845448 (1) Dual inf 71.457808 (142)
+93  Obj -300 Primal inf 0.081633538 (2) Dual inf 4.6569026 (46)
+184  Obj -300 Primal inf 0.079036602 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.085845448 (1) Dual inf 242.35225 (290)
+16  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0044494399 (1) Dual inf 37.484102 (139)
+93  Obj -300 Primal inf 0.0024167799 (1) Dual inf 3.4671377 (52)
+148  Obj -300 Primal inf 0.0019883684 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0044494399 (1) Dual inf 155.73575 (330)
+3  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.022947965 (1) Dual inf 26.636842 (141)
+93  Obj -300 Primal inf 0.022207048 (2) Dual inf 2.2839922 (46)
+145  Obj -300 Primal inf 0.022108605 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.022947965 (1) Dual inf 94.095484 (312)
+7  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.04329713 (1) Dual inf 29.599543 (127)
+93  Obj -300 Primal inf 0.03702229 (4) Dual inf 4.9118424 (51)
+155  Obj -300 Primal inf 0.036820349 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.04329713 (1) Dual inf 136.23687 (308)
+13  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.03968297 (1) Dual inf 128.46209 (151)
+93  Obj -300 Primal inf 0.012993327 (5) Dual inf 16.055846 (91)
+186  Obj -300 Primal inf 0.010229191 (3) Dual inf 18.902652 (71)
+249  Obj -300 Primal inf 0.010224716 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.03968297 (1) Dual inf 433.83481 (322)
+9  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.016798683 (1) Dual inf 42.538911 (144)
+93  Obj -300 Primal inf 0.011821682 (3) Dual inf 5.3653068 (59)
+146  Obj -300 Primal inf 0.011522985 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.016798683 (1) Dual inf 158.76429 (323)
+3  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.042586387 (1) Dual inf 32.801486 (146)
+93  Obj -300 Primal inf 0.0378426 (1) Dual inf 3.9769368 (53)
+146  Obj -300 Primal inf 0.0378426 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.042586387 (1) Dual inf 136.9496 (340)
+13  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.029706143 (1) Dual inf 71.102137 (127)
+93  Obj -300 Primal inf 0.012956113 (3) Dual inf 15.916255 (65)
+186  Obj -300 Primal inf 0.012628514 (2) Dual inf 0.64522673 (17)
+203  Obj -300 Primal inf 0.012628514 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.029706143 (1) Dual inf 284.70453 (290)
+7  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.040470143 (1) Dual inf 36.008649 (140)
+93  Obj -300 Primal inf 0.030376068 (3) Dual inf 45.069396 (120)
+186  Obj -300 Primal inf 0.028366075 (2) Dual inf 0.019036828 (3)
+189  Obj -300 Primal inf 0.028366075 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.040470143 (1) Dual inf 127.38275 (299)
+13  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.098221312 (1) Dual inf 21.956498 (156)
+93  Obj -300 Primal inf 0.094670387 (1) Dual inf 2.231932 (52)
+152  Obj -300 Primal inf 0.094084054 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.098221312 (1) Dual inf 70.9149 (309)
+32  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0018895945 (1) Dual inf 60.061903 (139)
+93  Obj -300 Primal inf 0.00056192767 (1) Dual inf 3.0280275 (45)
+138  Obj -300 Primal inf 0.00056192766 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0018895945 (1) Dual inf 254.20121 (323)
+2  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0044437454 (1) Dual inf 27.627904 (142)
+93  Obj -300 Primal inf 0.00078913562 (2) Dual inf 4.6826014 (60)
+153  Obj -300 Primal inf 0.00078913562 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0044437454 (1) Dual inf 88.181848 (296)
+6  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.022215819 (1) Dual inf 20.482175 (130)
+93  Obj -300 Primal inf 0.020825212 (1) Dual inf 2.3761902 (44)
+138  Obj -300 Primal inf 0.020795401 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.022215819 (1) Dual inf 69.150557 (278)
+4  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.1995491 (1) Dual inf 29.954377 (146)
+93  Obj -300 Primal inf 0.1995491 (1) Dual inf 3.2731114 (53)
+159  Obj -300 Primal inf 0.19930125 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.1995491 (1) Dual inf 116.77842 (322)
+40  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.013338488 (1) Dual inf 318.32138 (145)
+93  Obj -300 Primal inf 0.0013473456 (1) Dual inf 24.579777 (166)
+186  Obj -300 Primal inf 0.001057898 (1) Dual inf 1.8327077 (61)
+251  Obj -300 Primal inf 0.0010480564 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.013338488 (1) Dual inf 1373.9607 (324)
+6  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.019085987 (1) Dual inf 95.617084 (139)
+93  Obj -300 Primal inf 0.012394925 (2) Dual inf 40.564776 (98)
+186  Obj -300 Primal inf 0.0093997478 (1) Dual inf 17.114088 (110)
+279  Obj -300 Primal inf 0.0093997478 (1) Dual inf 0.45803255 (17)
+294  Obj -300 Primal inf 0.0093941151 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.019085987 (1) Dual inf 414.65108 (310)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.017978625 (1) Dual inf 27.206493 (133)
+93  Obj -300 Primal inf 0.0037843408 (4) Dual inf 23.219661 (107)
+186  Obj -300 Primal inf 0.0025489741 (2) Dual inf 12.765838 (76)
+275  Obj -300 Primal inf 0.0019540627 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.017978625 (1) Dual inf 116.28168 (322)
+8  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.21463578 (1) Dual inf 44.258615 (148)
+93  Obj -300 Primal inf 0.20116611 (3) Dual inf 43.443629 (87)
+186  Obj -300 Primal inf 0.19183205 (2) Dual inf 0.91558324 (15)
+201  Obj -300 Primal inf 0.19183205 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.21463578 (1) Dual inf 145.90879 (301)
+27  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0088748635 (1) Dual inf 57.197381 (153)
+93  Obj -300 Primal inf 0.0030155616 (1) Dual inf 6.7430979 (64)
+157  Obj -300 Primal inf 0.0030155616 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0088748635 (1) Dual inf 215.35663 (329)
+7  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.032576061 (1) Dual inf 29.549033 (150)
+93  Obj -300 Primal inf 0.018751037 (2) Dual inf 7.0964628 (82)
+172  Obj -300 Primal inf 0.017929298 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.032576061 (1) Dual inf 109.94023 (322)
+7  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.034851977 (1) Dual inf 23.488592 (128)
+93  Obj -300 Primal inf 0.019958263 (1) Dual inf 3.697016 (49)
+157  Obj -300 Primal inf 0.018837559 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.034851977 (1) Dual inf 75.904015 (255)
+16  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0053328063 (1) Dual inf 27.611664 (148)
+93  Obj -300 Primal inf 0.00010227787 (1) Dual inf 5.7731025 (76)
+105  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.019416212 (1) Dual inf 24.136411 (118)
+93  Obj -300 Primal inf 0.019416212 (1) Dual inf 0.76993336 (25)
+167  Obj -300 Primal inf 0.019091483 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.019416212 (1) Dual inf 24.927914 (119)
+93  Obj -300 Primal inf 0.016457136 (1) Dual inf 3.0519848 (55)
+148  Obj -300 Primal inf 0.016457136 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.98058359 (1) Dual inf 42.049859 (167)
+93  Obj -300 Primal inf 0.96278619 (2) Dual inf 4.8050245 (59)
+152  Obj -300 Primal inf 0.96278619 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.010263001 (1)
+0  Obj -300 Primal inf 0.12485681 (1)
+0  Obj -300 Primal inf 0.0067116171 (1)
+0  Obj -300 Primal inf 0.1284082 (1)
+0  Obj -300 Primal inf 0.0079873185 (1)
+0  Obj -300 Primal inf 0.1271325 (1)
+0  Obj -300 Primal inf 0.0037697301 (1)
+0  Obj -300 Primal inf 0.13135009 (1)
+0  Obj -300 Primal inf 0.095738858 (1) Dual inf 546.16735 (1239)
+24  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.2778259 (1) Dual inf 1170.6515 (993)
+71  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.3483404 (1) Dual inf 4695.4851 (630)
+52  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.4853295 (1) Dual inf 701.8382 (314)
+93  Obj -300 Primal inf 0.12240669 (2) Dual inf 82.848365 (302)
+165  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.050532843 (1) Dual inf 71.091125 (131)
+93  Obj -300 Primal inf 0.037245859 (4) Dual inf 15.499976 (60)
+186  Obj -300 Primal inf 0.030889372 (3) Dual inf 18.98857 (79)
+279  Obj -300 Primal inf 0.029589974 (3) Dual inf 23.688383 (89)
+336  Obj -300 Primal inf 0.02958926 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.050532843 (1) Dual inf 331.07471 (314)
+10  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.085845448 (1) Dual inf 71.457808 (142)
+93  Obj -300 Primal inf 0.081633538 (2) Dual inf 4.6569026 (46)
+184  Obj -300 Primal inf 0.079036602 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.085845448 (1) Dual inf 242.35225 (290)
+16  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0044494399 (1) Dual inf 37.484102 (139)
+93  Obj -300 Primal inf 0.0024167799 (1) Dual inf 3.4671377 (52)
+148  Obj -300 Primal inf 0.0019883684 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0044494399 (1) Dual inf 155.73575 (330)
+3  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.022947965 (1) Dual inf 26.636842 (141)
+93  Obj -300 Primal inf 0.022207048 (2) Dual inf 2.2839922 (46)
+145  Obj -300 Primal inf 0.022108605 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.022947965 (1) Dual inf 94.095484 (312)
+7  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.04329713 (1) Dual inf 29.599543 (127)
+93  Obj -300 Primal inf 0.03702229 (4) Dual inf 4.9118424 (51)
+155  Obj -300 Primal inf 0.036820349 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.04329713 (1) Dual inf 136.23687 (308)
+13  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.03968297 (1) Dual inf 128.46209 (151)
+93  Obj -300 Primal inf 0.012993327 (5) Dual inf 16.055846 (91)
+186  Obj -300 Primal inf 0.010229191 (3) Dual inf 18.902652 (71)
+249  Obj -300 Primal inf 0.010224716 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.03968297 (1) Dual inf 433.83481 (322)
+9  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.016798683 (1) Dual inf 42.538911 (144)
+93  Obj -300 Primal inf 0.011821682 (3) Dual inf 5.3653068 (59)
+146  Obj -300 Primal inf 0.011522985 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.016798683 (1) Dual inf 158.76429 (323)
+3  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.042586387 (1) Dual inf 32.801486 (146)
+93  Obj -300 Primal inf 0.0378426 (1) Dual inf 3.9769368 (53)
+146  Obj -300 Primal inf 0.0378426 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.042586387 (1) Dual inf 136.9496 (340)
+13  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.029706143 (1) Dual inf 71.102137 (127)
+93  Obj -300 Primal inf 0.012956113 (3) Dual inf 15.916255 (65)
+186  Obj -300 Primal inf 0.012628514 (2) Dual inf 0.64522673 (17)
+203  Obj -300 Primal inf 0.012628514 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.029706143 (1) Dual inf 284.70453 (290)
+7  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.040470143 (1) Dual inf 36.008649 (140)
+93  Obj -300 Primal inf 0.030376068 (3) Dual inf 45.069396 (120)
+186  Obj -300 Primal inf 0.028366075 (2) Dual inf 0.019036828 (3)
+189  Obj -300 Primal inf 0.028366075 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.040470143 (1) Dual inf 127.38275 (299)
+13  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.098221312 (1) Dual inf 21.956498 (156)
+93  Obj -300 Primal inf 0.094670387 (1) Dual inf 2.231932 (52)
+152  Obj -300 Primal inf 0.094084054 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.098221312 (1) Dual inf 70.9149 (309)
+32  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0018895945 (1) Dual inf 60.061903 (139)
+93  Obj -300 Primal inf 0.00056192767 (1) Dual inf 3.0280275 (45)
+138  Obj -300 Primal inf 0.00056192766 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0018895945 (1) Dual inf 254.20121 (323)
+2  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0044437454 (1) Dual inf 27.627904 (142)
+93  Obj -300 Primal inf 0.00078913562 (2) Dual inf 4.6826014 (60)
+153  Obj -300 Primal inf 0.00078913562 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0044437454 (1) Dual inf 88.181848 (296)
+6  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.022215819 (1) Dual inf 20.482175 (130)
+93  Obj -300 Primal inf 0.020825212 (1) Dual inf 2.3761902 (44)
+138  Obj -300 Primal inf 0.020795401 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.022215819 (1) Dual inf 69.150557 (278)
+4  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.1995491 (1) Dual inf 29.954377 (146)
+93  Obj -300 Primal inf 0.1995491 (1) Dual inf 3.2731114 (53)
+159  Obj -300 Primal inf 0.19930125 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.1995491 (1) Dual inf 116.77842 (322)
+40  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.013338488 (1) Dual inf 318.32138 (145)
+93  Obj -300 Primal inf 0.0013473456 (1) Dual inf 24.579777 (166)
+186  Obj -300 Primal inf 0.001057898 (1) Dual inf 1.8327077 (61)
+251  Obj -300 Primal inf 0.0010480564 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.013338488 (1) Dual inf 1373.9607 (324)
+6  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.019085987 (1) Dual inf 95.617084 (139)
+93  Obj -300 Primal inf 0.012394925 (2) Dual inf 40.564776 (98)
+186  Obj -300 Primal inf 0.0093997478 (1) Dual inf 17.114088 (110)
+279  Obj -300 Primal inf 0.0093997478 (1) Dual inf 0.45803255 (17)
+294  Obj -300 Primal inf 0.0093941151 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.019085987 (1) Dual inf 414.65108 (310)
+5  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.017978625 (1) Dual inf 27.206493 (133)
+93  Obj -300 Primal inf 0.0037843408 (4) Dual inf 23.219661 (107)
+186  Obj -300 Primal inf 0.0025489741 (2) Dual inf 12.765838 (76)
+275  Obj -300 Primal inf 0.0019540627 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.017978625 (1) Dual inf 116.28168 (322)
+8  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.21463578 (1) Dual inf 44.258615 (148)
+93  Obj -300 Primal inf 0.20116611 (3) Dual inf 43.443629 (87)
+186  Obj -300 Primal inf 0.19183205 (2) Dual inf 0.91558324 (15)
+201  Obj -300 Primal inf 0.19183205 (2)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.21463578 (1) Dual inf 145.90879 (301)
+27  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0088748635 (1) Dual inf 57.197381 (153)
+93  Obj -300 Primal inf 0.0030155616 (1) Dual inf 6.7430979 (64)
+157  Obj -300 Primal inf 0.0030155616 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.0088748635 (1) Dual inf 215.35663 (329)
+7  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.032576061 (1) Dual inf 29.549033 (150)
+93  Obj -300 Primal inf 0.018751037 (2) Dual inf 7.0964628 (82)
+172  Obj -300 Primal inf 0.017929298 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.032576061 (1) Dual inf 109.94023 (322)
+7  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.034851977 (1) Dual inf 23.488592 (128)
+93  Obj -300 Primal inf 0.019958263 (1) Dual inf 3.697016 (49)
+157  Obj -300 Primal inf 0.018837559 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.034851977 (1) Dual inf 75.904015 (255)
+16  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.0053328063 (1) Dual inf 27.611664 (148)
+93  Obj -300 Primal inf 0.00010227787 (1) Dual inf 5.7731025 (76)
+105  Obj -300
+Optimal - objective value -300
+0  Obj -300 Primal inf 0.019416212 (1) Dual inf 24.136411 (118)
+93  Obj -300 Primal inf 0.019416212 (1) Dual inf 0.76993336 (25)
+167  Obj -300 Primal inf 0.019091483 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.019416212 (1) Dual inf 24.927914 (119)
+93  Obj -300 Primal inf 0.016457136 (1) Dual inf 3.0519848 (55)
+148  Obj -300 Primal inf 0.016457136 (1)
+Primal infeasible - objective value -300
+0  Obj -300 Primal inf 0.98058359 (1) Dual inf 42.049859 (167)
+93  Obj -300 Primal inf 0.96278619 (2) Dual inf 4.8050245 (59)
+152  Obj -300 Primal inf 0.96278619 (2)
+Primal infeasible - objective value -300
+Exiting on maximum time
+Partial search - best objective 174 (best possible 300), took 1277 iterations and 4 nodes (11.18 seconds)
+Strong branching done 54 times (2279 iterations), fathomed 0 nodes and fixed 0 variables
+Maximum depth 4, 0 variables fixed on reduced cost
+Optimal - objective value -174
+0  Obj -174 Primal inf 2498.062 (302) Dual inf 7774.7609 (154)
+53  Obj -174 Primal inf 189.82074 (272) Dual inf 597.78215 (135)
+129  Obj -174 Primal inf 133.88865 (234) Dual inf 483.31681 (95)
+195  Obj -174 Primal inf 84.067812 (195) Dual inf 256.29659 (81)
+251  Obj -174 Primal inf 9.9999995 (5) Dual inf 182.56261 (56)
+263  Obj -174
+Optimal - objective value -174
+Cuts at root node changed objective from 300 to 300
+Probing was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.007 seconds)
+Gomory was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.016 seconds)
+Knapsack was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.001 seconds)
+Clique was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.001 seconds)
+MixedIntegerRounding2 was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.003 seconds)
+FlowCover was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.027 seconds)
+ZeroHalf was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.031 seconds)
+Optimal - objective value 174
+Optimal - objective value 174
+Presolve 0 (-900) rows, 0 (-3601) columns and 0 (-19572) elements
+Crash put 0 variables in basis, 0 dual infeasibilities
+Optimal - objective value 174
+After Postsolve, objective 174, infeasibilities - dual 0 (0), primal 0 (0)
+Optimal - objective value 174
+Perturbing problem by 0.001% of 1e-08 - largest nonzero change 0 ( 0%) - largest zero change 0
+0  Obj 174 Primal inf 1507.1149 (2)
+Optimal - objective value 174
+Presolve 0 (-900) rows, 0 (-3601) columns and 0 (-19572) elements
+Optimal - objective value 174
+After Postsolve, objective 174, infeasibilities - dual 0 (0), primal 0 (0)
+
+Result - Stopped on time limit
+
+Objective value:                174.00000000
+Upper bound:                    300.000
+Gap:                            -0.42
+Enumerated nodes:               4
+Total iterations:               1277
+Time (CPU seconds):             11.27
+Time (Wallclock seconds):       11.27
+
+Total time (CPU seconds):       11.27   (Wallclock seconds):       11.27
+

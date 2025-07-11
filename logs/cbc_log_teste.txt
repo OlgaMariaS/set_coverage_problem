@@ -1,0 +1,78 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.12 
+Build Date: Jun 17 2025 
+
+command line - cbc -solve -quit (default strategy 1)
+Presolve 6 (-9) rows, 6 (-10) columns and 18 (-15) elements
+0  Obj 1 Dual inf 2.3416368 (4)
+2  Obj 5
+Optimal - objective value 5
+After Postsolve, objective 5, infeasibilities - dual 0 (0), primal 0 (0)
+Optimal objective 5 - 2 iterations time 0.002, Presolve 0.00
+Continuous objective value is 5 - 0.00 seconds
+Optimal - objective value 5
+Optimal - objective value 5
+Presolve is modifying 1 integer bounds and re-presolving
+Presolve 6 (-9) rows, 6 (-10) columns and 18 (-15) elements
+Optimal - objective value 5
+Presolve 6 (0) rows, 6 (0) columns and 18 (0) elements
+0  Obj 5
+Optimal - objective value 5
+Optimal - objective value 5
+processed model has 6 rows, 6 columns (6 integer (6 of which binary)) and 18 elements
+0  Obj 5
+Optimal - objective value 5
+Optimal - objective value 5
+Cutoff increment increased from 1e-05 to 0.9999
+Optimal - objective value -5
+Initial state - 0 integers unsatisfied sum - 9.99201e-16
+Optimal - objective value -5
+Optimal - objective value -5
+0  Obj -1
+Optimal - objective value -1
+Solution found of 5
+0  Obj -5
+Optimal - objective value -5
+Before mini branch and bound, 6 integers at bound fixed and 0 continuous
+Mini branch and bound did not improve solution (0.01 seconds)
+After 0.01 seconds - Feasibility pump exiting with objective of 5 - took 0.00 seconds
+Optimal - objective value -5
+Integer solution of 5 found by feasibility pump after 0 iterations and 0 nodes (0.01 seconds)
+Primal infeasible - objective value -5
+Optimal - objective value -5
+Primal infeasible - objective value -5
+Search completed - best objective 5, took 0 iterations and 0 nodes (0.01 seconds)
+Maximum depth 0, 0 variables fixed on reduced cost
+Optimal - objective value -5
+Optimal - objective value -5
+Cuts at root node changed objective from 5 to 5
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Optimal - objective value 5
+Optimal - objective value 5
+Presolve 0 (-15) rows, 0 (-16) columns and 0 (-33) elements
+Crash put 0 variables in basis, 0 dual infeasibilities
+Optimal - objective value 5
+After Postsolve, objective 5, infeasibilities - dual 0 (0), primal 0 (0)
+Optimal - objective value 5
+Optimal - objective value 5
+Presolve 0 (-15) rows, 0 (-16) columns and 0 (-33) elements
+Optimal - objective value 5
+After Postsolve, objective 5, infeasibilities - dual 0 (0), primal 0 (0)
+
+Result - Optimal solution found
+
+Objective value:                5.00000000
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             0.02
+Time (Wallclock seconds):       0.02
+
+Total time (CPU seconds):       0.02   (Wallclock seconds):       0.02
+

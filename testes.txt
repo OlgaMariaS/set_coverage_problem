@@ -410,3 +410,187 @@ Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
 Cobertura media dos elementos: 1.00
 
 Tempo de execucao da instancia: 0.0035 segundos
+
+
+	*****TESTE*****
+
+
+
+Função Objetiva:
+                   Max ∑ yᵢ                             para i=1 até Linhas
+Sujeito a:
+                   ∑ aᵢⱼ·xⱼ = zᵢ                        ∀i, 1 ≤ i ≤ Linhas, para j=1 até Colunas
+                   yᵢ ≤ zᵢ                              ∀i, 1 ≤ i ≤ Linhas
+                   (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas
+                   y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ
+Solver CBC criado com sucesso!
+Instancia: TESTE
+Linhas: 5
+Colunas: 5
+
+Numero total de variaveis = 15
+Numero total de restricoes = 15
+Resolvendo com o solver Cbc 2.10.12
+
+
+	*****TESTE*****
+
+
+
+Função Objetiva:
+                   Max ∑ yᵢ                             para i=1 até Linhas
+Sujeito a:
+                   ∑ aᵢⱼ·xⱼ = zᵢ                        ∀i, 1 ≤ i ≤ Linhas, para j=1 até Colunas
+                   yᵢ ≤ zᵢ                              ∀i, 1 ≤ i ≤ Linhas
+                   (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas
+                   y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ
+Solver CBC criado com sucesso!
+Instancia: TESTE
+Linhas: 5
+Colunas: 5
+
+Numero total de variaveis = 15
+Numero total de restricoes = 15
+Resolvendo com o solver Cbc 2.10.12
+
+
+	*****TESTE*****
+
+
+
+Função Objetiva:
+                   Max ∑ yᵢ                             para i=1 até Linhas
+Sujeito a:
+                   ∑ aᵢⱼ·xⱼ = zᵢ                        ∀i, 1 ≤ i ≤ Linhas, para j=1 até Colunas
+                   yᵢ ≤ zᵢ                              ∀i, 1 ≤ i ≤ Linhas
+                   (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas
+                   y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ
+Solver CBC criado com sucesso!
+Instancia: TESTE
+Linhas: 5
+Colunas: 5
+
+Numero total de variaveis = 15
+Numero total de restricoes = 15
+Resolvendo com o solver Cbc 2.10.12
+
+Status: Optimal solution found
+Objective value: 5.0
+Gap: 0.0%
+Time (CPU seconds): 0.02
+Time (Wallclock seconds): 0.02
+Total time (CPU seconds): 0.02
+Total time (Wallclock seconds): 0.02
+
+Solucao otima encontrada!
+
+Valor da Funcao Objetivo (elementos cobertos unicamente) = 5.0
+
+Conjuntos selecionados:
+- Conjunto S 2
+    Elementos cobertos: [2, 3]
+- Conjunto S 3
+    Elementos cobertos: [5]
+- Conjunto S 5
+    Elementos cobertos: [1, 4]
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
+Cobertura media dos elementos: 1.00
+
+
+	*****TESTE*****
+
+
+
+Função Objetiva:
+                   Max ∑ yᵢ                             para i=1 até Linhas
+Sujeito a:
+                   ∑ aᵢⱼ·xⱼ = zᵢ                        ∀i, 1 ≤ i ≤ Linhas, para j=1 até Colunas
+                   yᵢ ≤ zᵢ                              ∀i, 1 ≤ i ≤ Linhas
+                   (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas
+                   y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ
+Solver CBC criado com sucesso!
+Instancia: TESTE
+Linhas: 5
+Colunas: 5
+
+Numero total de variaveis = 15
+Numero total de restricoes = 15
+Resolvendo com o solver Cbc 2.10.12
+
+Solucao otima encontrada!
+
+Status: Optimal solution found
+Objective value: 5.0
+Gap: 0.0%
+Time (CPU seconds): 0.02
+Time (Wallclock seconds): 0.02
+Total time (CPU seconds): 0.02
+Total time (Wallclock seconds): 0.02
+
+Conjuntos selecionados:
+- Conjunto S 2
+    Elementos cobertos: [2, 3]
+- Conjunto S 3
+    Elementos cobertos: [5]
+- Conjunto S 5
+    Elementos cobertos: [1, 4]
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
+Cobertura media dos elementos: 1.00
+
+
+
+	*****TESTE*****
+
+Função Objetiva:
+                   Max ∑ yᵢ                             para i=1 até Linhas
+Sujeito a:
+                   ∑ aᵢⱼ·xⱼ = zᵢ                        ∀i, 1 ≤ i ≤ Linhas, para j=1 até Colunas
+                   yᵢ ≤ zᵢ                              ∀i, 1 ≤ i ≤ Linhas
+                   (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas
+                   y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ
+Solver CBC criado com sucesso!
+Instancia: TESTE
+Linhas: 5
+Colunas: 5
+
+Numero total de variaveis = 15
+Numero total de restricoes = 15
+Resolvendo com o solver Cbc 2.10.12
+
+Solucao otima encontrada!
+
+Status: Optimal solution found
+Objective value: 5.0
+Gap: 0.0%
+Time (CPU seconds): 0.02
+Time (Wallclock seconds): 0.02
+Total time (CPU seconds): 0.02
+Total time (Wallclock seconds): 0.02
+
+Conjuntos selecionados:
+- Conjunto S 2
+    Elementos cobertos: [2, 3]
+- Conjunto S 3
+    Elementos cobertos: [5]
+- Conjunto S 5
+    Elementos cobertos: [1, 4]
+
+Detalhes da cobertura por elemento:
+Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
+Cobertura media dos elementos: 1.00

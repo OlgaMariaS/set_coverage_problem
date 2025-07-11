@@ -1,0 +1,257 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.12 
+Build Date: Jun 17 2025 
+
+command line - cbc -solve -quit (default strategy 1)
+Presolve 1200 (0) rows, 4800 (-1) columns and 82143 (0) elements
+0 infeas 0, obj 0 - mu 0.1, its 0, 0 interior
+1 infeas 0.015540457, obj 0.019992502 - mu 0.1, its 2, 800 interior
+2 infeas 0.01055022, obj 5.0992645 - mu 0.1, its 105, 1545 interior
+3 infeas 0.0087468153, obj 10.12705 - mu 0.1, its 105, 1609 interior
+4 infeas 0.0084812342, obj 14.902251 - mu 0.1, its 105, 1721 interior
+5 infeas 0.0099179182, obj 20.000334 - mu 0.1, its 105, 1746 interior
+6 infeas 0.0078165347, obj 25.056187 - mu 0.1, its 105, 1778 interior
+7 infeas 0.0061950879, obj 26.581891 - mu 0.03333, its 105, 1780 interior
+8 infeas 0.0040922979, obj 28.097087 - mu 0.03333, its 105, 1790 interior
+9 infeas 0.0042114507, obj 29.742289 - mu 0.03333, its 105, 1810 interior
+10 infeas 0.0026888124, obj 31.234593 - mu 0.03333, its 105, 1830 interior
+11 infeas 0.0030454711, obj 32.858052 - mu 0.03333, its 105, 1849 interior
+12 infeas 0.003743634, obj 34.418634 - mu 0.03333, its 105, 1850 interior
+13 infeas 0.0021186284, obj 34.929704 - mu 0.011108889, its 105, 1871 interior
+14 infeas 0.0010532857, obj 35.456797 - mu 0.011108889, its 105, 1878 interior
+15 infeas 0.0010102048, obj 35.972216 - mu 0.011108889, its 105, 1898 interior
+16 infeas 0.0011729518, obj 36.497245 - mu 0.011108889, its 105, 1917 interior
+17 infeas 0.001428488, obj 37.033755 - mu 0.011108889, its 105, 1931 interior
+18 infeas 0.0012814592, obj 37.576591 - mu 0.011108889, its 105, 1944 interior
+19 infeas 0.00074895767, obj 37.743438 - mu 0.0037025927, its 105, 1960 interior
+20 infeas 0.00060939142, obj 37.91979 - mu 0.0037025927, its 105, 1981 interior
+21 infeas 0.00050586703, obj 38.070649 - mu 0.0037025927, its 105, 2004 interior
+22 infeas 0.00054418169, obj 38.239781 - mu 0.0037025927, its 105, 2017 interior
+23 infeas 0.00049473888, obj 38.405151 - mu 0.0037025927, its 105, 2031 interior
+24 infeas 0.00058395163, obj 38.571064 - mu 0.0037025927, its 105, 2053 interior
+25 infeas 0.00025698406, obj 38.627996 - mu 0.0012340741, its 105, 2067 interior
+26 infeas 0.00016557549, obj 38.670167 - mu 0.0012340741, its 105, 2067 interior
+27 infeas 0.00016709435, obj 38.732243 - mu 0.0012340741, its 105, 2069 interior
+28 infeas 0.00017056119, obj 38.790183 - mu 0.0012340741, its 105, 2075 interior
+29 infeas 0.00012155736, obj 38.847804 - mu 0.0012340741, its 105, 2078 interior
+30 infeas 0.00012234196, obj 38.908714 - mu 0.0012340741, its 105, 2078 interior
+31 infeas 8.0602122e-05, obj 38.927084 - mu 0.00041131691, its 105, 2078 interior
+32 infeas 5.5944932e-05, obj 38.942687 - mu 0.00041131691, its 105, 2082 interior
+33 infeas 5.8944713e-05, obj 38.961245 - mu 0.00041131691, its 105, 2095 interior
+34 infeas 5.8344581e-05, obj 38.979824 - mu 0.00041131691, its 105, 2102 interior
+35 infeas 6.0247742e-05, obj 38.995946 - mu 0.00041131691, its 105, 2102 interior
+36 infeas 4.7789058e-05, obj 39.013035 - mu 0.00041131691, its 105, 2105 interior
+37 infeas 2.7246079e-05, obj 39.017876 - mu 0.00013709193, its 105, 2114 interior
+38 infeas 1.3935769e-05, obj 39.023314 - mu 0.00013709193, its 105, 2128 interior
+39 infeas 2.0969503e-05, obj 39.029096 - mu 0.00013709193, its 105, 2145 interior
+40 infeas 1.9931297e-05, obj 39.034763 - mu 0.00013709193, its 105, 2145 interior
+41 infeas 1.8781137e-05, obj 39.040176 - mu 0.00013709193, its 105, 2147 interior
+42 infeas 1.9507389e-05, obj 39.045632 - mu 0.00013709193, its 105, 2150 interior
+43 infeas 9.046123e-06, obj 39.04752 - mu 4.5692739e-05, its 105, 2157 interior
+44 infeas 4.8452455e-06, obj 39.049387 - mu 4.5692739e-05, its 105, 2167 interior
+45 infeas 4.7835843e-06, obj 39.05122 - mu 4.5692739e-05, its 105, 2180 interior
+46 infeas 4.4063209e-06, obj 39.053021 - mu 4.5692739e-05, its 105, 2196 interior
+47 infeas 4.3553246e-06, obj 39.054841 - mu 4.5692739e-05, its 105, 2212 interior
+48 infeas 6.4968562e-06, obj 39.056582 - mu 4.5692739e-05, its 105, 2210 interior
+49 infeas 3.0945703e-06, obj 39.057173 - mu 1.522939e-05, its 105, 2198 interior
+50 infeas 1.8020411e-06, obj 39.057785 - mu 1.522939e-05, its 105, 2177 interior
+51 infeas 1.9746379e-06, obj 39.058375 - mu 1.522939e-05, its 105, 2138 interior
+52 infeas 1.7503374e-06, obj 39.058998 - mu 1.522939e-05, its 105, 2138 interior
+sum of infeasibilities 0.0389422 - average 3.24518e-05, 2663 fixed columns
+Presolve 1200 (0) rows, 2138 (-2663) columns and 27871 (-54272) elements
+0  Obj 39.058375 Primal inf 0.013769009 (400) Dual inf 2.0687251e+13 (2138)
+73  Obj 39.058375 Primal inf 0.0068307089 (327) Dual inf 2.2182003e+13 (2065)
+117  Obj 39.058375 Primal inf 0.0055114777 (283) Dual inf 2.009502e+13 (2021)
+168  Obj 39.058375 Primal inf 0.0047664477 (231) Dual inf 1.5980224e+13 (1969)
+230  Obj 39.058375 Primal inf 0.0037767948 (169) Dual inf 1.2898017e+13 (1907)
+307  Obj 39.058375 Primal inf 0.0026743705 (98) Dual inf 8.1601487e+12 (1831)
+404  Obj 39.058375 Primal inf 0.00049201548 (37) Dual inf 2.4212339e+12 (1738)
+463  Obj 39.058375 Primal inf 1.3213801e-05 (5) Dual inf 6.2184081e+11 (1708)
+546  Obj 39.058375 Primal inf 1.7965624e-06 (1) Dual inf 4.0402682e+11 (1660)
+671  Obj 39.058375 Dual inf 0.50293337 (400)
+744  Obj 39.058375 Dual inf 0.50293337 (400)
+884  Obj 39.058375 Dual inf 0.50293337 (400)
+1008  Obj 39.058375 Dual inf 0.50293337 (400)
+1094  Obj 39.058375 Dual inf 0.50293337 (400)
+1179  Obj 39.058375 Dual inf 0.50293337 (400)
+1237  Obj 39.058375 Dual inf 0.50293337 (400)
+1290  Obj 39.058375 Dual inf 0.50293337 (400)
+1346  Obj 39.065734 Dual inf 59827.768 (1260)
+1445  Obj 39.354528 Dual inf 185178.48 (1180)
+1534  Obj 39.670271 Dual inf 500605.4 (1122)
+1633  Obj 40.432769 Dual inf 237966.87 (1050)
+1732  Obj 41.358692 Dual inf 315828.06 (954)
+1831  Obj 43.555382 Dual inf 696489.7 (895)
+1930  Obj 59.074994 Dual inf 581795.11 (836)
+2023  Obj 99.527869 Dual inf 493544.47 (739)
+2123  Obj 137.94116 Dual inf 369479.96 (752)
+End of values pass after 2138 iterations
+2138  Obj 145.09333 Dual inf 548541.84 (787)
+Perturbing problem by 0.001% of 13.351398 - largest nonzero change 8.8370481e-05 ( 0.0009870811%) - largest zero change 1.9944433e-05
+2197  Obj 154.30904 Dual inf 9408466.4 (643)
+2268  Obj 174.40064 Dual inf 2416378.2 (578)
+2339  Obj 206.61365 Dual inf 4048391.9 (809)
+2407  Obj 240.87727 Dual inf 1117768.8 (689)
+2478  Obj 270.65129 Dual inf 2586473.1 (718)
+2559  Obj 284.49029 Dual inf 4503729.8 (893)
+2639  Obj 295.70184 Dual inf 2418669.6 (662)
+2734  Obj 307.54135 Dual inf 250820.33 (598)
+2830  Obj 316.42856 Dual inf 3209328 (987)
+2929  Obj 322.23859 Dual inf 972194.01 (742)
+3028  Obj 326.87779 Dual inf 1007896.6 (836)
+3127  Obj 334.91521 Dual inf 595099.07 (756)
+3226  Obj 343.81444 Dual inf 3861861.8 (815)
+3325  Obj 352.61869 Dual inf 1331137.6 (800)
+3424  Obj 362.66966 Dual inf 439271.95 (831)
+3523  Obj 368.296 Dual inf 482729.45 (774)
+3622  Obj 371.3811 Dual inf 163792.46 (795)
+3710  Obj 372.63785 Dual inf 170391.59 (863)
+3809  Obj 375.33647 Dual inf 295022.53 (832)
+3883  Obj 377.12049 Dual inf 259017.09 (843)
+3939  Obj 379.47441 Dual inf 382883.12 (802)
+4038  Obj 388.87211 Dual inf 298241.07 (836)
+4116  Obj 393.67878 Dual inf 95815.673 (766)
+4215  Obj 397.6764 Dual inf 471684.33 (840)
+4305  Obj 399.87357 Dual inf 812570.36 (858)
+4404  Obj 399.9965 Dual inf 112.07461 (714)
+4503  Obj 399.9986 Dual inf 342.17873 (675)
+4595  Obj 399.99946 Dual inf 402.80369 (665)
+4662  Obj 399.99982 Dual inf 53.677202 (664)
+4733  Obj 400
+4733  Obj 400 Primal inf 5.9617808e-06 (1) Dual inf 3.1383531e+12 (879)
+4734  Obj 400
+Optimal - objective value 400
+0  Obj 400
+Optimal - objective value 400
+After Postsolve, objective 400, infeasibilities - dual 0 (0), primal 0 (0)
+0  Obj 400
+Optimal - objective value 400
+0  Obj 400
+Optimal - objective value 400
+0  Obj 400
+Optimal - objective value 400
+Optimal objective 400 - 0 iterations time 3.342, Idiot 3.27
+Continuous objective value is 400 - 3.34 seconds
+Optimal - objective value 400
+Optimal - objective value 400
+Presolve 963 (-237) rows, 4563 (-238) columns and 128751 (46608) elements
+Optimal - objective value 400
+Presolve 800 (-163) rows, 4400 (-163) columns and 161086 (32335) elements
+0  Obj 400
+Optimal - objective value 400
+Optimal - objective value 400
+processed model has 800 rows, 4400 columns (4400 integer (4400 of which binary)) and 161086 elements
+0  Obj 400
+Optimal - objective value 400
+Optimal - objective value 400
+Cutoff increment increased from 1e-05 to 0.9999
+Optimal - objective value -400
+Initial state - 400 integers unsatisfied sum - 21.3612
+Optimal - objective value -400
+Optimal - objective value -400
+0  Obj 3.1302193 Dual inf 30114.223 (1940)
+Perturbing problem by 0.001% of 6.0392921 - largest nonzero change 7.0302609e-05 ( 0.00078526648%) - largest zero change 0
+80  Obj 2.3391814 Dual inf 224059.33 (2190)
+133  Obj 1.4954958 Dual inf 198347.51 (2110)
+194  Obj 0.90038775 Dual inf 154263.53 (2083)
+256  Obj 0.29536555 Dual inf 312832.65 (2148)
+313  Obj -0.14211543 Dual inf 117634.56 (2116)
+388  Obj -0.80064618 Dual inf 71056.833 (2088)
+439  Obj -1.0726093 Dual inf 241193.37 (2154)
+504  Obj -1.3431375 Dual inf 429661.06 (2133)
+555  Obj -1.5299365 Dual inf 124771.23 (2108)
+624  Obj -1.8111909 Dual inf 53384.517 (1974)
+691  Obj -2.0532262 Dual inf 352117.65 (2127)
+751  Obj -2.2883158 Dual inf 41124.292 (1963)
+806  Obj -2.4569088 Dual inf 378431.04 (2184)
+878  Obj -2.6119685 Dual inf 111025.45 (2132)
+949  Obj -2.763336 Dual inf 46126.728 (1989)
+1006  Obj -2.8989504 Dual inf 70299.323 (2002)
+1061  Obj -2.9989061 Dual inf 29485.077 (1893)
+1114  Obj -3.098613 Dual inf 18272.631 (1791)
+1176  Obj -3.186801 Dual inf 44872.927 (1942)
+1230  Obj -3.2670315 Dual inf 19486.089 (1807)
+1286  Obj -3.3165517 Dual inf 250934.25 (2155)
+1349  Obj -3.408928 Dual inf 25249.338 (1825)
+1406  Obj -3.4943317 Dual inf 27718.239 (1861)
+1468  Obj -3.5657514 Dual inf 31229.008 (1895)
+1520  Obj -3.6410518 Dual inf 30529.606 (1838)
+1579  Obj -3.7078026 Dual inf 3869.8763 (1256)
+1632  Obj -3.7454004 Dual inf 8246.8634 (1511)
+1683  Obj -3.7785347 Dual inf 3419.4546 (1177)
+1743  Obj -3.8152407 Dual inf 36803.78 (1910)
+1804  Obj -3.8436698 Dual inf 6369.3391 (1437)
+1868  Obj -3.8722591 Dual inf 6330.7632 (1435)
+1937  Obj -3.8950311 Dual inf 5483.4868 (1414)
+2030  Obj -3.9195514 Dual inf 1475.7559 (886)
+2119  Obj -3.933238 Dual inf 127.56741 (269)
+2170  Obj -3.9464677 Dual inf 5934.137 (1406)
+2264  Obj -3.9690772 Dual inf 2971.9243 (1158)
+2363  Obj -3.9849534 Dual inf 917.29613 (721)
+2435  Obj -3.9926158 Dual inf 44.519364 (141)
+2505  Obj -3.994086
+2505  Obj -3.9940728 Primal inf 1.0432462e-07 (1) Dual inf 5.043382e+12 (2156)
+2510  Obj -3.9940728
+Optimal - objective value -3.9940728
+Pass   1: suminf.   14.64069 (397) obj. 399.999 iterations 2510
+0  Obj 10.974564 Dual inf 66123.757 (2004)
+Perturbing problem by 0.001% of 6.0392921 - largest nonzero change 7.0381892e-05 ( 0.00078615205%) - largest zero change 0
+61  Obj 10.440242 Dual inf 57249.66 (1944)
+117  Obj 9.9622207 Dual inf 437195.18 (2143)
+169  Obj 9.6557609 Dual inf 153543.33 (2039)
+238  Obj 9.3229954 Dual inf 68838.896 (1915)
+290  Obj 8.979088 Dual inf 374902.48 (2129)
+347  Obj 8.5833072 Dual inf 96596.75 (2004)
+416  Obj 8.1419361 Dual inf 32865.202 (1714)
+483  Obj 7.7008335 Dual inf 173182.18 (2046)
+569  Obj 7.2963524 Dual inf 434348.62 (2114)
+625  Obj 7.0525559 Dual inf 974897.67 (2134)
+691  Obj 6.5824523 Dual inf 948824.13 (2124)
+766  Obj 6.175194 Dual inf 358517.35 (2056)
+828  Obj 5.9296612 Dual inf 544114.64 (2091)
+927  Obj 5.0750083 Dual inf 78447.567 (1913)
+1016  Obj 4.1544999 Dual inf 179001.49 (1969)
+1098  Obj 3.324029 Dual inf 121561.5 (1992)
+1197  Obj 2.0955456 Dual inf 135682.21 (1962)
+1293  Obj 0.69444284 Dual inf 498483.79 (2030)
+1380  Obj -1.2073414 Dual inf 110624.05 (1996)
+1463  Obj -2.9636981 Dual inf 47529.288 (1746)
+1541  Obj -4.9290095 Dual inf 122298.39 (1888)
+1613  Obj -6.6987656 Dual inf 118470.74 (1869)
+1684  Obj -8.1441522 Dual inf 34595.099 (1546)
+1747  Obj -9.2321755 Dual inf 15373.34 (1350)
+1809  Obj -10.839273 Dual inf 45007.479 (1509)
+1872  Obj -11.506222 Dual inf 5448.8839 (981)
+1929  Obj -11.765626 Dual inf 4.1177093 (16)
+1950  Obj -11.773126
+1950  Obj -11.773096
+Optimal - objective value -11.773096
+Pass   2: suminf.    7.95936 (399) obj. 399.898 iterations 1950
+No solution found this major pass
+After 9.94 seconds - Feasibility pump exiting - took 5.91 seconds
+Optimal - objective value -400
+Optimal - objective value -400
+Exiting on maximum time
+Partial search - best objective -1e+50 (best possible 400), took 0 iterations and 0 nodes (10.08 seconds)
+Maximum depth 0, 0 variables fixed on reduced cost
+Cuts at root node changed objective from 400 to 400
+Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Knapsack was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+Clique was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+
+Result - Stopped on time limit
+
+No feasible solution found
+Upper bound:                    400.000
+Enumerated nodes:               0
+Total iterations:               0
+Time (CPU seconds):             10.08
+Time (Wallclock seconds):       10.08
+
+Total time (CPU seconds):       10.09   (Wallclock seconds):       10.09
+

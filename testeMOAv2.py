@@ -1,6 +1,9 @@
 from ortools.linear_solver import pywraplp
 import time
 import os
+import contextlib
+import sys
+import re
 from typing import List
 
 # LEITURA, RESOLUÇÃO E ESCRITA DE INSTÂNCIAS SCP
@@ -35,6 +38,13 @@ class Arquivo_scp:
         self.colunas = 0
         self.conjuntos_escolhidos = []
 
+class Tempo_execução:
+    def __init__(self):
+        self.cpu_time_solver = 0
+        self.wall_time_solver = 0
+        self.total_wall_time = 0
+        self.total_cpu_time = 0
+
 # Função que abre o arquivo de entrada e lê todas as linhas
 # Retorna uma lista de strings com o conteúdo do arquivo
 # Se não conseguir abrir, encerra o programa
@@ -49,8 +59,6 @@ def abrir_arquivo(arquivo_leitura):
                 # Leitura do conteúdo do 'arquivo_leitura'
                 subconjuntos, matriz, elementos = ler_conteudo(arquivo_leitura.linhas, arquivo_leitura.colunas, linhas_arquivo)
 
-                # Fechamento do arquivo
-                arquivo_leitura.arquivo.close()
             print("\nO arquivo foi aberto com sucesso!")
             return subconjuntos, matriz, elementos
         except FileNotFoundError:
@@ -140,7 +148,7 @@ def ler_conteudo(l, c, linhas_arquivo):
     return subconjuntos, elementos, matriz
 
 # Função executada para a gravação das execuções do solver no 'arquivo_escrita', definido na main()
-def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconjuntos: List[Subconjunto], matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo,  media_cobertura_total, tempo_execucao):
+def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconjuntos: List[Subconjunto], matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo,  media_cobertura_total, tempo_execucao, padrao_log):
 
     if arquivo_leitura.id == 0:
         tipo_leitura = "w"
@@ -153,10 +161,11 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
             # Alterna a escrita inicial dependendo se for um teste ou não
 
             if arquivo_leitura.nome == "TESTE":
-                escrita.write(f"\n\n\n\t*****TESTE*****")
-
+                escrita.write(f"\n\n\n\n\t*****TESTE*****")
+                escrita.write("\n\nFunção Objetiva:")
+            else:
+                escrita.write("\n\n\n\nFunção Objetiva:")
             # Elementos centrais do solver 
-            escrita.write("\n\n\n\nFunção Objetiva:")
             escrita.write("\n                   Max ∑ yᵢ                             para i=1 até Linhas")
             escrita.write("\nSujeito a:") 
             escrita.write("\n                   ∑ aᵢⱼ·xⱼ = zᵢ                        ∀i, 1 ≤ i ≤ Linhas, para j=1 até Colunas")
@@ -183,39 +192,64 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
             
             escrita.write("\nResolvendo com o solver " + versao_solver)
 
-            if media_cobertura_total == 1:
-                escrita.write("\n\nSolucao otima encontrada!")
-            elif media_cobertura_total > 1:
-                escrita.write("\n\nUma solucao factivel foi encontrada.")
-            elif media_cobertura_total == 0:
-                escrita.write("\nO problema nao tem solucao.")
 
-            escrita.write("\n\nValor da Funcao Objetivo (elementos cobertos unicamente) = " + str(funcao_objetivo))
-            escrita.write("\n\nConjuntos selecionados:")
+            if media_cobertura_total >= 1:
+                if  media_cobertura_total == 1:
+                    escrita.write("\n\nSolucao otima encontrada!")
+                else:
+                    escrita.write("\n\nUma solucao factivel foi encontrada.")
+        
+                if padrao_log:
 
-            for j in range(arquivo_leitura.colunas):
-                if subconjuntos[j].var_escolha > 0.5:
-                    escrita.write(f"\n- Conjunto S {j+1}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}")
+                    # Iniciação variáveis do log
+                    status = padrao_log.group("status")
+                    limitante_superior = float(padrao_log.group("upper")) if padrao_log.group("upper") else 0.0 
+                    gap = abs(float(padrao_log.group("gap"))) if padrao_log.group("gap") else 0.0
 
-            escrita.write("\n\nDetalhes da cobertura por elemento:")
-            
-            for i in range(arquivo_leitura.linhas):
-                coberto_unicamente = "Sim" if elementos[i].var_cobertura_unica > 0.5 else "Não"
-                escrita.write(f'\nElemento {str(i+1)}: coberto {str(elementos[i].var_cobertura_total)} vez(es). Cobertura unica: {coberto_unicamente}')
+                    tempo_execucao.cpu_time_solver = float(padrao_log.group("cpu"))
+                    tempo_execucao.wall_time_solver = float(padrao_log.group("wall"))
+                    tempo_execucao.total_cpu_time = float(padrao_log.group("total_cpu"))
+                    tempo_execucao.total_wall_time = float(padrao_log.group("total_wall"))
 
-            escrita.write(f"\nCobertura media dos elementos: {media_cobertura_total:.2f}")
-            if arquivo_leitura.nome == "TESTE":
-                escrita.write(f"\n\nTempo de execucao da instancia: {tempo_execucao[len(tempo_execucao)-1]:.4f} segundos")
+                    escrita.write(f"\n\nStatus: {status}")
+                    escrita.write(f"\nFunção Objetivo: {funcao_objetivo:.2f}")
+                    if limitante_superior > 0:
+                        escrita.write(f"\nLimitante Superior: {limitante_superior:.2f}")
+                    escrita.write(f"\nGap de integralidade: {(gap * 100):.2f}%")
+                    escrita.write(f"\nTime (CPU seconds): {tempo_execucao.cpu_time_solver:.2f}")
+                    escrita.write(f"\nTime (Wallclock seconds): {tempo_execucao.wall_time_solver:.2f}")
+                    escrita.write(f"\nTotal time (CPU seconds): {tempo_execucao.total_cpu_time:.2f}")
+                    escrita.write(f"\nTotal time (Wallclock seconds): {tempo_execucao.total_wall_time:.2f}")
+                else:
+                    escrita.write("\n\nERRO AO LER O LOG")
+
+                escrita.write("\n\nConjuntos selecionados:")
+
+                for j in range(arquivo_leitura.colunas):
+                    if subconjuntos[j].var_escolha > 0.5:
+                        escrita.write(f"\n- Conjunto S {j+1}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}")
+
+                escrita.write("\n\nDetalhes da cobertura por elemento:")
+                
+                for i in range(arquivo_leitura.linhas):
+                    coberto_unicamente = "Sim" if elementos[i].var_cobertura_unica > 0.5 else "Não"
+                    escrita.write(f'\nElemento {str(i+1)}: coberto {str(elementos[i].var_cobertura_total)} vez(es). Cobertura unica: {coberto_unicamente}')
+
+                escrita.write(f"\nCobertura media dos elementos: {media_cobertura_total:.2f}")
+
             else:
-                escrita.write(f"\n\nTempo de execucao da instancia: {tempo_execucao[arquivo_leitura.id]:.4f} segundos")
+                escrita.write("\n\nO problema nao tem solucao.")
+                escrita.write(f"\n\nTime (CPU seconds): {tempo_execucao.cpu_time_solver:.2f}")
+                escrita.write(f"\nTime (Wallclock seconds): {tempo_execucao.wall_time_solver:.2f}")
+                escrita.write(f"\nTotal time (CPU seconds): {tempo_execucao.total_cpu_time:.2f}")
+                escrita.write(f"\nTotal time (Wallclock seconds): {tempo_execucao.total_wall_time:.2f}")
 
-            escrita.close()
     except FileNotFoundError:
         print("\nERRO! O arquivo de escrita não foi aberto!")
         exit(1)
 
 
-def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output_branch_and_bound, output_padrao_completo, escrita, arquivo_escrita):
+def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output_padrao_completo, escrita, arquivo_escrita):
     # Inicialização das variaveis:
 
     # Quantidade de arquivos no vetor arquivo leitura, menos o 'TESTE'
@@ -225,21 +259,33 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
     media_cobertura_total = 0
 
     # Vetor  que armazena o tempo de execução de cada instância.
-    tempo_execucao = [0 for _ in range(len(arquivo_leitura))]
+    tempo_execucao = [Tempo_execução() for _ in range(len(arquivo_leitura))]
+
+    # Define o caminho da subpasta
+    subpasta = "logs"
+
+    # Cria a subpasta se ela ainda não existir
+    os.makedirs(subpasta, exist_ok=True)
 
     if escrita:
+        escrita_permitida = 1
         try:
-            with open(arquivo_escrita, "r", encoding="utf-8") as arquivo:
-                linhas_arquivo = arquivo.readlines()
-
-                if not linhas_arquivo:
+            if os.path.getsize(arquivo_escrita) > 0:
+                while True:
+                    resposta = input("Deseja sobrescrever o arquivo atual? (s/n): ").strip().lower()
+                    if resposta in ["s", "n"]:
+                        break
+                    print("Por favor, digite 's' para sim ou 'n' para não.")
+                if resposta == "s":
                     escrita_permitida = 1
                 else:
                     escrita_permitida = 0
-
-                arquivo.close()
+            else:
+                escrita_permitida = 0
         except FileNotFoundError:
-            escrita_permitida = 1 
+            escrita_permitida = 1
+    else:
+        escrita_permitida = 0
     
     if qtd_arquivos == -1:
         print(f"\n\t*TESTE*")
@@ -265,10 +311,13 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
     else:
         qtd = 0
 
+
     while qtd < qtd_arquivos:
         i = 0
         j = 0
 
+         # Arquivo que armazenará o log de cada execução
+        caminho_log = "cbc_log_"
 
         # Instancia o solver CBC
         solver = pywraplp.Solver.CreateSolver("CBC")
@@ -290,10 +339,19 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
                     if aux == 1:
                         elementos[i].num_coberturas += 1
                         subconjuntos[j].elementos_cobertos.append(i+1)
+
+            # Arquivo que armazenará o log de cada execução
+            caminho_log += 'teste.txt'
         else:
             # Abertura do 'arquivo_leitura'
             subconjuntos, elementos, matriz  = abrir_arquivo(arquivo_leitura[qtd])
+
+            caminho_log += arquivo_leitura[qtd].nome
+            
             print(f'\n\n{qtd+1})')
+            
+        # Caminho completo do arquivo dentro da subpasta 'logs'
+        caminho_log = os.path.join(subpasta, caminho_log)
 
         print(f'Instância = {arquivo_leitura[qtd].nome}')
         print(f'Linhas = {arquivo_leitura[qtd].linhas}')
@@ -342,18 +400,51 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
         # Define tempo máximo de execução do solver
         solver.set_time_limit(tempo_max)
 
-        # Define a saida de um output muito detalhado do 'branch-and-bound' ('branch-and-cut' no caso do solver CBC)*Dar uma pesquisada depois*
-        if output_branch_and_bound:
-            solver.EnableOutput()
+        # Define a saida de um output muito detalhado do 'branch-and-bound' ('branch-and-cut' no caso do solver CBC)
+        solver.EnableOutput()
 
         versao_solver = solver.SolverVersion()
         print("\nResolvendo com o solver", versao_solver)
 
-        start_time = time.time()
-        resultado = solver.Solve()
-        end_time = time.time()
+        # Cria o arquivo de log e redireciona a saída do solver para ele
+        with open(caminho_log, "w", encoding="utf-8") as arquivo_log:
+            # Salva os descritores originais de stdout e stderr
+            stdout_original= os.dup(1)
+            stderr_original = os.dup(2)
 
-        tempo_execucao[qtd] = end_time - start_time
+            # Redireciona os descritores para o arquivo
+            os.dup2(arquivo_log.fileno(), 1)
+            os.dup2(arquivo_log.fileno(), 2)
+
+            try:
+                # Execução do solver com saída redirecionada
+                resultado = solver.Solve()
+            finally:
+                # Restaura os descritores originais
+                os.dup2(stdout_original, 1)
+                os.dup2(stderr_original, 2)
+                os.close(stdout_original)
+                os.close(stderr_original)
+
+        # Leituta do log gerado na execução do solver
+        with open(caminho_log, "r", encoding="utf-8") as f:
+            log_content = f.read()
+            indice = log_content.find("Result - ")
+            trecho_dados = log_content[indice:] 
+
+        if indice != -1:
+        # Leituta do log gerado na execução do solver
+            padrao_log = re.search(r"Result - (?P<status>.*)\n+(?:No feasible solution found\n+)?(?:Objective value:\s+(?P<objective>\d*\.?\d+)\n+)?(?:Upper bound:\s+(?P<upper>\d*\.?\d+)\n+)?(?:Gap:\s+(?P<gap>-?\d*\.?\d+)\n+)?(?:Enumerated nodes:\s+(?P<nodes>\d+)\n+)?(?:Total iterations:\s+(?P<iterations>\d+)\n+)?Time \(CPU seconds\):\s+(?P<cpu>\d*\.?\d+)\n+Time \(Wallclock seconds\):\s+(?P<wall>\d*\.?\d+)\n+Total time \(CPU seconds\):\s+(?P<total_cpu>\d*\.?\d+)\s+\(Wallclock seconds\):\s+(?P<total_wall>\d*\.?\d+)", trecho_dados)
+                            
+            status = padrao_log.group("status")
+            funcao_objetivo = funcao_objetivo.Value()
+            limitante_superior = float(padrao_log.group("upper")) if padrao_log.group("upper") else 0.0 
+            gap = abs(float(padrao_log.group("gap"))) if padrao_log.group("gap") else 0.0
+
+            tempo_execucao[qtd].cpu_time_solver = float(padrao_log.group("cpu"))
+            tempo_execucao[qtd].wall_time_solver = float(padrao_log.group("wall"))
+            tempo_execucao[qtd].total_cpu_time = float(padrao_log.group("total_cpu"))
+            tempo_execucao[qtd].total_wall_time = float(padrao_log.group("total_wall"))
 
         if resultado == pywraplp.Solver.OPTIMAL or resultado == pywraplp.Solver.FEASIBLE:
             if resultado == pywraplp.Solver.OPTIMAL:
@@ -361,8 +452,18 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             else:
                 print('\nUma solução factível foi encontrada.')
 
-            funcao_objetivo = funcao_objetivo.Value()
-            print(f'\nValor da Função Objetivo (elementos cobertos unicamente) = {funcao_objetivo}')
+            if padrao_log:
+                print("\nStatus:", status)
+                print(f"Função Objetivo: {funcao_objetivo:.2f}")
+                if limitante_superior > 0:
+                    print(f"Limitante Superior: {limitante_superior:.2f}") 
+                print(f"Gap: {(gap * 100):.2f}%")
+                print(f"Time (CPU seconds): {tempo_execucao[qtd].cpu_time_solver:.2f}")
+                print(f"Time (Wallclock seconds): {tempo_execucao[qtd].wall_time_solver:.2f}")
+                print(f"Total time (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.2f}")
+                print(f"Total time (Wallclock seconds): {tempo_execucao[qtd].total_wall_time:.2f}")
+            else:
+                print("ERRO")    
 
             for j in range(arquivo_leitura[qtd].colunas):
                 subconjuntos[j].var_escolha = subconjuntos[j].var_escolha.solution_value()
@@ -389,45 +490,36 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
 
             print(f"\nCobertura média dos elementos: {media_cobertura_total:.2f}")
         else:
-            print('O problema não tem solução.')
+            print('\nO problema não tem solução.')
             funcao_objetivo = 0
-            media_cobertura_total = 0
+            media_cobertura_total = 0    
+            print(f"\n⚙️  Tempo CPU usado na execução do solver (CPU seconds): {tempo_execucao[qtd].cpu_time_solver:.4f} s")
+            print(f"⏱️  Tempo real decorrido na execução do solver (Wallclock seconds): {tempo_execucao[qtd].wall_time_solver:.4f} s")
+            print(f"\n⚙️  Tempo total de CPU usado (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.4f} s")
+            print(f"⏱️  Tempo real total decorrido (Wallclock seconds): {tempo_execucao[qtd].total_wall_time:.4f} s")
 
-        print(f"Tempo de execução da instância: {tempo_execucao[qtd]:.4f} segundos") 
-
-        if escrita:
+        if escrita_permitida:
+            # Verifica se o TESTE está ativado
             if qtd == len(arquivo_leitura) - 1:
                 arquivo_escrita = "testes.txt"
-                # Grava o retorno do solver no 'arquivo_escrita'
-                escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao)
-            else:
-                if escrita_permitida:
-                    # Grava o retorno do solver no 'arquivo_escrita'
-                    escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao)
-                else:
-                    while True:
-                        resposta = input("Deseja sobrescrever o arquivo atual? (s/n): ").strip().lower()
-                        if resposta in ["s", "n"]:
-                            break
-                        print("Por favor, digite 's' para sim ou 'n' para não.")
-
-                    if resposta == "s":
-                        # Grava o retorno do solver no 'arquivo_escrita'
-                        escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao)
-                        escrita_permitida = 1
-                    else:
-                        escrita = 0
+                
+            # Grava o retorno do solver no 'arquivo_escrita'
+            escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao[qtd], padrao_log)
 
         qtd += 1
 
     # Verifica se mais de 1 execução foi realizada para a impressão da soma dos tempos de execução
     if not (arquivo_leitura[qtd-1].nome == "TESTE" or qtd_arquivos == 1):
-        print(f"\nTempo total de execução da(s) {qtd} instância(s): {sum(tempo_execucao):.4f} segundos")
+        tempo_total_cpu = sum(tempo_execucao[i].total_cpu_time for i in range(len(tempo_execucao) - 1))
+        tempo_total_wall = sum(tempo_execucao[i].total_wall_time for i in range(len(tempo_execucao) - 1))
 
-        if escrita:
+        print(f"\n⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
+        print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")
+
+        if escrita_permitida:
             with open(arquivo_escrita, "a", encoding="utf-8") as arquivo:
-                arquivo.write(f"\n\nTempo total de execção da(s) {qtd} instância(s): {sum(tempo_execucao):.4f} segundos")
-                arquivo.close()
+                arquivo.write(f"\n\nTempo total de execção da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
+                arquivo.write(f"\n\nTempo total de execção da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")
 
 
     return
@@ -475,19 +567,16 @@ def main():
     arquivo_leitura[qtd_arquivos_leitura].nome = "TESTE"
 
     # Tempo máximo de excução em milisegundos (milissegundos -> segundos/1000).
-    tempo_max = 1000     
+    tempo_max = 10000     
     
     # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "matriz" (teste=1).
-    teste = 1
+    teste = 0
 
     # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
     escrita = 1
 
     # Define a saida de uma descrição detalhada dos subconjuntos escolhidos e elementos cobertos (opicional)
-    output_padrao_completo = 1
-
-    # Define a saida de uma descrição detalhada do funcionamento do solver (opicional)
-    output_branch_and_bound = 0
+    output_padrao_completo = 0
 
     # Total de linhas da matriz (calculado automaticamente para as instancias, uso predefinido apenas para testes)   
     arquivo_leitura[qtd_arquivos_leitura].linhas = 5
@@ -512,7 +601,7 @@ def main():
         arquivo_leitura[qtd_arquivos_leitura].id = -1
 
     # Execução do solver
-    executa_solver(arquivo_leitura, matriz, tempo_max, output_branch_and_bound, output_padrao_completo, escrita, arquivo_escrita)
+    executa_solver(arquivo_leitura, matriz, tempo_max, output_padrao_completo, escrita, arquivo_escrita)
 
 if __name__ == "__main__":
     main()  
