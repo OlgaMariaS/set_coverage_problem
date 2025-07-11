@@ -640,7 +640,7 @@ def main():
     # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
     escrita = 1
 
-    # Define a saida de uma descrição detalhada dos subconjuntos escolhidos e elementos cobertos (opicional)
+    # Define a saida de uma descrição detalhada, no terminal, dos subconjuntos escolhidos e elementos cobertos (opicional)
     output_padrao_completo = 0
 
     # Total de linhas da matriz (calculado automaticamente para as instancias, uso predefinido apenas para testes)   
