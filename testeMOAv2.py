@@ -567,7 +567,7 @@ def main():
     arquivo_leitura[qtd_arquivos_leitura].nome = "TESTE"
 
     # Tempo máximo de excução em milisegundos (milissegundos -> segundos/1000).
-    tempo_max = 10000     
+    tempo_max = 3600000     
     
     # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "matriz" (teste=1).
     teste = 0
