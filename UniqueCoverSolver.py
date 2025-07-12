@@ -506,7 +506,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             # Tempo de wallclock do solver (Tempo real do software sendo processado), incluindo alocação de variáveis, pré-processamento, entre outros.) 
             tempo_execucao[qtd].total_wall_time = float(padrao_log.group("total_wall"))
         else:
-            padrao_log = 0
+            padrao_log = None
 
         if resultado == pywraplp.Solver.OPTIMAL or resultado == pywraplp.Solver.FEASIBLE:
             if resultado == pywraplp.Solver.OPTIMAL:
@@ -597,8 +597,6 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
                 arquivo.write(f"\n\nTempo em horas:")
                 arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
                 arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
-
-
 
     return
 
