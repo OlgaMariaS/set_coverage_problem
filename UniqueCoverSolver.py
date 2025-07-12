@@ -557,10 +557,10 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             print('\nO problema não tem solução.')
             funcao_objetivo = 0
             media_cobertura_total = 0    
-            print(f"\n⚙️  Tempo CPU usado na execução do solver (CPU seconds): {tempo_execucao[qtd].cpu_time_solver:.4f} s")
-            print(f"⏱️  Tempo real decorrido na execução do solver (Wallclock seconds): {tempo_execucao[qtd].wall_time_solver:.4f} s")
-            print(f"\n⚙️  Tempo total de CPU usado (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.4f} s")
-            print(f"⏱️  Tempo real total decorrido (Wallclock seconds): {tempo_execucao[qtd].total_wall_time:.4f} s")
+            print(f"\n⚙️  Tempo CPU usado na execução do solver (CPU seconds): {tempo_execucao[qtd].cpu_time_solver:.3f} s")
+            print(f"⏱️  Tempo real decorrido na execução do solver (Wallclock seconds): {tempo_execucao[qtd].wall_time_solver:.3f} s")
+            print(f"\n⚙️  Tempo total de CPU usado (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.3f} s")
+            print(f"⏱️  Tempo real total decorrido (Wallclock seconds): {tempo_execucao[qtd].total_wall_time:.3f} s")
 
         if escrita_permitida:
             # Verifica se o TESTE está ativado
@@ -581,8 +581,8 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
         h_w, m_w, s_w, ms_w = converter_tempo(tempo_total_wall)
 
         print(f"\nTempo em segundos:")
-        print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
-        print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")
+        print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.3f} segundos")
+        print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.3f} segundos")
         
         print(f"\nTempo em horas:")
         print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
@@ -591,8 +591,8 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
         if escrita_permitida:
             with open(arquivo_escrita, "a", encoding="utf-8") as arquivo:
                 arquivo.write(f"\n\nTempo em segundos:")
-                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
-                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")                
+                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.3f} segundos")
+                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.3f} segundos")                
 
                 arquivo.write(f"\n\nTempo em horas:")
                 arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
