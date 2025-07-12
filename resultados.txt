@@ -1,7 +1,3 @@
-
-
-
-
 Função Objetiva:
                    Max ∑ yᵢ                             para i=1 até Linhas
 Sujeito a:
