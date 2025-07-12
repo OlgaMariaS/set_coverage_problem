@@ -3253,9 +3253,9 @@ Elemento 50: coberto 1.0 vez(es). Cobertura unica: Sim
 Cobertura media dos elementos: 1.20
 
 Tempo em segundos:
-Tempo total de execção da(s) 8 instância(s) (CPU seconds): 23141.7800 segundos
-Tempo total de execção da(s) 8 instância(s) (Wallclock seconds): 23141.7800 segundos
+Tempo total de execução da(s) 8 instância(s) (CPU seconds): 23141.7800 segundos
+Tempo total de execução da(s) 8 instância(s) (Wallclock seconds): 23141.7800 segundos
 
 Tempo em horas:
-Tempo total de execção da(s) 8 instância(s) (CPU seconds): 6h 25min 41s 780ms
-Tempo total de execção da(s) 8 instância(s) (Wallclock seconds): 6h 25min 41s 780ms
+Tempo total de execução da(s) 8 instância(s) (CPU seconds): 6h 25min 41s 780ms
+Tempo total de execução da(s) 8 instância(s) (Wallclock seconds): 6h 25min 41s 780ms

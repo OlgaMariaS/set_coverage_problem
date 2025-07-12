@@ -583,18 +583,18 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
         print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")
         
         print(f"\nTempo em horas:")
-        print(f"⚙️  Tempo total de execção da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
-        print(f"⏱️  Tempo total de execção da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
+        print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
+        print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
 
         if escrita_permitida:
             with open(arquivo_escrita, "a", encoding="utf-8") as arquivo:
                 arquivo.write(f"\n\nTempo em segundos:")
-                arquivo.write(f"\nTempo total de execção da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
-                arquivo.write(f"\nTempo total de execção da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")                
+                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
+                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")                
 
                 arquivo.write(f"\n\nTempo em horas:")
-                arquivo.write(f"\nTempo total de execção da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
-                arquivo.write(f"\nTempo total de execção da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
+                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
+                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
 
 
 
