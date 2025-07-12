@@ -505,6 +505,8 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
 
             # Tempo de wallclock do solver (Tempo real do software sendo processado), incluindo alocação de variáveis, pré-processamento, entre outros.) 
             tempo_execucao[qtd].total_wall_time = float(padrao_log.group("total_wall"))
+        else:
+            padrao_log = 0
 
         if resultado == pywraplp.Solver.OPTIMAL or resultado == pywraplp.Solver.FEASIBLE:
             if resultado == pywraplp.Solver.OPTIMAL:
@@ -525,7 +527,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
                 print(f"Total time (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.2f}")
                 print(f"Total time (Wallclock seconds): {tempo_execucao[qtd].total_wall_time:.2f}")
             else:
-                print("ERRO")    
+                print("ERRO AO LER O LOG GERADO")    
 
             for j in range(arquivo_leitura[qtd].colunas):
                 subconjuntos[j].var_escolha = subconjuntos[j].var_escolha.solution_value()
