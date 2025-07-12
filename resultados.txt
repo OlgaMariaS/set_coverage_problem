@@ -26,10 +26,16 @@ Solucao otima encontrada!
 Status: Optimal solution found
 Função Objetivo: 200.00
 Gap de integralidade: 0.00%
-Time (CPU seconds): 1521.88
-Time (Wallclock seconds): 1521.88
-Total time (CPU seconds): 1521.89
-Total time (Wallclock seconds): 1521.89
+Número de nós gerados: 525255
+Número de iterações: 46431888
+Time (CPU seconds): 1534.99
+Time (Wallclock seconds): 1534.99
+Total time (CPU seconds): 1534.99
+Total time (Wallclock seconds): 1534.99
+
+Tempo em horas:
+Tempo de execução em horas (CPU): 0h 25min 34s 990ms
+Tempo total de execução em horas (Wallclock): 0h 25min 34s 990ms
 
 Conjuntos selecionados:
 - Conjunto S 4
@@ -410,10 +416,16 @@ Uma solucao factivel foi encontrada.
 Status: Optimal solution found
 Função Objetivo: 200.00
 Gap de integralidade: 0.00%
-Time (CPU seconds): 3.78
-Time (Wallclock seconds): 3.77
-Total time (CPU seconds): 3.78
-Total time (Wallclock seconds): 3.78
+Número de nós gerados: 90
+Número de iterações: 25200
+Time (CPU seconds): 4.57
+Time (Wallclock seconds): 4.57
+Total time (CPU seconds): 4.57
+Total time (Wallclock seconds): 4.57
+
+Tempo em horas:
+Tempo de execução em horas (CPU): 0h 0min 4s 570ms
+Tempo total de execução em horas (Wallclock): 0h 0min 4s 570ms
 
 Conjuntos selecionados:
 - Conjunto S 29
@@ -788,147 +800,163 @@ Resolvendo com o solver Cbc 2.10.12
 Uma solucao factivel foi encontrada.
 
 Status: Stopped on time limit
-Função Objetivo: 113.00
+Função Objetivo: 144.00
 Limitante Superior: 200.00
-Gap de integralidade: 43.00%
-Time (CPU seconds): 3600.04
-Time (Wallclock seconds): 3600.04
-Total time (CPU seconds): 3600.04
-Total time (Wallclock seconds): 3600.04
+Gap de integralidade: 28.00%
+Número de nós gerados: 992492
+Número de iterações: 57286262
+Time (CPU seconds): 3600.08
+Time (Wallclock seconds): 3600.08
+Total time (CPU seconds): 3600.08
+Total time (Wallclock seconds): 3600.08
+
+Tempo em horas:
+Tempo de execução em horas (CPU): 1h 0min 0s 80ms
+Tempo total de execução em horas (Wallclock): 1h 0min 0s 80ms
 
 Conjuntos selecionados:
-- Conjunto S 2
-    Elementos cobertos: [18, 43, 44, 45, 75, 89, 125, 129, 131, 142, 148, 154, 170]
-- Conjunto S 41
-    Elementos cobertos: [14, 27, 71, 78, 90, 104, 131, 137, 150, 175, 180]
-- Conjunto S 82
-    Elementos cobertos: [10, 42, 50, 103, 109, 113, 119, 140, 162, 167, 168, 194]
-- Conjunto S 167
-    Elementos cobertos: [33, 40, 45, 49, 59, 62, 71, 103, 110, 140, 159, 175]
-- Conjunto S 299
-    Elementos cobertos: [8, 25, 61, 102, 121, 186, 194]
-- Conjunto S 310
-    Elementos cobertos: [6, 18, 19, 29, 35, 57, 65, 87, 114, 116, 121, 139, 150, 171, 181, 197]
-- Conjunto S 323
-    Elementos cobertos: [7, 11, 63, 96, 97, 110, 111, 127, 135, 168, 172, 177, 200]
-- Conjunto S 334
-    Elementos cobertos: [4, 12, 26, 54, 55, 79, 102, 111, 131, 134, 148, 151, 152, 175, 196]
-- Conjunto S 355
-    Elementos cobertos: [5, 21, 61, 72, 130, 159, 192]
-- Conjunto S 369
-    Elementos cobertos: [12, 91, 94, 110, 113, 141, 155, 158, 160, 166, 173, 200]
-- Conjunto S 399
-    Elementos cobertos: [2, 3, 11, 27, 51, 53, 64, 82, 88, 92, 126, 132, 150, 155, 174, 177, 188]
-- Conjunto S 416
-    Elementos cobertos: [9, 12, 35, 47, 91, 113, 126, 144, 178, 179, 187]
-- Conjunto S 498
-    Elementos cobertos: [1, 3, 15, 20, 48, 54, 66, 68, 76, 109, 165, 177, 190, 199]
-- Conjunto S 546
-    Elementos cobertos: [49, 62, 65, 69, 89, 106, 110, 172, 174, 182, 188, 191, 193]
-- Conjunto S 548
-    Elementos cobertos: [8, 15, 21, 38, 109, 137, 156, 168, 169, 183, 192]
-- Conjunto S 568
-    Elementos cobertos: [47, 61, 66, 85, 93, 116, 153, 161, 169, 172, 177, 194]
-- Conjunto S 578
-    Elementos cobertos: [13, 16, 24, 30, 49, 65, 83, 95, 107, 120, 138, 143, 160, 183, 189, 192]
-- Conjunto S 587
-    Elementos cobertos: [47, 48, 81, 97, 106, 169]
+- Conjunto S 11
+    Elementos cobertos: [8, 17, 29, 44, 58, 59, 68, 80, 100, 114, 140, 153, 156, 166, 167, 176]
+- Conjunto S 92
+    Elementos cobertos: [39, 63, 96, 131, 164, 180, 189, 190]
+- Conjunto S 182
+    Elementos cobertos: [15, 23, 28, 33, 46, 50, 103, 118, 149]
+- Conjunto S 219
+    Elementos cobertos: [13, 24, 32, 37, 50, 78, 89, 164, 173, 174]
+- Conjunto S 242
+    Elementos cobertos: [31, 32, 38, 39, 61, 85, 91, 96, 97, 122, 141, 160, 161, 170, 177, 178]
+- Conjunto S 270
+    Elementos cobertos: [18, 73, 98, 124, 127, 155, 169, 171, 181]
+- Conjunto S 276
+    Elementos cobertos: [45, 117, 138, 142, 148, 187]
+- Conjunto S 293
+    Elementos cobertos: [34, 76, 99, 130, 138, 154, 198]
+- Conjunto S 330
+    Elementos cobertos: [2, 37, 84, 94, 139, 177, 191]
+- Conjunto S 352
+    Elementos cobertos: [13, 66, 86, 127, 138, 147, 162, 173, 198]
+- Conjunto S 363
+    Elementos cobertos: [1, 12, 37, 44, 76, 101, 136, 158]
+- Conjunto S 413
+    Elementos cobertos: [23, 91, 118, 134, 169, 179]
+- Conjunto S 429
+    Elementos cobertos: [26, 41, 49, 50, 71, 144, 150]
+- Conjunto S 477
+    Elementos cobertos: [43, 116, 129, 143, 163]
+- Conjunto S 556
+    Elementos cobertos: [4, 5, 10, 77, 79, 96, 107, 108, 126, 141, 151, 188, 191]
+- Conjunto S 589
+    Elementos cobertos: [23, 42, 47, 69, 81, 82, 133, 139, 160, 175, 185]
 - Conjunto S 612
     Elementos cobertos: [28, 33, 73, 95, 96, 111, 117, 118, 127, 146, 152, 159, 172]
-- Conjunto S 755
-    Elementos cobertos: [16, 18, 36, 111, 136, 153, 184, 193]
-- Conjunto S 812
-    Elementos cobertos: [25, 34, 37, 65, 67, 94, 104, 115, 123, 163]
-- Conjunto S 819
-    Elementos cobertos: [17, 39, 52, 76, 77, 84, 86, 89, 95, 96, 108, 128, 135, 147, 159, 172, 176, 188]
-- Conjunto S 833
-    Elementos cobertos: [4, 27, 41, 48, 74, 78, 80, 97, 98, 110, 138]
-- Conjunto S 893
-    Elementos cobertos: [49, 58, 59, 70, 71, 78, 101, 105, 106, 112, 133, 140, 141, 150, 164, 169, 187]
-- Conjunto S 923
-    Elementos cobertos: [2, 20, 21, 27, 33, 45, 50, 54, 56, 73, 99, 127, 145, 153]
-- Conjunto S 973
-    Elementos cobertos: [16, 54, 102, 114, 121, 122, 141, 149]
+- Conjunto S 631
+    Elementos cobertos: [19, 56, 92, 93, 102, 132, 134, 136, 145, 165, 170, 200]
+- Conjunto S 646
+    Elementos cobertos: [11, 45, 46, 50, 55, 86, 196]
+- Conjunto S 665
+    Elementos cobertos: [3, 6, 30, 62, 104, 120, 157, 195]
+- Conjunto S 688
+    Elementos cobertos: [9, 21, 45, 91, 126, 135, 183, 186]
+- Conjunto S 693
+    Elementos cobertos: [27, 52, 74, 86, 87, 124, 158, 170, 177, 193, 198]
+- Conjunto S 799
+    Elementos cobertos: [22, 35, 51, 55, 64, 67, 88, 90, 182]
+- Conjunto S 803
+    Elementos cobertos: [13, 106, 113, 151, 184]
+- Conjunto S 805
+    Elementos cobertos: [60, 102, 112]
+- Conjunto S 825
+    Elementos cobertos: [23, 119, 121, 125, 139, 155, 158, 172, 192]
+- Conjunto S 834
+    Elementos cobertos: [20, 34, 40, 44, 109, 110, 123, 137, 171]
+- Conjunto S 891
+    Elementos cobertos: [7, 36, 50, 181, 196, 198]
+- Conjunto S 892
+    Elementos cobertos: [54, 57, 86, 99, 129, 138]
+- Conjunto S 947
+    Elementos cobertos: [25, 48, 66, 75, 99, 115, 129, 197, 199]
+- Conjunto S 981
+    Elementos cobertos: [14, 65, 66, 83, 90, 126, 128, 139, 168]
 
 Detalhes da cobertura por elemento:
 Elemento 1: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 2: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 3: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 4: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 2: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 3: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 4: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 5: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 6: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 7: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 8: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 8: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 9: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 10: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 11: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 12: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 13: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 11: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 12: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 13: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 14: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 15: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 16: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 15: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 16: coberto 0.0 vez(es). Cobertura unica: Não
 Elemento 17: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 18: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 18: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 19: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 20: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 21: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 22: coberto 0.0 vez(es). Cobertura unica: Não
-Elemento 23: coberto 0.0 vez(es). Cobertura unica: Não
+Elemento 20: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 21: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 22: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 23: coberto 4.0 vez(es). Cobertura unica: Não
 Elemento 24: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 25: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 25: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 26: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 27: coberto 4.0 vez(es). Cobertura unica: Não
-Elemento 28: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 27: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 28: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 29: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 30: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 31: coberto 0.0 vez(es). Cobertura unica: Não
-Elemento 32: coberto 0.0 vez(es). Cobertura unica: Não
-Elemento 33: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 34: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 35: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 30: coberto 1.0 vez(es). Cobertura unica: Não
+Elemento 31: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 32: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 33: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 34: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 35: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 36: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 37: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 37: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 38: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 39: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 39: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 40: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 41: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 42: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 43: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 44: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 44: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 45: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 46: coberto 0.0 vez(es). Cobertura unica: Não
-Elemento 47: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 48: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 49: coberto 4.0 vez(es). Cobertura unica: Não
-Elemento 50: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 46: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 47: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 48: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 49: coberto 1.0 vez(es). Cobertura unica: Não
+Elemento 50: coberto 5.0 vez(es). Cobertura unica: Não
 Elemento 51: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 52: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 53: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 54: coberto 4.0 vez(es). Cobertura unica: Não
-Elemento 55: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 53: coberto 0.0 vez(es). Cobertura unica: Não
+Elemento 54: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 55: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 56: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 57: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 58: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 59: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 60: coberto 0.0 vez(es). Cobertura unica: Não
-Elemento 61: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 62: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 59: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 60: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 61: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 62: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 63: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 64: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 65: coberto 4.0 vez(es). Cobertura unica: Não
-Elemento 66: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 65: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 66: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 67: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 68: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 69: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 70: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 71: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 72: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 70: coberto 0.0 vez(es). Cobertura unica: Não
+Elemento 71: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 72: coberto 0.0 vez(es). Cobertura unica: Não
 Elemento 73: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 74: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 75: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 76: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 77: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 78: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 78: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 79: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 80: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 81: coberto 1.0 vez(es). Cobertura unica: Sim
@@ -936,122 +964,122 @@ Elemento 82: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 83: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 84: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 85: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 86: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 86: coberto 4.0 vez(es). Cobertura unica: Não
 Elemento 87: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 88: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 89: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 90: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 91: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 89: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 90: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 91: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 92: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 93: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 94: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 95: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 96: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 97: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 94: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 95: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 96: coberto 4.0 vez(es). Cobertura unica: Não
+Elemento 97: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 98: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 99: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 100: coberto 0.0 vez(es). Cobertura unica: Não
+Elemento 99: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 100: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 101: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 102: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 103: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 104: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 105: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 106: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 102: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 103: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 104: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 105: coberto 0.0 vez(es). Cobertura unica: Não
+Elemento 106: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 107: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 108: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 109: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 110: coberto 5.0 vez(es). Cobertura unica: Não
-Elemento 111: coberto 4.0 vez(es). Cobertura unica: Não
+Elemento 109: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 110: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 111: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 112: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 113: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 114: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 113: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 114: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 115: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 116: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 117: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 118: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 116: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 117: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 118: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 119: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 120: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 121: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 121: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 122: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 123: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 124: coberto 0.0 vez(es). Cobertura unica: Não
+Elemento 124: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 125: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 126: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 126: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 127: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 128: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 129: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 129: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 130: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 131: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 131: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 132: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 133: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 134: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 135: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 136: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 137: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 138: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 139: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 140: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 141: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 134: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 135: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 136: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 137: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 138: coberto 4.0 vez(es). Cobertura unica: Não
+Elemento 139: coberto 4.0 vez(es). Cobertura unica: Não
+Elemento 140: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 141: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 142: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 143: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 144: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 145: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 146: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 147: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 148: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 148: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 149: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 150: coberto 4.0 vez(es). Cobertura unica: Não
-Elemento 151: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 152: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 153: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 150: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 151: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 152: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 153: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 154: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 155: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 156: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 157: coberto 0.0 vez(es). Cobertura unica: Não
-Elemento 158: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 159: coberto 4.0 vez(es). Cobertura unica: Não
+Elemento 157: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 158: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 159: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 160: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 161: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 162: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 163: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 164: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 164: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 165: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 166: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 167: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 168: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 169: coberto 4.0 vez(es). Cobertura unica: Não
-Elemento 170: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 171: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 172: coberto 5.0 vez(es). Cobertura unica: Não
-Elemento 173: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 174: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 175: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 168: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 169: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 170: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 171: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 172: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 173: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 174: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 175: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 176: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 177: coberto 4.0 vez(es). Cobertura unica: Não
+Elemento 177: coberto 3.0 vez(es). Cobertura unica: Não
 Elemento 178: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 179: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 180: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 181: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 181: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 182: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 183: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 183: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 184: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 185: coberto 0.0 vez(es). Cobertura unica: Não
+Elemento 185: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 186: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 187: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 188: coberto 3.0 vez(es). Cobertura unica: Não
+Elemento 187: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 188: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 189: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 190: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 191: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 192: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 193: coberto 2.0 vez(es). Cobertura unica: Não
-Elemento 194: coberto 3.0 vez(es). Cobertura unica: Não
-Elemento 195: coberto 0.0 vez(es). Cobertura unica: Não
-Elemento 196: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 191: coberto 2.0 vez(es). Cobertura unica: Não
+Elemento 192: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 193: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 194: coberto 0.0 vez(es). Cobertura unica: Não
+Elemento 195: coberto 1.0 vez(es). Cobertura unica: Sim
+Elemento 196: coberto 2.0 vez(es). Cobertura unica: Não
 Elemento 197: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 198: coberto 0.0 vez(es). Cobertura unica: Não
+Elemento 198: coberto 4.0 vez(es). Cobertura unica: Não
 Elemento 199: coberto 1.0 vez(es). Cobertura unica: Sim
-Elemento 200: coberto 2.0 vez(es). Cobertura unica: Não
-Cobertura media dos elementos: 1.59
+Elemento 200: coberto 1.0 vez(es). Cobertura unica: Sim
+Cobertura media dos elementos: 1.36
 
 
 
@@ -1080,10 +1108,16 @@ Status: Stopped on time limit
 Função Objetivo: 258.00
 Limitante Superior: 300.00
 Gap de integralidade: 14.00%
-Time (CPU seconds): 3600.07
-Time (Wallclock seconds): 3600.07
-Total time (CPU seconds): 3600.07
-Total time (Wallclock seconds): 3600.07
+Número de nós gerados: 1179261
+Número de iterações: 64432293
+Time (CPU seconds): 3600.06
+Time (Wallclock seconds): 3600.06
+Total time (CPU seconds): 3600.06
+Total time (Wallclock seconds): 3600.06
+
+Tempo em horas:
+Tempo de execução em horas (CPU): 1h 0min 0s 60ms
+Tempo total de execução em horas (Wallclock): 1h 0min 0s 60ms
 
 Conjuntos selecionados:
 - Conjunto S 29
@@ -1601,10 +1635,16 @@ Status: Stopped on time limit
 Função Objetivo: 64.00
 Limitante Superior: 300.00
 Gap de integralidade: 79.00%
-Time (CPU seconds): 3600.60
-Time (Wallclock seconds): 3600.60
-Total time (CPU seconds): 3600.60
-Total time (Wallclock seconds): 3600.60
+Número de nós gerados: 22157
+Número de iterações: 13816144
+Time (CPU seconds): 3600.24
+Time (Wallclock seconds): 3600.24
+Total time (CPU seconds): 3600.24
+Total time (Wallclock seconds): 3600.24
+
+Tempo em horas:
+Tempo de execução em horas (CPU): 1h 0min 0s 240ms
+Tempo total de execução em horas (Wallclock): 1h 0min 0s 240ms
 
 Conjuntos selecionados:
 - Conjunto S 51
@@ -2002,10 +2042,16 @@ Status: Stopped on time limit
 Função Objetivo: 261.00
 Limitante Superior: 400.00
 Gap de integralidade: 35.00%
-Time (CPU seconds): 3600.04
-Time (Wallclock seconds): 3600.04
-Total time (CPU seconds): 3600.05
-Total time (Wallclock seconds): 3600.05
+Número de nós gerados: 216305
+Número de iterações: 26670178
+Time (CPU seconds): 3600.06
+Time (Wallclock seconds): 3600.06
+Total time (CPU seconds): 3600.06
+Total time (Wallclock seconds): 3600.06
+
+Tempo em horas:
+Tempo de execução em horas (CPU): 1h 0min 0s 60ms
+Tempo total de execução em horas (Wallclock): 1h 0min 0s 60ms
 
 Conjuntos selecionados:
 - Conjunto S 5
@@ -2599,10 +2645,16 @@ Status: Stopped on time limit
 Função Objetivo: 41.00
 Limitante Superior: 400.00
 Gap de integralidade: 90.00%
-Time (CPU seconds): 3602.58
-Time (Wallclock seconds): 3602.58
-Total time (CPU seconds): 3602.58
-Total time (Wallclock seconds): 3602.58
+Número de nós gerados: 11872
+Número de iterações: 6179090
+Time (CPU seconds): 3601.61
+Time (Wallclock seconds): 3601.61
+Total time (CPU seconds): 3601.61
+Total time (Wallclock seconds): 3601.61
+
+Tempo em horas:
+Tempo de execução em horas (CPU): 1h 0min 1s 610ms
+Tempo total de execução em horas (Wallclock): 1h 0min 1s 610ms
 
 Conjuntos selecionados:
 - Conjunto S 45
@@ -3116,10 +3168,16 @@ Status: Stopped on time limit
 Função Objetivo: 44.00
 Limitante Superior: 49.98
 Gap de integralidade: 12.00%
-Time (CPU seconds): 3600.18
-Time (Wallclock seconds): 3600.18
-Total time (CPU seconds): 3600.18
-Total time (Wallclock seconds): 3600.18
+Número de nós gerados: 3258618
+Número de iterações: 67697562
+Time (CPU seconds): 3600.17
+Time (Wallclock seconds): 3600.17
+Total time (CPU seconds): 3600.17
+Total time (Wallclock seconds): 3600.17
+
+Tempo em horas:
+Tempo de execução em horas (CPU): 1h 0min 0s 170ms
+Tempo total de execução em horas (Wallclock): 1h 0min 0s 170ms
 
 Conjuntos selecionados:
 - Conjunto S 150
@@ -3194,5 +3252,10 @@ Elemento 49: coberto 1.0 vez(es). Cobertura unica: Sim
 Elemento 50: coberto 1.0 vez(es). Cobertura unica: Sim
 Cobertura media dos elementos: 1.20
 
-Tempo total de execção da(s) 8 instância(s) (CPU seconds): 23129.1900 segundos
-Tempo total de execção da(s) 8 instância(s) (Wallclock seconds): 23129.1900 segundos
+Tempo em segundos:
+Tempo total de execção da(s) 8 instância(s) (CPU seconds): 23141.7800 segundos
+Tempo total de execção da(s) 8 instância(s) (Wallclock seconds): 23141.7800 segundos
+
+Tempo em horas:
+Tempo total de execção da(s) 8 instância(s) (CPU seconds): 6h 25min 41s 780ms
+Tempo total de execção da(s) 8 instância(s) (Wallclock seconds): 6h 25min 41s 780ms

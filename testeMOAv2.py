@@ -281,10 +281,10 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
         exit(1)
 
 def converter_tempo(segundos_totais):
-    horas = int(segundos_totais // 3600)
-    minutos = int((segundos_totais % 3600) // 60)
+    horas = int(segundos_totais / 3600)
+    minutos = int((segundos_totais % 3600) / 60)
     segundos = int(segundos_totais % 60)
-    milissegundos = int((segundos_totais - segundos) * 1000)
+    milissegundos = int(round((segundos_totais - int(segundos_totais)) * 1000))
 
     return horas, minutos, segundos, milissegundos
 
@@ -632,13 +632,13 @@ def main():
     arquivo_leitura[qtd_arquivos_leitura].nome = "TESTE"
 
     # Tempo máximo de excução em milisegundos (milissegundos -> segundos/1000).
-    tempo_max = 3600000     
+    tempo_max = 1000     
     
     # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "matriz" (teste=1).
     teste = 0
 
     # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
-    escrita = 1
+    escrita = 0
 
     # Define a saida de uma descrição detalhada, no terminal, dos subconjuntos escolhidos e elementos cobertos (opicional)
     output_padrao_completo = 0
