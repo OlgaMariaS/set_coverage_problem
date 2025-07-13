@@ -3,9 +3,8 @@ import os
 import re
 from typing import List
 
-# LEITURA, RESOLUÇÃO E ESCRITA DE INSTÂNCIAS SCP
 
-# Classe que representa um subconjunto, com seu ID, peso, elementos cobertos e variável de decisão
+# Classe que representa um subconjunto com seu ID, peso, elementos cobertos e variável de decisão
 class Subconjunto:
     def __init__(self, id):
         self.id = id
@@ -18,13 +17,13 @@ class Subconjunto:
 class Elemento:
     def __init__(self, id):
         self.id = id
-        self.num_coberturas = 0
+        self.num_coberturas      = 0
         # Variáveis y
         self.var_cobertura_unica = 0
         # Variáveis z
         self.var_cobertura_total = 0
 
-# Classe que representa um arquivo scp.txt
+# Classe que representa um arquivo de instancia do SCP (Set Covering Problem)
 class Arquivo_scp:
     def __init__(self, id):
         self.id = id
@@ -37,14 +36,12 @@ class Arquivo_scp:
 
 class Tempo_execução:
     def __init__(self):
-        self.cpu_time_solver = 0
-        self.wall_time_solver = 0
-        self.total_wall_time = 0
-        self.total_cpu_time = 0
+        self.cpu_time_solver    = 0
+        self.wall_time_solver   = 0
+        self.total_wall_time    = 0
+        self.total_cpu_time     = 0
 
-# Função que abre o arquivo de entrada e lê todas as linhas
-# Retorna uma lista de strings com o conteúdo do arquivo
-# Se não conseguir abrir, encerra o programa
+# Le o arquivo de instancia e retorna uma lista de strings
 def abrir_arquivo(arquivo_leitura):
         try:
             with open(arquivo_leitura.caminho, "r") as arquivo_leitura.arquivo:
@@ -62,26 +59,21 @@ def abrir_arquivo(arquivo_leitura):
             print("\nERRO! O arquivo não foi aberto!")
             exit(1)
         
-
-# Função que lê a primeira linha do arquivo contendo:
-# - número de linhas (elementos);
-# - número de colunas (subconjuntos);
-# Retorna os dois valores como inteiros
+# Lê a primeira linha da instancia contendo:
+    # - número de linhas (elementos);
+    # - número de colunas (subconjuntos);
 def ler_cabecalho(linhas_arquivo):
     primeira_linha = linhas_arquivo[0].strip().split()
     linhas = int(primeira_linha[0])
     colunas = int(primeira_linha[1])
     return linhas, colunas
 
-
 # Lê o conteudo da instância, armazenado no 'linhas_arquivo', contendo:
-# - pesos dos subconjuntos;
-# - quantidades de cobertura de cada elemento;
-# - subconjuntos que cobrem cada elemento;
+    # - pesos dos subconjuntos;
+    # - quantidades de cobertura de cada elemento;
+    # - subconjuntos que cobrem cada elemento;
 # Retorna: Lista de subconjuntos, Lista de elementos e Matriz de cobertura, nesta ordem.
 def ler_conteudo(l, c, linhas_arquivo):
-    # Inicializa variaveis:
-
     # Lista dos elementos(linhas)
     elementos = [Elemento(id=i) for i in range(l)]
 
@@ -97,7 +89,7 @@ def ler_conteudo(l, c, linhas_arquivo):
     # Numero de coberturas realizadas para o elemento atual
     num_cobertos_atual = 0
 
-    # Variáveis de auxílio
+    # Auxiliares
     i = 0
     j = 0
 
@@ -115,9 +107,8 @@ def ler_conteudo(l, c, linhas_arquivo):
             i += 1
         linha_atual += 1
         
-
     # Leitura das coberturas de cada elemento
-    # 'i' representa o numeros de elementos lidos
+        # 'i' representa o numeros de elementos lidos
     i = 0
     while linha_atual < len(linhas_arquivo):
         
@@ -139,12 +130,19 @@ def ler_conteudo(l, c, linhas_arquivo):
                 subconjuntos[j-1].elementos_cobertos.append(i)
                 num_cobertos_atual += 1
         
-        # Avança para a próxima linha]
         linha_atual += 1
         
     return subconjuntos, elementos, matriz
 
-# Função executada para a gravação das execuções do solver no 'arquivo_escrita', definido na main()
+def converter_tempo(segundos_totais):
+    horas = int(segundos_totais / 3600)
+    minutos = int((segundos_totais % 3600) / 60)
+    segundos = int(segundos_totais % 60)
+    milissegundos = int(round((segundos_totais - int(segundos_totais)) * 1000))
+
+    return horas, minutos, segundos, milissegundos
+
+# Grava as execuções do solver no 'arquivo_escrita' definido na main()
 def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconjuntos: List[Subconjunto], matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo,  media_cobertura_total, tempo_execucao, padrao_log):
 
     if arquivo_leitura.id == 0:
@@ -152,17 +150,15 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
     else:
         tipo_leitura = "a"
 
-    # Abertura do arquivo de escrita
     try:
         with open(arquivo_escrita, tipo_leitura, encoding="utf-8") as escrita:
             # Alterna a escrita inicial dependendo se for um teste ou não
-
             if arquivo_leitura.nome == "TESTE":
                 escrita.write(f"\n\n\n\n\t*****TESTE*****")
                 escrita.write("\n\nFunção Objetiva:")
             else:
                 escrita.write("\n\n\n\nFunção Objetiva:")
-            # Elementos centrais do solver 
+        
             escrita.write("\n                   Max ∑ yᵢ                             para i=1 até Linhas")
             escrita.write("\nSujeito a:") 
             escrita.write("\n                   ∑ aᵢⱼ·xⱼ = zᵢ                        ∀i, 1 ≤ i ≤ Linhas, para j=1 até Colunas")
@@ -189,7 +185,6 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
             
             escrita.write("\nResolvendo com o solver " + versao_solver)
 
-
             if media_cobertura_total >= 1:
                 if  media_cobertura_total == 1:
                     escrita.write("\n\nSolucao otima encontrada!")
@@ -197,18 +192,16 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
                     escrita.write("\n\nUma solucao factivel foi encontrada.")
         
                 if padrao_log:
-                    # Iniciação variáveis do log
-
                     # Status da solução
                     status = padrao_log.group("status")
 
-                    # Limitante superior (LS) do Branch-and-Bound (Branch-and-cut nesse caso)
+                    # Limitante superior (LS) do Branch-and-cut
                     limitante_superior = float(padrao_log.group("LS")) if padrao_log.group("LS") else 0.0 
 
                     # Gap de integralidade -> Diferença percentual entre o valor da função objetivo e o limitante superior
                     gap = abs(float(padrao_log.group("gap"))) if padrao_log.group("gap") else 0.0
 
-                    # Número de nós criados pelo Branch-and-Bound (Branch-and-cut nesse caso)
+                    # Número de nós criados pelo Branch-and-cut
                     num_nos = padrao_log.group("nos") if padrao_log.group("nos") else 0.0
 
                     # Número de iterações realizadas pelo Solver
@@ -280,18 +273,8 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
         print("\nERRO! O arquivo de escrita não foi aberto!")
         exit(1)
 
-def converter_tempo(segundos_totais):
-    horas = int(segundos_totais / 3600)
-    minutos = int((segundos_totais % 3600) / 60)
-    segundos = int(segundos_totais % 60)
-    milissegundos = int(round((segundos_totais - int(segundos_totais)) * 1000))
-
-    return horas, minutos, segundos, milissegundos
-
 # Executa o solver
 def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output_padrao_completo, escrita, arquivo_escrita):
-    # Inicialização das variaveis:
-
     # Quantidade de arquivos no vetor arquivo leitura, menos o 'TESTE'
     qtd_arquivos = arquivo_leitura[len(arquivo_leitura)-1].id
 
@@ -351,12 +334,11 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
     else:
         qtd = 0
 
-
     while qtd < qtd_arquivos:
         i = 0
         j = 0
 
-         # Arquivo que armazenará o log de cada execução
+        # Arquivo que armazenará o log de cada execução
         caminho_log = "cbc_log_"
 
         # Instancia o solver CBC
@@ -440,7 +422,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
         # Define tempo máximo de execução do solver
         solver.set_time_limit(tempo_max)
 
-        # Define a saida de um output muito detalhado do 'branch-and-bound' ('branch-and-cut' no caso do solver CBC)
+        # Define a saida de um output muito detalhado do branch-and-cut
         solver.EnableOutput()
 
         versao_solver = solver.SolverVersion()
@@ -482,13 +464,13 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             # Valor da função objetivo
             funcao_objetivo = funcao_objetivo.Value()
 
-            # Limitante superior (LS) do Branch-and-Bound (Branch-and-cut nesse caso)
+            # Limitante superior (LS) do Branch-and-cut
             limitante_superior = float(padrao_log.group("LS")) if padrao_log.group("LS") else 0.0 
 
             # Gap de integralidade -> Diferença percentual entre o valor da função objetivo e o limitante superior
             gap = abs(float(padrao_log.group("gap"))) if padrao_log.group("gap") else 0.0
 
-            # Número de nós criados pelo Branch-and-Bound (Branch-and-cut nesse caso)
+            # Número de nós criados pelo Branch-and-cut
             num_nos = padrao_log.group("nos") if padrao_log.group("nos") else 0.0
 
             # Número de iterações realizadas pelo Solver
@@ -552,7 +534,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
                     coberto_unicamente = "Sim" if elementos[i].var_cobertura_unica > 0.5 else "Não"
                     print(f'Elemento {i+1}: coberto {int(elementos[i].var_cobertura_total)} vez(es). Cobertura única: {coberto_unicamente}')
 
-            print(f"\nCobertura média dos elementos: {media_cobertura_total:.2f}")
+            print(f"\n\nCobertura média dos elementos: {media_cobertura_total:.2f}")
         else:
             print('\nO problema não tem solução.')
             funcao_objetivo = 0
@@ -567,7 +549,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             if qtd == len(arquivo_leitura) - 1:
                 arquivo_escrita = "testes.txt"
                 
-            # Grava o retorno do solver no 'arquivo_escrita'
+            # Grava o retorno do solver 
             escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao[qtd], padrao_log)
 
         qtd += 1
@@ -601,9 +583,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
     return
 
 def main():
-    # Parametros básicos para a execução:
-    
-    # Nome do arquivo no qual o resultado dos testes poderá ser escrito (opcional).
+    # Nome do arquivo no qual o resultado serão escritos.
     arquivo_escrita = "resultados.txt"
 
     # Caminho da pasta onde o script está
