@@ -107,209 +107,17 @@ Optimal - objective value 300
 Optimal - objective value 300
 0  Obj 300
 Optimal - objective value 300
-Optimal objective 300 - 0 iterations time 1.432, Idiot 1.40
-Continuous objective value is 300 - 1.44 seconds
+Optimal objective 300 - 0 iterations time 1.312, Idiot 1.28
+Continuous objective value is 300 - 1.31 seconds
 Optimal - objective value 300
 Optimal - objective value 300
-Presolve 663 (-237) rows, 3363 (-238) columns and 81116 (34710) elements
 Optimal - objective value 300
-Presolve 600 (-63) rows, 3300 (-63) columns and 90412 (9296) elements
-0  Obj 300
-Optimal - objective value 300
-Optimal - objective value 300
-processed model has 600 rows, 3300 columns (3300 integer (3300 of which binary)) and 90412 elements
-0  Obj 300
-Optimal - objective value 300
-Optimal - objective value 300
-Cutoff increment increased from 1e-05 to 0.9999
 Optimal - objective value -300
-Initial state - 300 integers unsatisfied sum - 21.2074
-Optimal - objective value -300
-Optimal - objective value -300
-0  Obj 7.4894543 Dual inf 31375.263 (1557)
-Perturbing problem by 0.001% of 5.2952118 - largest nonzero change 6.2871352e-05 ( 0.0007483947%) - largest zero change 0
-52  Obj 6.7263725 Dual inf 220351.93 (1670)
-145  Obj 5.0117113 Dual inf 348978.75 (1695)
-201  Obj 4.3454287 Dual inf 103641.6 (1570)
-275  Obj 3.6499009 Dual inf 107832.15 (1632)
-368  Obj 2.7179053 Dual inf 132455.94 (1620)
-439  Obj 2.3667616 Dual inf 59718.124 (1559)
-507  Obj 1.956761 Dual inf 181863.76 (1643)
-566  Obj 1.6227499 Dual inf 23244.176 (1431)
-658  Obj 1.2381676 Dual inf 28619.332 (1485)
-751  Obj 0.86307813 Dual inf 32585.477 (1485)
-811  Obj 0.72341079 Dual inf 12418.369 (1307)
-881  Obj 0.59892657 Dual inf 5878.732 (1139)
-960  Obj 0.45942586 Dual inf 8169.2415 (1196)
-1016  Obj 0.35520376 Dual inf 13476.144 (1299)
-1069  Obj 0.2624459 Dual inf 12572.889 (1256)
-1133  Obj 0.20779327 Dual inf 33574.121 (1501)
-1225  Obj 0.16010951 Dual inf 679.47012 (512)
-1297  Obj 0.1364374 Dual inf 7214.4166 (1175)
-1369  Obj 0.11565855 Dual inf 2243.4881 (853)
-1462  Obj 0.08397655 Dual inf 207.83287 (287)
-1533  Obj 0.077103356 Dual inf 2.7283947 (37)
-1549  Obj 0.076847901
-1549  Obj 0.076849952
-Optimal - objective value 0.076849952
-Pass   1: suminf.   14.11639 (299) obj. 299.999 iterations 1549
-0  Obj 9.7672718 Dual inf 21827.269 (1302)
-Perturbing problem by 0.001% of 5.2952118 - largest nonzero change 6.2717111e-05 ( 0.00074655868%) - largest zero change 0
-65  Obj 9.0905871 Dual inf 130709.06 (1536)
-146  Obj 8.4053591 Dual inf 23589.838 (1290)
-208  Obj 7.7714831 Dual inf 57231.023 (1520)
-282  Obj 6.9048176 Dual inf 74885.603 (1499)
-346  Obj 6.2729191 Dual inf 18335.504 (1255)
-406  Obj 5.6946744 Dual inf 64537.436 (1473)
-499  Obj 4.7537951 Dual inf 156067.49 (1554)
-569  Obj 3.9557682 Dual inf 47731.63 (1397)
-658  Obj 2.7464938 Dual inf 100702.06 (1532)
-743  Obj 1.0565775 Dual inf 42670.184 (1320)
-820  Obj -0.65268037 Dual inf 142595.97 (1503)
-889  Obj -1.9928686 Dual inf 37888.531 (1272)
-952  Obj -3.8600938 Dual inf 25888.986 (1268)
-1011  Obj -5.6177437 Dual inf 17561.874 (1126)
-1067  Obj -6.5277251 Dual inf 1123.7349 (430)
-1120  Obj -6.9243695 Dual inf 16.875145 (32)
-1153  Obj -6.9686095
-1153  Obj -6.9686022
-Optimal - objective value -6.9686022
-Pass   2: suminf.    7.99075 (295) obj. 299.928 iterations 1153
-0  Obj 3.6431382 Dual inf 15002.659 (1097)
-Perturbing problem by 0.001% of 5.2952118 - largest nonzero change 6.121715e-05 ( 0.00072870376%) - largest zero change 1.1059178e-05
-55  Obj -0.026922386 Dual inf 67826.632 (1453)
-113  Obj -3.647789 Dual inf 234961.99 (1230)
-167  Obj -5.8829895 Dual inf 148465.24 (1698)
-224  Obj -10.101538 Dual inf 16462.805 (905)
-275  Obj -12.175348 Dual inf 43138.914 (1094)
-324  Obj -16.352159 Dual inf 10242.722 (771)
-354  Obj -16.352165
-354  Obj -16.35209
-Optimal - objective value -16.35209
-Pass   3: suminf.    0.15967 (257) obj. 299.84 iterations 354
-0  Obj 12.566859 Dual inf 0.51733671 (27)
-Perturbing problem by 0.001% of 5.2952118 - largest nonzero change 5.9125108e-05 ( 0.0018378647%) - largest zero change 1.1030254e-05
-26  Obj -14.892616
-26  Obj -14.892616
-Optimal - objective value -14.892616
-Pass   4: suminf.    0.12933 (231) obj. 273.871 iterations 26
-0  Obj 1.6893708 Dual inf 0.29759571 (16)
-Perturbing problem by 0.001% of 5.2952118 - largest nonzero change 6.0394117e-05 ( 0.0017603936%) - largest zero change 1.093178e-05
-16  Obj -14.101622
-16  Obj -14.101622
-Optimal - objective value -14.101622
-Pass   5: suminf.    0.11433 (216) obj. 258.886 iterations 16
-0  Obj -0.054296833 Dual inf 0.24715303 (13)
-Perturbing problem by 0.001% of 5.2952118 - largest nonzero change 5.7036225e-05 ( 0.0019085%) - largest zero change 1.1294702e-05
-13  Obj -13.57796
-13  Obj -13.57796
-Optimal - objective value -13.57796
-Pass   6: suminf.    0.10133 (203) obj. 245.899 iterations 13
-0  Obj -6.8754748 Dual inf 0.11886675 (7)
-Perturbing problem by 0.001% of 5.2952118 - largest nonzero change 5.5672708e-05 ( 0.0018999521%) - largest zero change 1.1112519e-05
-7  Obj -13.226717
-7  Obj -13.226717
-Optimal - objective value -13.226717
-Pass   7: suminf.    0.09533 (197) obj. 239.905 iterations 7
-0  Obj -13.226717
-Optimal - objective value -13.226717
-Pass   8: suminf.    0.09533 (197) obj. 239.905 iterations 0
-0  Obj 242.37274 Dual inf 6503.0643 (866)
-Perturbing problem by 0.001% of 5.2952118 - largest nonzero change 5.81451e-05 ( 0.0018434645%) - largest zero change 1.1002719e-05
-52  Obj 229.57811 Dual inf 2622.378 (492)
-238  Obj 41.593503 Dual inf 240.73378 (62)
-300  Obj -23.08811
-300  Obj -23.087017
-Optimal - objective value -23.087017
-Pass   9: suminf.    0.88333 (221) obj. 220.117 iterations 300
-0  Obj -1.5865299 Dual inf 0.38122203 (20)
-20  Obj -22.336773
-Optimal - objective value -22.336773
-Pass  10: suminf.    0.75867 (201) obj. 200.241 iterations 20
-0  Obj 3.7900497 Dual inf 0.46006447 (24)
-24  Obj -21.273362
-Optimal - objective value -21.273362
-Pass  11: suminf.    0.62967 (177) obj. 176.37 iterations 24
-0  Obj 7.797107 Dual inf 0.51424853 (27)
-27  Obj -20.238127
-Optimal - objective value -20.238127
-Pass  12: suminf.    0.50367 (150) obj. 149.496 iterations 27
-0  Obj 7.6433321 Dual inf 0.49396829 (26)
-26  Obj -19.297398
-Optimal - objective value -19.297398
-Pass  13: suminf.    0.39300 (124) obj. 123.607 iterations 26
-0  Obj 1.2555551 Dual inf 0.36251558 (19)
-19  Obj -18.520921
-Optimal - objective value -18.520921
-Pass  14: suminf.    0.31700 (105) obj. 104.683 iterations 19
-0  Obj -7.3588419 Dual inf 0.19390557 (10)
-10  Obj -17.939882
-Optimal - objective value -17.939882
-Pass  15: suminf.    0.27967 (95) obj. 94.7203 iterations 10
-0  Obj -5.9704129 Dual inf 0.21045216 (11)
-11  Obj -17.455147
-Optimal - objective value -17.455147
-Pass  16: suminf.    0.23933 (84) obj. 83.7607 iterations 11
-0  Obj 11.700265 Dual inf 0.51436355 (27)
-27  Obj -16.377441
-Optimal - objective value -16.377441
-Pass  17: suminf.    0.14800 (57) obj. 56.852 iterations 27
-0  Obj 1.441316 Dual inf 0.30966795 (16)
-16  Obj -15.468063
-Optimal - objective value -15.468063
-Pass  18: suminf.    0.09900 (41) obj. 40.901 iterations 16
-0  Obj 12.229256 Dual inf 0.48232929 (25)
-25  Obj -14.119403
-Optimal - objective value -14.119403
-Pass  19: suminf.    0.03300 (16) obj. 15.967 iterations 25
-0  Obj -1.9751613 Dual inf 0.21175027 (11)
-11  Obj -13.547282
-Optimal - objective value -13.547282
-Pass  20: suminf.    0.00833 (5) obj. 4.99167 iterations 11
-Solution found of -0
-Rounding solution of 43 is better than previous of -0
-
-0  Obj -300
-Optimal - objective value -300
-Before mini branch and bound, 2256 integers at bound fixed and 0 continuous
-Presolve 600 (0) rows, 1044 (-2256) columns and 25370 (-65042) elements
-Presolve 600 (0) rows, 1044 (-2256) columns and 25370 (-65042) elements
-Presolve 600 (0) rows, 1044 (0) columns and 25370 (0) elements
-processed model has 600 rows, 1044 columns (1044 integer (1044 of which binary)) and 25370 elements
-Full problem 600 rows 3300 columns, reduced to 600 rows 1044 columns
-At root node, 0 cuts changed objective from 300 to 300 in 1 passes
-Cut generator 0 (Probing) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)
-After 0 nodes, 1 on tree, -1e+50 best solution, best possible 300 (4.64 seconds)
-Exiting on maximum time
-Partial search - best objective -1e+50 (best possible 300), took 3170 iterations and 44 nodes (9.94 seconds)
-Strong branching done 532 times (5101 iterations), fathomed 0 nodes and fixed 0 variables
-Maximum depth 44, 0 variables fixed on reduced cost
-Mini branch and bound did not improve solution (9.95 seconds)
-Round again with cutoff of 69.5999
-Optimal - objective value -300
-Optimal - objective value -300
-No solution found this major pass
-After 9.98 seconds - Feasibility pump exiting with objective of 43 - took 8.26 seconds
-Optimal - objective value -43
-Integer solution of 43 found by feasibility pump after 0 iterations and 0 nodes (9.99 seconds)
 Optimal - objective value -300
 Optimal - objective value -300
 Exiting on maximum time
-Partial search - best objective 43 (best possible 300), took 0 iterations and 0 nodes (10.04 seconds)
+Partial search - best objective -1e+50 (best possible 300), took 0 iterations and 0 nodes (1.47 seconds)
 Maximum depth 0, 0 variables fixed on reduced cost
-Optimal - objective value -43
-Perturbing problem by 0.001% of 1e-08 - largest nonzero change 0 ( 0%) - largest zero change 0
-0  Obj -300 Primal inf 4733.6077 (557)
-54  Obj -299.97033 Primal inf 2414.0422 (532)
-112  Obj -298.95441 Primal inf 2107.5184 (508)
-163  Obj -297.76464 Primal inf 197901.92 (487)
-229  Obj -294.91135 Primal inf 1128.073 (438)
-280  Obj -288.87672 Primal inf 670.24624 (371)
-340  Obj -255.86333 Primal inf 216.86398 (216)
-433  Obj -165.89667 Primal inf 126.89732 (126)
-526  Obj -74.963667 Primal inf 31.963663 (32)
-560  Obj -43
-Optimal - objective value -43
 Cuts at root node changed objective from 300 to 300
 Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 Gomory was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
@@ -319,29 +127,15 @@ MixedIntegerRounding2 was tried 0 times and created 0 cuts of which 0 were activ
 FlowCover was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 TwoMirCuts was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
 ZeroHalf was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
-Optimal - objective value 43
-Optimal - objective value 43
-Presolve 0 (-900) rows, 0 (-3601) columns and 0 (-46406) elements
-Crash put 0 variables in basis, 0 dual infeasibilities
-Optimal - objective value 43
-After Postsolve, objective 43, infeasibilities - dual 0 (0), primal 0 (0)
-Optimal - objective value 43
-Perturbing problem by 0.001% of 1e-08 - largest nonzero change 0 ( 0%) - largest zero change 0
-0  Obj 43.999667 Primal inf 1517.5295 (5)
-Optimal - objective value 43
-Presolve 0 (-900) rows, 0 (-3601) columns and 0 (-46406) elements
-Optimal - objective value 43
-After Postsolve, objective 43, infeasibilities - dual 0 (0), primal 0 (0)
 
 Result - Stopped on time limit
 
-Objective value:                43.00000000
+No feasible solution found
 Upper bound:                    300.000
-Gap:                            -0.86
 Enumerated nodes:               0
 Total iterations:               0
-Time (CPU seconds):             10.18
-Time (Wallclock seconds):       10.18
+Time (CPU seconds):             1.47
+Time (Wallclock seconds):       1.47
 
-Total time (CPU seconds):       10.18   (Wallclock seconds):       10.18
+Total time (CPU seconds):       1.47   (Wallclock seconds):       1.47
 

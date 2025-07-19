@@ -130,109 +130,16 @@ Optimal - objective value 400
 Optimal - objective value 400
 0  Obj 400
 Optimal - objective value 400
-Optimal objective 400 - 0 iterations time 3.342, Idiot 3.27
-Continuous objective value is 400 - 3.34 seconds
+Optimal objective 400 - 0 iterations time 1.792, Idiot 1.75
+Continuous objective value is 400 - 1.79 seconds
 Optimal - objective value 400
 Optimal - objective value 400
-Presolve 963 (-237) rows, 4563 (-238) columns and 128751 (46608) elements
 Optimal - objective value 400
-Presolve 800 (-163) rows, 4400 (-163) columns and 161086 (32335) elements
-0  Obj 400
-Optimal - objective value 400
-Optimal - objective value 400
-processed model has 800 rows, 4400 columns (4400 integer (4400 of which binary)) and 161086 elements
-0  Obj 400
-Optimal - objective value 400
-Optimal - objective value 400
-Cutoff increment increased from 1e-05 to 0.9999
 Optimal - objective value -400
-Initial state - 400 integers unsatisfied sum - 21.3612
-Optimal - objective value -400
-Optimal - objective value -400
-0  Obj 3.1302193 Dual inf 30114.223 (1940)
-Perturbing problem by 0.001% of 6.0392921 - largest nonzero change 7.0302609e-05 ( 0.00078526648%) - largest zero change 0
-80  Obj 2.3391814 Dual inf 224059.33 (2190)
-133  Obj 1.4954958 Dual inf 198347.51 (2110)
-194  Obj 0.90038775 Dual inf 154263.53 (2083)
-256  Obj 0.29536555 Dual inf 312832.65 (2148)
-313  Obj -0.14211543 Dual inf 117634.56 (2116)
-388  Obj -0.80064618 Dual inf 71056.833 (2088)
-439  Obj -1.0726093 Dual inf 241193.37 (2154)
-504  Obj -1.3431375 Dual inf 429661.06 (2133)
-555  Obj -1.5299365 Dual inf 124771.23 (2108)
-624  Obj -1.8111909 Dual inf 53384.517 (1974)
-691  Obj -2.0532262 Dual inf 352117.65 (2127)
-751  Obj -2.2883158 Dual inf 41124.292 (1963)
-806  Obj -2.4569088 Dual inf 378431.04 (2184)
-878  Obj -2.6119685 Dual inf 111025.45 (2132)
-949  Obj -2.763336 Dual inf 46126.728 (1989)
-1006  Obj -2.8989504 Dual inf 70299.323 (2002)
-1061  Obj -2.9989061 Dual inf 29485.077 (1893)
-1114  Obj -3.098613 Dual inf 18272.631 (1791)
-1176  Obj -3.186801 Dual inf 44872.927 (1942)
-1230  Obj -3.2670315 Dual inf 19486.089 (1807)
-1286  Obj -3.3165517 Dual inf 250934.25 (2155)
-1349  Obj -3.408928 Dual inf 25249.338 (1825)
-1406  Obj -3.4943317 Dual inf 27718.239 (1861)
-1468  Obj -3.5657514 Dual inf 31229.008 (1895)
-1520  Obj -3.6410518 Dual inf 30529.606 (1838)
-1579  Obj -3.7078026 Dual inf 3869.8763 (1256)
-1632  Obj -3.7454004 Dual inf 8246.8634 (1511)
-1683  Obj -3.7785347 Dual inf 3419.4546 (1177)
-1743  Obj -3.8152407 Dual inf 36803.78 (1910)
-1804  Obj -3.8436698 Dual inf 6369.3391 (1437)
-1868  Obj -3.8722591 Dual inf 6330.7632 (1435)
-1937  Obj -3.8950311 Dual inf 5483.4868 (1414)
-2030  Obj -3.9195514 Dual inf 1475.7559 (886)
-2119  Obj -3.933238 Dual inf 127.56741 (269)
-2170  Obj -3.9464677 Dual inf 5934.137 (1406)
-2264  Obj -3.9690772 Dual inf 2971.9243 (1158)
-2363  Obj -3.9849534 Dual inf 917.29613 (721)
-2435  Obj -3.9926158 Dual inf 44.519364 (141)
-2505  Obj -3.994086
-2505  Obj -3.9940728 Primal inf 1.0432462e-07 (1) Dual inf 5.043382e+12 (2156)
-2510  Obj -3.9940728
-Optimal - objective value -3.9940728
-Pass   1: suminf.   14.64069 (397) obj. 399.999 iterations 2510
-0  Obj 10.974564 Dual inf 66123.757 (2004)
-Perturbing problem by 0.001% of 6.0392921 - largest nonzero change 7.0381892e-05 ( 0.00078615205%) - largest zero change 0
-61  Obj 10.440242 Dual inf 57249.66 (1944)
-117  Obj 9.9622207 Dual inf 437195.18 (2143)
-169  Obj 9.6557609 Dual inf 153543.33 (2039)
-238  Obj 9.3229954 Dual inf 68838.896 (1915)
-290  Obj 8.979088 Dual inf 374902.48 (2129)
-347  Obj 8.5833072 Dual inf 96596.75 (2004)
-416  Obj 8.1419361 Dual inf 32865.202 (1714)
-483  Obj 7.7008335 Dual inf 173182.18 (2046)
-569  Obj 7.2963524 Dual inf 434348.62 (2114)
-625  Obj 7.0525559 Dual inf 974897.67 (2134)
-691  Obj 6.5824523 Dual inf 948824.13 (2124)
-766  Obj 6.175194 Dual inf 358517.35 (2056)
-828  Obj 5.9296612 Dual inf 544114.64 (2091)
-927  Obj 5.0750083 Dual inf 78447.567 (1913)
-1016  Obj 4.1544999 Dual inf 179001.49 (1969)
-1098  Obj 3.324029 Dual inf 121561.5 (1992)
-1197  Obj 2.0955456 Dual inf 135682.21 (1962)
-1293  Obj 0.69444284 Dual inf 498483.79 (2030)
-1380  Obj -1.2073414 Dual inf 110624.05 (1996)
-1463  Obj -2.9636981 Dual inf 47529.288 (1746)
-1541  Obj -4.9290095 Dual inf 122298.39 (1888)
-1613  Obj -6.6987656 Dual inf 118470.74 (1869)
-1684  Obj -8.1441522 Dual inf 34595.099 (1546)
-1747  Obj -9.2321755 Dual inf 15373.34 (1350)
-1809  Obj -10.839273 Dual inf 45007.479 (1509)
-1872  Obj -11.506222 Dual inf 5448.8839 (981)
-1929  Obj -11.765626 Dual inf 4.1177093 (16)
-1950  Obj -11.773126
-1950  Obj -11.773096
-Optimal - objective value -11.773096
-Pass   2: suminf.    7.95936 (399) obj. 399.898 iterations 1950
-No solution found this major pass
-After 9.94 seconds - Feasibility pump exiting - took 5.91 seconds
 Optimal - objective value -400
 Optimal - objective value -400
 Exiting on maximum time
-Partial search - best objective -1e+50 (best possible 400), took 0 iterations and 0 nodes (10.08 seconds)
+Partial search - best objective -1e+50 (best possible 400), took 0 iterations and 0 nodes (2.00 seconds)
 Maximum depth 0, 0 variables fixed on reduced cost
 Cuts at root node changed objective from 400 to 400
 Probing was tried 0 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
@@ -250,8 +157,8 @@ No feasible solution found
 Upper bound:                    400.000
 Enumerated nodes:               0
 Total iterations:               0
-Time (CPU seconds):             10.08
-Time (Wallclock seconds):       10.08
+Time (CPU seconds):             2.01
+Time (Wallclock seconds):       2.01
 
-Total time (CPU seconds):       10.09   (Wallclock seconds):       10.09
+Total time (CPU seconds):       2.01   (Wallclock seconds):       2.01
 

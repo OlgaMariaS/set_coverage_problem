@@ -72,7 +72,7 @@ Objective value:                5.00000000
 Enumerated nodes:               0
 Total iterations:               0
 Time (CPU seconds):             0.02
-Time (Wallclock seconds):       0.02
+Time (Wallclock seconds):       0.01
 
 Total time (CPU seconds):       0.02   (Wallclock seconds):       0.02
 

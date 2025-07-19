@@ -1,4 +1,5 @@
 from ortools.linear_solver import pywraplp
+import sys
 import os
 import re
 from typing import List
@@ -448,21 +449,21 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
 
         # Cria o arquivo de log e redireciona a saída do solver para ele
         with open(caminho_log, "w", encoding="utf-8") as arquivo_log:
-            # Salva os descritores originais de stdout e stderr
-            stdout_original= os.dup(1)
-            stderr_original = os.dup(2)
-
-            # Redireciona os descritores para o arquivo
-            os.dup2(arquivo_log.fileno(), 1)
-            os.dup2(arquivo_log.fileno(), 2)
-
             try:
-                # Execução do solver com saída redirecionada
+                # Salva os descritores originais
+                stdout_original = os.dup(sys.stdout.fileno())
+                stderr_original = os.dup(sys.stderr.fileno())
+
+                os.dup2(arquivo_log.fileno(), sys.stdout.fileno())
+                os.dup2(arquivo_log.fileno(), sys.stderr.fileno())
+
+                # Roda o solver com saída redirecionada
                 resultado = solver.Solve()
+
             finally:
-                # Restaura os descritores originais
-                os.dup2(stdout_original, 1)
-                os.dup2(stderr_original, 2)
+                # Restaura stdout e stderr
+                os.dup2(stdout_original, sys.stdout.fileno())
+                os.dup2(stderr_original, sys.stderr.fileno())
                 os.close(stdout_original)
                 os.close(stderr_original)
 
@@ -473,7 +474,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             trecho_dados = log_content[indice:] 
 
         if indice != -1:
-        # Leituta do log gerado na execução do solver
+            # Leituta do log gerado na execução do solver
             padrao_log = re.search(r"Result - (?P<status>.*)\n+(?:No feasible solution found\n+)?(?:Objective value:\s+(?P<f_objetivo>\d*\.?\d+)\n+)?(?:Upper bound:\s+(?P<LS>\d*\.?\d+)\n+)?(?:Gap:\s+(?P<gap>-?\d*\.?\d+)\n+)?(?:Enumerated nodes:\s+(?P<nos>\d+)\n+)?(?:Total iterations:\s+(?P<iteracoes>\d+)\n+)?Time \(CPU seconds\):\s+(?P<cpu>\d*\.?\d+)\n+Time \(Wallclock seconds\):\s+(?P<wall>\d*\.?\d+)\n+Total time \(CPU seconds\):\s+(?P<total_cpu>\d*\.?\d+)\s+\(Wallclock seconds\):\s+(?P<total_wall>\d*\.?\d+)", trecho_dados)
                             
             # Status da solução
@@ -505,6 +506,8 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
 
             # Tempo de wallclock do solver (Tempo real do software sendo processado), incluindo alocação de variáveis, pré-processamento, entre outros.) 
             tempo_execucao[qtd].total_wall_time = float(padrao_log.group("total_wall"))
+        else:
+            padrao_log = None
 
         if resultado == pywraplp.Solver.OPTIMAL or resultado == pywraplp.Solver.FEASIBLE:
             if resultado == pywraplp.Solver.OPTIMAL:
@@ -525,7 +528,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
                 print(f"Total time (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.2f}")
                 print(f"Total time (Wallclock seconds): {tempo_execucao[qtd].total_wall_time:.2f}")
             else:
-                print("ERRO")    
+                print("ERRO AO LER O LOG GERADO")    
 
             for j in range(arquivo_leitura[qtd].colunas):
                 subconjuntos[j].var_escolha = subconjuntos[j].var_escolha.solution_value()

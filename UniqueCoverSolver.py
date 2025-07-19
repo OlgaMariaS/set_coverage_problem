@@ -1,4 +1,5 @@
 from ortools.linear_solver import pywraplp
+import sys
 import os
 import re
 from typing import List
@@ -288,6 +289,11 @@ def converter_tempo(segundos_totais):
 
     return horas, minutos, segundos, milissegundos
 
+def decoder(cromossomo, matriz, M):
+    m = len(cromossomo)
+    n = len(matriz)
+    x = [1 if gene <= 0.5 else 0 for gene in cromossomo]
+
 # Executa o solver
 def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output_padrao_completo, escrita, arquivo_escrita):
     # Inicialização das variaveis:
@@ -453,16 +459,16 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             stderr_original = os.dup(2)
 
             # Redireciona os descritores para o arquivo
-            os.dup2(arquivo_log.fileno(), 1)
-            os.dup2(arquivo_log.fileno(), 2)
+            os.dup2(arquivo_log.fileno(), sys.stdout.fileno())
+            os.dup2(arquivo_log.fileno(), sys.stderr.fileno())
 
             try:
                 # Execução do solver com saída redirecionada
                 resultado = solver.Solve()
             finally:
                 # Restaura os descritores originais
-                os.dup2(stdout_original, 1)
-                os.dup2(stderr_original, 2)
+                os.dup2(stdout_original, sys.stdout.fileno())
+                os.dup2(stderr_original, sys.stderr.fileno())
                 os.close(stdout_original)
                 os.close(stderr_original)
 
@@ -473,7 +479,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             trecho_dados = log_content[indice:] 
 
         if indice != -1:
-            # Leituta do log gerado na execução do solver
+        # Leituta do log gerado na execução do solver
             padrao_log = re.search(r"Result - (?P<status>.*)\n+(?:No feasible solution found\n+)?(?:Objective value:\s+(?P<f_objetivo>\d*\.?\d+)\n+)?(?:Upper bound:\s+(?P<LS>\d*\.?\d+)\n+)?(?:Gap:\s+(?P<gap>-?\d*\.?\d+)\n+)?(?:Enumerated nodes:\s+(?P<nos>\d+)\n+)?(?:Total iterations:\s+(?P<iteracoes>\d+)\n+)?Time \(CPU seconds\):\s+(?P<cpu>\d*\.?\d+)\n+Time \(Wallclock seconds\):\s+(?P<wall>\d*\.?\d+)\n+Total time \(CPU seconds\):\s+(?P<total_cpu>\d*\.?\d+)\s+\(Wallclock seconds\):\s+(?P<total_wall>\d*\.?\d+)", trecho_dados)
                             
             # Status da solução
@@ -506,7 +512,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             # Tempo de wallclock do solver (Tempo real do software sendo processado), incluindo alocação de variáveis, pré-processamento, entre outros.) 
             tempo_execucao[qtd].total_wall_time = float(padrao_log.group("total_wall"))
         else:
-            padrao_log = 0
+            padrao_log = None
 
         if resultado == pywraplp.Solver.OPTIMAL or resultado == pywraplp.Solver.FEASIBLE:
             if resultado == pywraplp.Solver.OPTIMAL:
@@ -557,10 +563,10 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
             print('\nO problema não tem solução.')
             funcao_objetivo = 0
             media_cobertura_total = 0    
-            print(f"\n⚙️  Tempo CPU usado na execução do solver (CPU seconds): {tempo_execucao[qtd].cpu_time_solver:.4f} s")
-            print(f"⏱️  Tempo real decorrido na execução do solver (Wallclock seconds): {tempo_execucao[qtd].wall_time_solver:.4f} s")
-            print(f"\n⚙️  Tempo total de CPU usado (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.4f} s")
-            print(f"⏱️  Tempo real total decorrido (Wallclock seconds): {tempo_execucao[qtd].total_wall_time:.4f} s")
+            print(f"\n⚙️  Tempo CPU usado na execução do solver (CPU seconds): {tempo_execucao[qtd].cpu_time_solver:.3f} s")
+            print(f"⏱️  Tempo real decorrido na execução do solver (Wallclock seconds): {tempo_execucao[qtd].wall_time_solver:.3f} s")
+            print(f"\n⚙️  Tempo total de CPU usado (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.3f} s")
+            print(f"⏱️  Tempo real total decorrido (Wallclock seconds): {tempo_execucao[qtd].total_wall_time:.3f} s")
 
         if escrita_permitida:
             # Verifica se o TESTE está ativado
@@ -581,8 +587,8 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
         h_w, m_w, s_w, ms_w = converter_tempo(tempo_total_wall)
 
         print(f"\nTempo em segundos:")
-        print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
-        print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")
+        print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.3f} segundos")
+        print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.3f} segundos")
         
         print(f"\nTempo em horas:")
         print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
@@ -591,14 +597,12 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, output
         if escrita_permitida:
             with open(arquivo_escrita, "a", encoding="utf-8") as arquivo:
                 arquivo.write(f"\n\nTempo em segundos:")
-                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.4f} segundos")
-                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.4f} segundos")                
+                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.3f} segundos")
+                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.3f} segundos")                
 
                 arquivo.write(f"\n\nTempo em horas:")
                 arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
                 arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
-
-
 
     return
 
@@ -643,7 +647,7 @@ def main():
     escrita = 0
 
     # Define a saida de uma descrição detalhada, no terminal, dos subconjuntos escolhidos e elementos cobertos (opicional)
-    output_padrao_completo = 0
+    output_padrao_completo = 1
 
     # Total de linhas da matriz (calculado automaticamente para as instancias, uso predefinido apenas para testes)   
     arquivo_leitura[qtd_arquivos_leitura].linhas = 5
