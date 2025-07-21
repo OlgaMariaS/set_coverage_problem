@@ -749,14 +749,14 @@ def main():
     # Definição do 'arquivo' de teste
     arquivo_leitura[qtd_arquivos_leitura].nome = "TESTE"
 
-    # Tempo máximo de excução em milisegundos (milissegundos -> segundos*1000).
-    tempo_max = 10
+    # Tempo máximo de excução em segundos.
+    tempo_max = 3600
 
     regra_parada_geracao = None
 
     regra_parada_valor_alvo = None
 
-    regra_parada_sem_melhora = 20
+    regra_parada_sem_melhora = None
 
     regras_parada = [regra_parada_geracao, regra_parada_valor_alvo, regra_parada_sem_melhora]   
     
