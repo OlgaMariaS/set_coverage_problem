@@ -42,20 +42,8 @@ class Arquivo_scp:
         self.colunas = 0
         self.conjuntos_escolhidos = []
 
-class Tempo_execução:
-    def __init__(self):
-        self.cpu_time_solver = 0
-        self.wall_time_solver = 0
-        self.total_wall_time = 0
-        self.total_cpu_time = 0
-
 class StopRule(ParsingEnum):
-    """
-    Controls stop criteria. Stops either when:
-    - a given number of `GENERATIONS` is given;
-    - or a `TARGET` value is found;
-    - or no `IMPROVEMENT` is found in a given number of iterations.
-    """
+
     GENERATIONS = 0
     TARGET = 1
     IMPROVEMENT = 2
@@ -74,10 +62,10 @@ def abrir_arquivo(arquivo_leitura):
                 # Leitura do conteúdo do 'arquivo_leitura'
                 subconjuntos, matriz, elementos = ler_conteudo(arquivo_leitura.linhas, arquivo_leitura.colunas, linhas_arquivo)
 
-            print("\nO arquivo foi aberto com sucesso!")
+            print("\n\n\nO arquivo foi aberto com sucesso!")
             return subconjuntos, matriz, elementos
         except FileNotFoundError:
-            print("\nERRO! O arquivo não foi aberto!")
+            print("\n\n\nERRO! O arquivo não foi aberto!")
             exit(1)
         
 
@@ -162,7 +150,7 @@ def ler_conteudo(l, c, linhas_arquivo):
     return subconjuntos, elementos, matriz
 
 # Função executada para a gravação das execuções do solver no 'arquivo_escrita', definido na main()
-def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconjuntos: List[Subconjunto], matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo,  media_cobertura_total, tempo_execucao, padrao_log):
+def escreve_teste(arquivo_leitura:Arquivo_scp, subconjuntos: List[Subconjunto], elementos:List[Elemento], arquivo_escrita, padrao_resposta,  media_cobertura_total, tempo_execucao):
 
     if arquivo_leitura.id == 0:
         tipo_leitura = "w"
@@ -187,13 +175,6 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
             escrita.write("\n                   (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas")
             escrita.write("\n                   y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ")
 
-
-            # Se não foi possivel criar variaveis ou restricoes, escreve que não foi possivel a criação do solver e finaliza a execução o programa
-            if num_vars == 0 or num_restricoes == 0:
-                escrita.write("\nNao foi possivel criar o solver CBC\n\n")
-                exit(1)
-            escrita.write("\nSolver CBC criado com sucesso!")
-
             if not arquivo_leitura.nome == "TESTE":
                 escrita.write(f"\n\n\n{arquivo_leitura.id+1})")
 
@@ -201,97 +182,54 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, elementos:List[Elemento], subconj
             escrita.write("\nLinhas: " + str(arquivo_leitura.linhas))
             escrita.write("\nColunas: " + str(arquivo_leitura.colunas))
 
-            escrita.write("\n\nNumero total de variaveis = " + str(num_vars))
-            escrita.write("\nNumero total de restricoes = " + str(num_restricoes))
-            
-            escrita.write("\nResolvendo com o solver " + versao_solver)
+            escrita.write(f"\n\nIter | Resp | Temp")
 
+            for i in padrao_resposta[1]:
+                escrita.write(f"\n* {i[0]} | {i[1]:.0f} | {i[2]:.2f}")
 
-            if media_cobertura_total >= 1:
+            if media_cobertura_total > 0:
                 if  media_cobertura_total == 1:
                     escrita.write("\n\nSolucao otima encontrada!")
                 else:
                     escrita.write("\n\nUma solucao factivel foi encontrada.")
-        
-                if padrao_log:
-                    # Iniciação variáveis do log
-
-                    # Status da solução
-                    status = padrao_log.group("status")
-
-                    # Limitante superior (LS) do Branch-and-Bound (Branch-and-cut nesse caso)
-                    limitante_superior = float(padrao_log.group("LS")) if padrao_log.group("LS") else 0.0 
-
-                    # Gap de integralidade -> Diferença percentual entre o valor da função objetivo e o limitante superior
-                    gap = abs(float(padrao_log.group("gap"))) if padrao_log.group("gap") else 0.0
-
-                    # Número de nós criados pelo Branch-and-Bound (Branch-and-cut nesse caso)
-                    num_nos = padrao_log.group("nos") if padrao_log.group("nos") else 0.0
-
-                    # Número de iterações realizadas pelo Solver
-                    num_iteracoes = padrao_log.group("iteracoes") if padrao_log.group("iteracoes") else 0.0
-
-                    # Tempo de execução em cpu do solver (Tempo efetivo do software sendo processado) 
-                    tempo_execucao.cpu_time_solver = float(padrao_log.group("cpu"))
-
-                    # Tempo de wallclock do solver (Tempo real do software sendo processado)
-                    tempo_execucao.wall_time_solver = float(padrao_log.group("wall"))
-
-                    # Tempo de execução em cpu no total (Tempo efetivo do software sendo processado, incluindo alocação de variáveis, pré-processamento, entre outros.) 
-                    tempo_execucao.total_cpu_time = float(padrao_log.group("total_cpu"))
-
-                    # Tempo de wallclock do solver (Tempo real do software sendo processado), incluindo alocação de variáveis, pré-processamento, entre outros.) 
-                    tempo_execucao.total_wall_time = float(padrao_log.group("total_wall"))
-
-                    escrita.write(f"\n\nStatus: {status}")
-                    escrita.write(f"\nFunção Objetivo: {funcao_objetivo:.2f}")
-                    if limitante_superior > 0:
-                        escrita.write(f"\nLimitante Superior: {limitante_superior:.2f}")
-                    escrita.write(f"\nGap de integralidade: {(gap * 100):.2f}%")
-                    escrita.write(f"\nNúmero de nós gerados: {num_nos}")
-                    escrita.write(f"\nNúmero de iterações: {num_iteracoes}")
-                    escrita.write(f"\nTime (CPU seconds): {tempo_execucao.cpu_time_solver:.2f}")
-                    escrita.write(f"\nTime (Wallclock seconds): {tempo_execucao.wall_time_solver:.2f}")
-                    escrita.write(f"\nTotal time (CPU seconds): {tempo_execucao.total_cpu_time:.2f}")
-                    escrita.write(f"\nTotal time (Wallclock seconds): {tempo_execucao.total_wall_time:.2f}")
-
-                    h_c, m_c, s_c, ms_c = converter_tempo(tempo_execucao.total_cpu_time)
-                    h_w, m_w, s_w, ms_w = converter_tempo(tempo_execucao.total_wall_time)
-
-                    escrita.write(f"\n\nTempo em horas:")
-                    escrita.write(f"\nTempo de execução em horas (CPU): {h_c}h {m_c}min {s_c}s {ms_c}ms")
-                    escrita.write(f"\nTempo total de execução em horas (Wallclock): {h_w}h {m_w}min {s_w}s {ms_w}ms")
-                else:
-                    escrita.write("\n\nERRO AO LER O LOG")
 
                 escrita.write("\n\nConjuntos selecionados:")
 
-                for j in range(arquivo_leitura.colunas):
-                    if subconjuntos[j].var_escolha > 0.5:
-                        escrita.write(f"\n- Conjunto S {j+1}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}")
+                for j in padrao_resposta[4]:
+                    escrita.write(f"\n- Conjunto S {j+1}\n    Elementos cobertos: {subconjuntos[j-1].elementos_cobertos}")
 
                 escrita.write("\n\nDetalhes da cobertura por elemento:")
                 
-                for i in range(arquivo_leitura.linhas):
-                    coberto_unicamente = "Sim" if elementos[i].var_cobertura_unica > 0.5 else "Não"
-                    escrita.write(f'\nElemento {str(i+1)}: coberto {str(elementos[i].var_cobertura_total)} vez(es). Cobertura unica: {coberto_unicamente}')
+                for e in elementos:
+                    coberto_unicamente = "Sim" if e.var_cobertura_unica == 1 else "Não"
+                    escrita.write(f'\nElemento {str(e.id)}: coberto {str(e.var_cobertura_total)} vez(es). Cobertura unica: {coberto_unicamente}')
 
-                escrita.write(f"\nCobertura media dos elementos: {media_cobertura_total:.2f}")
+                escrita.write(f"\nMelhor resultado:                      {padrao_resposta[1][len(padrao_resposta[1])-1][1]:.0f}")
+                escrita.write(f"\nGAP integralidade:                     {padrao_resposta[10]:.2f}%")
+                escrita.write(f"\nGAP proporcional à solução encontrada: {padrao_resposta[11]:.2f}%")
+                escrita.write(f"\nPeso total:                           {padrao_resposta[3]}")
+                escrita.write(f"\nQuantidad de nós:                      {padrao_resposta[2]}")
+                escrita.write(f"\nTotal de iterações:                    {padrao_resposta[9]}")
+                escrita.write(f"\nCobertura media dos elementos:         {media_cobertura_total:.2f}")
+                escrita.write(f"\nSeed:                                  {padrao_resposta[0]}")
+           
+                escrita.write(f"\nTempo em segundos:                     {tempo_execucao:.2f}s")
+                
+                h, m, s, ms = converter_tempo(tempo_execucao)
+
+                escrita.write(f"\nTempo em horas:                        {h}h {m}min {s}s {ms}ms")
+
+                escrita.write(f"\nMaior número de iterações sem melhora: {padrao_resposta[6]}")
+                escrita.write(f"\nÚltima iteração de melhora:            {padrao_resposta[7]}")
+                escrita.write(f"\nÚltimo momento de melhora:             {padrao_resposta[8]:.2f}s")
 
             else:
-                escrita.write("\n\nO problema nao tem solucao.")
-                escrita.write(f"\n\nTime (CPU seconds): {tempo_execucao.cpu_time_solver:.2f}")
-                escrita.write(f"\nTime (Wallclock seconds): {tempo_execucao.wall_time_solver:.2f}")
-                escrita.write(f"\nTotal time (CPU seconds): {tempo_execucao.total_cpu_time:.2f}")
-                escrita.write(f"\nTotal time (Wallclock seconds): {tempo_execucao.total_wall_time:.2f}")
+                escrita.write('\n\nO problema não tem solução.')
+                escrita.write(f"\n\nTempo em segundos: {tempo_execucao:.2f};")
 
-                h_c, m_c, s_c, ms_c = converter_tempo(tempo_execucao.total_cpu_time)
-                h_w, m_w, s_w, ms_w = converter_tempo(tempo_execucao.total_wall_time)
+                h, m, s, ms = converter_tempo(tempo_execucao)
 
-                escrita.write(f"\n\nTempo em horas:")
-                escrita.write(f"\nTempo de execução em horas (CPU): {h_c}h {m_c}min {s_c}s {ms_c}ms")
-                escrita.write(f"\nTempo total de execução em horas (Wallclock): {h_w}h {m_w}min {s_w}s {ms_w}ms")
-
+                escrita.write(f"\nTempo em horas: {h}h {m}min {s}s {ms}ms")
 
     except FileNotFoundError:
         print("\nERRO! O arquivo de escrita não foi aberto!")
@@ -310,9 +248,9 @@ def Atualiza_Pesos(subconjuntos, elementos, fim):
     for s in subconjuntos:
         peso = 0
         for i in s.elementos_cobertos:
-            if elementos[i-1].num_coberturas == 0:
+            if elementos[i-1].var_cobertura_total == 0:
                 peso += 1
-            elif elementos[i-1].num_coberturas == 1:
+            elif elementos[i-1].var_cobertura_total == 1:
                 if fim:
                     peso -= 1
                 else:
@@ -357,12 +295,13 @@ def Busca_Local(subconjuntos, elementos):
 
         for s in solucao_atual:
             Atualiza_Pesos(subconjuntos, elementos, 1)
-            ganho_antes = sum(1 for e in elementos if e.num_coberturas == 1)
+            ganho_antes = sum(1 for e in elementos if e.var_cobertura_total == 1)
+
             # Simula remoção de s
             elementos_afetados = []
             for i in s.elementos_cobertos:
                 e = elementos[i - 1]
-                if e.num_coberturas == 1:
+                if e.var_cobertura_total == 1:
                     elementos_afetados.append(i)
 
             # Se não há elementos com cobertura única perdida, continue
@@ -370,7 +309,6 @@ def Busca_Local(subconjuntos, elementos):
                 continue
 
             # Testa subconjuntos fora da solução que podem cobrir os elementos afetados
-            
             for s_sub in range(porcentagem_procura):
                 if conjuntos_possiveis[s_sub].var_escolha == 1 or conjuntos_possiveis[s_sub] == s:
                     continue
@@ -386,10 +324,10 @@ def Busca_Local(subconjuntos, elementos):
 
                     # Aplica a substituição
                     for i in s.elementos_cobertos:
-                        elementos[i - 1].num_coberturas -= 1
+                        elementos[i - 1].var_cobertura_total -= 1
 
                     for i in conjuntos_possiveis[s_sub].elementos_cobertos:
-                        elementos[i - 1].num_coberturas += 1
+                        elementos[i - 1].var_cobertura_total += 1
 
                     #ganho_depois = sum(1 for e in elementos if e.num_coberturas == 1)
                   
@@ -398,48 +336,44 @@ def Busca_Local(subconjuntos, elementos):
                        
                     # Atualiza as coberturas únicas
                     for e in elementos:
-                        z = e.num_coberturas
-                        e.var_cobertura_total = z
+                        z = e.var_cobertura_total
                         e.var_cobertura_unica = 1 if z == 1 else 0
 
                     melhorou = True
                     qtd_melhora += 1 
 
-                    #print(f"\nSubstituir subconjunto {s.id} por {conjuntos_possiveis[s_sub].id}: ")
-                    #print(f"    Ganho antes: {ganho_antes}")
-                    #print(f"    Ganho depois: {ganho_depois}")
-
                     break
                 
-                # Novo: Avalia se adicionar s_sub melhora a cobertura única
+                # Avalia se adicionar s_sub melhora a cobertura única
                 if conjuntos_possiveis[s_sub].peso > 0:
         
                     # Simula adição
                     for i in conjuntos_possiveis[s_sub].elementos_cobertos:
-                        elementos[i - 1].num_coberturas += 1
-                    ganho_depois = sum(1 for e in elementos if e.num_coberturas == 1)
+                        elementos[i - 1].var_cobertura_total += 1
+                    ganho_depois = sum(1 for e in elementos if e.var_cobertura_total == 1)
                     
                     if ganho_depois > ganho_antes:
                         conjuntos_possiveis[s_sub].var_escolha = 1
                             
                         for e in elementos:
-                            z = e.num_coberturas
-                            e.var_cobertura_total = z
+                            z = e.var_cobertura_total
                             e.var_cobertura_unica = 1 if z == 1 else 0   
                             
                         melhorou = True
                         qtd_melhora += 1 
-                            
-                        #print(f"\nAdicionar subconjunto {conjuntos_possiveis[s_sub].id}: ")
-                        #print(f"    Ganho antes: {ganho_antes} ")
-                        #print(f"    Ganho depois: {ganho_depois} ") 
 
                         break
                     else:
                         for i in conjuntos_possiveis[s_sub].elementos_cobertos:
-                            elementos[i - 1].num_coberturas -= 1
+                            elementos[i - 1].var_cobertura_total -= 1
             if melhorou:
                 break 
+
+    solucao_atual = []
+    for s in subconjuntos:
+        if s.var_escolha == 1:
+            solucao_atual.append(s)
+    return solucao_atual
 
 # Decodificador BRKGA
 class SCPDecoder():
@@ -448,8 +382,13 @@ class SCPDecoder():
         self.elementos = elementos
         self.M = M        
         self.alpha = alpha
+        self.subconjuntos_resposta = subconjuntos
+        self.elementos_resposta = elementos
+        self.melhor_solução = []
+        self.melhor_solucao_elementos = []
         self.melhor_resultado = 0
-        self.melhor_cobertura_unica = 0
+        self.media = 0
+        self.nos = 0
         self.melhor_custo = 0
 
     def decode(self, chromosome, rewrite: bool):
@@ -460,13 +399,16 @@ class SCPDecoder():
         for s in self.subconjuntos:
             s.var_escolha = 0
         for e in self.elementos:
-            e.num_coberturas = 0
+            e.var_cobertura_total = 0
 
         maximo = 0
         minimo = len(self.elementos)
 
         fim = 0
         unicos = 0
+        custo_total = 0
+        media = 0
+        elementos_cobertos = []
         Atualiza_Pesos(self.subconjuntos, self.elementos, fim)
 
         while True:
@@ -482,49 +424,50 @@ class SCPDecoder():
 
             escolhido.var_escolha = 1
             for i in escolhido.elementos_cobertos:
-                self.elementos[i-1].num_coberturas += 1
+                self.elementos[i-1].var_cobertura_total += 1
 
             Atualiza_Pesos(self.subconjuntos, self.elementos, fim)
+    
+
+        solução = Busca_Local(self.subconjuntos, self.elementos)
+
+        for s in solução:
+            custo_total += s.peso
+            for i in s.elementos_cobertos:
+                if i not in elementos_cobertos:
+                    elementos_cobertos.append(i)
+                if self.elementos[i-1].var_cobertura_total == 1:
+                    unicos += 1
+                media += self.elementos[i-1].var_cobertura_total
         
-        fim = 1
-
-        Busca_Local(self.subconjuntos, self.elementos)
-
-        for s in self.subconjuntos:
-                if s.var_escolha == 1:
-                    for i in s.elementos_cobertos:
-                        if self.elementos[i-1].num_coberturas == 1:
-                            unicos += 1
-
-        custo_total = sum(s.peso for s in self.subconjuntos if s.var_escolha == 1)
-
-        # Salva para acesso externo
-        if unicos > self.melhor_cobertura_unica:
-            self.melhor_cobertura_unica = unicos
+        if unicos > self.melhor_resultado:
+            self.melhor_solução = []
+            for s in solução:
+                self.melhor_solução.append(s.id)
+            self.subconjuntos_resposta = self.subconjuntos
+            self.elementos_resposta = self.elementos
+            self.media = media/len(self.elementos)
+            self.melhor_solucao_elementos = elementos_cobertos
+            self.melhor_resultado = unicos
+            self.nos = len(self.melhor_solução)
             self.melhor_custo = custo_total
 
-        # Objetivo: maximizar soma dos y_i
         return unicos
 
 
 # Executa o solver
-def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, escrita, arquivo_escrita):
+def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras_parada, output_padrao_completo,escrita, arquivo_escrita):
     # Inicialização das variaveis:
+
+    alterar_target = 1 if regras_parada[1] == None else 0
 
     # Quantidade de arquivos no vetor arquivo leitura, menos o 'TESTE'
     qtd_arquivos = arquivo_leitura[len(arquivo_leitura)-1].id
 
-    #Inicialização da média da cobertura total de um elemento
-    media_cobertura_total = 0
-
     # Vetor  que armazena o tempo de execução de cada instância.
-    tempo_execucao = [Tempo_execução() for _ in range(len(arquivo_leitura))]
-
-    # Define o caminho da subpasta
-    subpasta = "logs"
-
-    # Cria a subpasta se ela ainda não existir
-    os.makedirs(subpasta, exist_ok=True)
+    tempo_execucao = [0 for _ in range(len(arquivo_leitura))]
+    iteracoes_total = [0 for _ in range(len(arquivo_leitura))]
+    
 
     if tempo_max <= 0.0:
         raise RuntimeError(f"O tempo máximo de execução deve ser maior que 0.0. "
@@ -574,16 +517,18 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, escrit
     else:
         qtd = 0
 
-    
-    best_cost = [0 for _ in range(qtd_arquivos)]
-    cobertos_unicamente = [0 for _ in range(qtd_arquivos)]
+
+    solucao = [0 for _ in range(qtd_arquivos)]
+    solucao_elementos = [0 for _ in range(qtd_arquivos)]    
+    nos = [0 for _ in range(qtd_arquivos)]
+    custo_total= [0 for _ in range(qtd_arquivos)]
 
     while qtd < qtd_arquivos:
         i = 0
-        j = 0
+        j = 0 
 
-         # Arquivo que armazenará o log de cada execução
-        caminho_log = "cbc_log_"
+        #Inicialização da média da cobertura total de um elemento
+        media_cobertura = 0
 
         if arquivo_leitura[qtd].nome == "TESTE":
 
@@ -596,18 +541,14 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, escrit
                         elementos[i].num_coberturas += 1
                         subconjuntos[j].elementos_cobertos.append(i+1)
 
-            # Arquivo que armazenará o log de cada execução
-            caminho_log += 'teste.txt'
         else:
             # Abertura do 'arquivo_leitura'
             subconjuntos, elementos, matriz  = abrir_arquivo(arquivo_leitura[qtd])
-
-            caminho_log += arquivo_leitura[qtd].nome
             
             print(f'\n\n{qtd+1})')
-            
-        # Caminho completo do arquivo dentro da subpasta 'logs'
-        caminho_log = os.path.join(subpasta, caminho_log)
+        
+        regras_parada[1] = len(elementos) if alterar_target == 1 else regras_parada[1]
+        
 
         print(f'Instância = {arquivo_leitura[qtd].nome}')
         print(f'Linhas = {arquivo_leitura[qtd].linhas}')
@@ -616,130 +557,138 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, escrit
         # Definição de M ≥ |U|
         M = arquivo_leitura[qtd].colunas + 1
         alpha = 0.1
-        num_generations = 4
         configuration_file = "config.conf"
         cromossomo_qtd = len(subconjuntos)
+        seed=time.time()
         
         decode = SCPDecoder(subconjuntos, elementos, M, alpha)
 
-        parametros, _ = load_configuration(configuration_file)
+        parametros_brkga, _ = load_configuration(configuration_file)
 
         solver_brkga = BrkgaMpIpr(
             decoder=decode,
             sense = Sense.MAXIMIZE,
-            seed=time.time(),
+            seed=seed,
             chromosome_size=cromossomo_qtd,
-            params = parametros
+            params = parametros_brkga,
+            evolutionary_mechanism_on= 1
         )
 
-        # NOTE: don't forget to initialize the algorithm.
         solver_brkga.initialize()
 
-        ########################################
-        # Find good solutions / evolve
-        ########################################
-
-        #print(f"Evolving {num_generations} generations...")
-        #solver_brkga.evolve(num_generations)
+        best_cost = 0
+        iteracao = 0
+        last_update_time = 0.0
+        last_update_iteration = 0
+        large_offset = 0
         run = True
         start_time = time.time()
+
+        print(f"\nIter | Resp | Temp")
+
+        guarda_iteracoes = []
+
         while run:
-            iteration += 1
+            iteracao += 1
 
             # Evolves one iteration.
             solver_brkga.evolve()
 
             # Checks the current results and holds the best.
             fitness = solver_brkga.get_best_fitness()
-            if fitness < best_cost:
+            if fitness > best_cost:
                 last_update_time = time.time() - start_time
-                update_offset = iteration - last_update_iteration
+                update_offset = iteracao - last_update_iteration
 
                 if large_offset < update_offset:
                     large_offset = update_offset
 
-                last_update_iteration = iteration
+                last_update_iteration = iteracao
                 best_cost = fitness
-                best_chromosome = solver_brkga.get_best_chromosome()
 
-                print(f"* {iteration} | {best_cost:.0f} | {last_update_time:.2f}")
-                iter_without_improvement = iteration - last_update_iteration
+                guarda_iteracoes.append([iteracao, best_cost, last_update_time])
+
+                print(f"* {iteracao} | {best_cost:.0f} | {last_update_time:.2f}")
+            
+            iter_without_improvement = iteracao - last_update_iteration
 
             # Check stop criteria.
             run = not (
-                (time.time() - start_time > maximum_time)
+                (time.time()- start_time > tempo_max)
                 or
-                (stop_rule == StopRule.GENERATIONS and iteration == stop_argument)
+                ((0 if regras_parada[0] != None else None) == StopRule.GENERATIONS.value and iteracao == regras_parada[0])
                 or
-                (stop_rule == StopRule.IMPROVEMENT and
-                iter_without_improvement >= stop_argument)
+                ((1 if regras_parada[1] != None else None) == StopRule.TARGET.value and best_cost == regras_parada[1])
                 or
-                (stop_rule == StopRule.TARGET and best_cost <= stop_argument)
+                ((2 if regras_parada[2] != None else None) == StopRule.IMPROVEMENT.value and iter_without_improvement >= regras_parada[2])
+                
             )
+
+        subconjuntos = decode.subconjuntos_resposta
+        elementos = decode.elementos_resposta
+
+        tempo_execucao[qtd] = time.time() - start_time
+        iteracoes_total[qtd] = iteracao
+
+        solucao[qtd] = decode.melhor_solução
+        solucao_elementos[qtd] = decode.melhor_solucao_elementos
+        nos[qtd] = decode.nos
+        custo_total[qtd] = decode.melhor_custo
+        gap1 = ((len(elementos) - best_cost)/best_cost) * 100
+        gap2 = ((len(elementos) - best_cost)/len(elementos)) * 100
         
-        for geracao in range(num_generations):
-            print(f"\n\nEvoluindo Geração {geracao+1}...") 
-            for populacao_id in range(solver_brkga.params.num_independent_populations):
 
-                solver_brkga.evolve_population(populacao_id)
+        if best_cost > 0:
 
-                fitness_vals = [fit for fit, _ in solver_brkga._current_populations[populacao_id].fitness]
-                escolhidos = 0
-                peso_medio = 0
-                for i in range(len(subconjuntos)):
-                    if decode.subconjuntos[i].var_escolha == 1:
-                        escolhidos += 1
-                        peso_medio += decode.subconjuntos[i].peso
+            print('\nUma solução factível foi encontrada.')
 
-                print(f"\n\nPopulação {populacao_id+1}...")
+            
+            print(f"\n\nMelhor resultado:                      {best_cost:.0f}")
+            print(f"Gap integralidade:                     {gap1:.2f}%")
+            print(f"Gap proporcional à solução encontrada: {gap2:.2f}%")
+            print(f"Peso total:                           {custo_total[qtd]}")
+            print(f"Quantidade de nós:                     {nos[qtd]}")
+            print(f"Total de iterações:                    {iteracoes_total[qtd]}")
 
-                print(f"\nSubconjuntos escolhidos: {escolhidos}    Peso médio: {peso_medio/escolhidos if escolhidos!=0 else 0}")
-
-                print(f"\nResultado máximo da população {populacao_id+1}: {max(fitness_vals)}")
-                print(f"\nResultado médio da população {populacao_id+1}: {sum(fitness_vals)/len(fitness_vals)}")
-                print(f"Resultado mínimo da população {populacao_id+1}: {min(fitness_vals)}")
-
-                #print(f"\nMelhor indivíduo da população {populacao_id+1}:")
-                #print(f"    Cobertura Única: ", decode.melhor_cobertura_unica)
-                #print(f"    Custo Total: ", decode.melhor_custo)
-
-
-
-        best_cost[qtd] = solver_brkga.get_best_fitness()
-        cobertos_unicamente[qtd] = decode.melhor_cobertura_unica
-        print(f"\n\nMelhor Resultado: {best_cost[qtd]}")
-        print(f"\nMaior Cobertura única: {cobertos_unicamente[qtd]}")
-
-
-        resultado = 1
-
-        if resultado == pywraplp.Solver.OPTIMAL or resultado == pywraplp.Solver.FEASIBLE:
-            if resultado == pywraplp.Solver.OPTIMAL:
-                print('\nSolução ótima encontrada!')
-            else:
-                print('\nUma solução factível foi encontrada.')
+            media_cobertura = decode.media
+            print(f"Cobertura média dos elementos:         {media_cobertura:.2f}")
+            print(f"Seed:                                  {seed}")
+            print(f"\nTempo em segundos:                     {tempo_execucao[qtd]:.2f}")
+            h_c, m_c, s_c, ms_c = converter_tempo(tempo_execucao[qtd])
+            print(f"Tempo em horas:                        {h_c}h {m_c}min {s_c}s {ms_c}ms")
+            
 
             # Descreve todos os subconjuntos selecionados e seus respectivos elementos cobertos
             if output_padrao_completo == 1:
+                
+                print(f"\nMaior número de iterações sem melhora: {large_offset};")
+                print(f"Última iteração de melhora:            {last_update_iteration};")
+                print(f"Último momento de melhora:               {last_update_time:.2f}s;")
+
                 print('\nConjuntos selecionados:')
-                for j in range(arquivo_leitura[qtd].colunas):
-                    if subconjuntos[j].var_escolha > 0.5:
-                        print(f'- Conjunto S{j+1}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}')
+                for j in solucao[qtd]:
+                    print(f'- Conjunto S{j}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}')
 
                 print(f'\nDetalhes da cobertura por elemento da instancia {arquivo_leitura[qtd].nome}:')
-                for i in range(arquivo_leitura[qtd].linhas):
-                    coberto_unicamente = "Sim" if elementos[i].var_cobertura_unica > 0.5 else "Não"
+                for i in range(len(elementos)):
+                    coberto_unicamente = "Sim" if (i+1) in solucao_elementos else "Não"
                     print(f'Elemento {i+1}: coberto {int(elementos[i].var_cobertura_total)} vez(es). Cobertura única: {coberto_unicamente}')
 
-            print(f"\nCobertura média dos elementos: {media_cobertura_total:.2f}")
+            
         else:
             print('\nO problema não tem solução.')
-            funcao_objetivo = 0
-            media_cobertura_total = 0    
-            print(f"\n⚙️  Tempo CPU usado na execução do solver (CPU seconds): {tempo_execucao[qtd].cpu_time_solver:.3f} s")
-            print(f"⏱️  Tempo real decorrido na execução do solver (Wallclock seconds): {tempo_execucao[qtd].wall_time_solver:.3f} s")
-            print(f"\n⚙️  Tempo total de CPU usado (CPU seconds): {tempo_execucao[qtd].total_cpu_time:.3f} s")
-            print(f"⏱️  Tempo real total decorrido (Wallclock seconds): {tempo_execucao[qtd].total_wall_time:.3f} s")
+            
+            h_c, m_c, s_c, ms_c = converter_tempo(tempo_total)
+
+            print(f"Tempo em segundos: {tempo_execucao[qtd]:.2f}s;")
+            
+            print(f"Tempo em horas: {h_c}h {m_c}min {s_c}s {ms_c}ms")
+
+            media_cobertura = 0
+            gap1 = 0
+            gap2 = 0
+
+        padrao_resposta = [seed, guarda_iteracoes, nos[qtd], custo_total[qtd], solucao[qtd], solucao_elementos[qtd], large_offset, last_update_iteration, last_update_time, iteracoes_total[qtd], gap1, gap2]
 
         if escrita_permitida:
             # Verifica se o TESTE está ativado
@@ -747,36 +696,25 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, escrit
                 arquivo_escrita = "testes.txt"
                 
             # Grava o retorno do solver no 'arquivo_escrita'
-            escreve_teste(arquivo_leitura[qtd], elementos, subconjuntos, matriz, arquivo_escrita, num_vars, num_restricoes, versao_solver, funcao_objetivo, media_cobertura_total, tempo_execucao[qtd], padrao_log)
+            escreve_teste(arquivo_leitura[qtd], subconjuntos, elementos, arquivo_escrita, padrao_resposta, media_cobertura, tempo_execucao[qtd])
 
         qtd += 1
 
     # Verifica se mais de 1 execução foi realizada para a impressão da soma dos tempos de execução
     if not (arquivo_leitura[qtd-1].nome == "TESTE" or qtd_arquivos == 1):
-        tempo_total_cpu = sum(tempo_execucao[i].total_cpu_time for i in range(len(tempo_execucao) - 1))
-        tempo_total_wall = sum(tempo_execucao[i].total_wall_time for i in range(len(tempo_execucao) - 1))
+        tempo_total = sum(i for i in tempo_execucao)
 
-        h_c, m_c, s_c, ms_c = converter_tempo(tempo_total_cpu)
-        h_w, m_w, s_w, ms_w = converter_tempo(tempo_total_wall)
+        h_c, m_c, s_c, ms_c = converter_tempo(tempo_total)
 
-        print(f"\nTempo em segundos:")
-        print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.3f} segundos")
-        print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.3f} segundos")
+        print(f"\n\nTempo total de execução da(s) {qtd} instância(s) (segundos): {tempo_total:.3f} segundos")
         
-        print(f"\nTempo em horas:")
-        print(f"⚙️  Tempo total de execução da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
-        print(f"⏱️  Tempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
+        print(f"\nTempo total de execução da(s) {qtd} instância(s) (horas): {h_c}h {m_c}min {s_c}s {ms_c}ms")
 
         if escrita_permitida:
             with open(arquivo_escrita, "a", encoding="utf-8") as arquivo:
-                arquivo.write(f"\n\nTempo em segundos:")
-                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {tempo_total_cpu:.3f} segundos")
-                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {tempo_total_wall:.3f} segundos")                
+                arquivo.write(f"\n\n\nTempo total de execução da(s) {qtd} instância(s) (segundos): {tempo_total:.3f} segundos")
 
-                arquivo.write(f"\n\nTempo em horas:")
-                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (CPU seconds): {h_c}h {m_c}min {s_c}s {ms_c}ms")
-                arquivo.write(f"\nTempo total de execução da(s) {qtd} instância(s) (Wallclock seconds): {h_w}h {m_w}min {s_w}s {ms_w}ms")
-    print(f"\nSoluções: {best_cost}")
+                arquivo.write(f"\n\nTempo total de execução da(s) {qtd} instância(s) (horas):    {h_c}h {m_c}min {s_c}s {ms_c}ms")
 
     return subconjuntos, elementos, matriz
 
@@ -784,7 +722,7 @@ def main():
     # Parametros básicos para a execução:
     
     # Nome do arquivo no qual o resultado dos testes poderá ser escrito (opcional).
-    arquivo_escrita = "resultados.txt"
+    arquivo_escrita = "resultadosBRKGA.txt"
 
     # Caminho da pasta onde o script está
     pasta_script = os.path.dirname(os.path.abspath(__file__))
@@ -811,14 +749,22 @@ def main():
     # Definição do 'arquivo' de teste
     arquivo_leitura[qtd_arquivos_leitura].nome = "TESTE"
 
-    # Tempo máximo de excução em milisegundos (milissegundos -> segundos/1000).
-    tempo_max = 1000     
+    # Tempo máximo de excução em milisegundos (milissegundos -> segundos*1000).
+    tempo_max = 10
+
+    regra_parada_geracao = None
+
+    regra_parada_valor_alvo = None
+
+    regra_parada_sem_melhora = 20
+
+    regras_parada = [regra_parada_geracao, regra_parada_valor_alvo, regra_parada_sem_melhora]   
     
     # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "matriz" (teste=1).
     teste = 0
 
     # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
-    escrita = 0
+    escrita = 1
 
     # Define a saida de uma descrição detalhada, no terminal, dos subconjuntos escolhidos e elementos cobertos (opicional)
     output_padrao_completo = 0
@@ -846,7 +792,7 @@ def main():
         arquivo_leitura[qtd_arquivos_leitura].id = -1
 
     # Execução do solver
-    executa_solver(arquivo_leitura, matriz, tempo_max, output_padrao_completo, escrita, arquivo_escrita)
+    executa_solver(arquivo_leitura, matriz, tempo_max, regras_parada, output_padrao_completo, escrita, arquivo_escrita)
 
 
 
