@@ -4,7 +4,7 @@ from brkga_mp_ipr.algorithm import BrkgaMpIpr, BrkgaParams
 import time
 import math
 import random
-import sys
+from copy import deepcopy
 import os
 import re
 from typing import List
@@ -149,24 +149,18 @@ def ler_conteudo(l, c, linhas_arquivo):
         
     return subconjuntos, elementos, matriz
 
-# Função executada para a gravação das execuções do solver no 'arquivo_escrita', definido na main()
-def escreve_teste(arquivo_leitura:Arquivo_scp, subconjuntos: List[Subconjunto], elementos:List[Elemento], arquivo_escrita, padrao_resposta,  media_cobertura_total, tempo_execucao):
-
-    if arquivo_leitura.id == 0:
-        tipo_leitura = "w"
-    else:
-        tipo_leitura = "a"
-
+def escreve_cabecalho(qtd_arquivos, arquivo_escrita, config_file, parametros):
     # Abertura do arquivo de escrita
     try:
-        with open(arquivo_escrita, tipo_leitura, encoding="utf-8") as escrita:
+        with open(arquivo_escrita, "w" ,encoding="utf-8") as escrita:
             # Alterna a escrita inicial dependendo se for um teste ou não
+            
+            if qtd_arquivos == -1:
+                escrita.write(f"\t*****TESTE*****")
 
-            if arquivo_leitura.nome == "TESTE":
-                escrita.write(f"\n\n\n\n\t*****TESTE*****")
-                escrita.write("\n\nFunção Objetiva:")
-            else:
-                escrita.write("\n\n\n\nFunção Objetiva:")
+
+            escrita.write("Função Objetiva:")
+
             # Elementos centrais do solver 
             escrita.write("\n                   Max ∑ yᵢ                             para i=1 até Linhas")
             escrita.write("\nSujeito a:") 
@@ -175,12 +169,41 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, subconjuntos: List[Subconjunto], 
             escrita.write("\n                   (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas")
             escrita.write("\n                   y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ")
 
-            if not arquivo_leitura.nome == "TESTE":
-                escrita.write(f"\n\n\n{arquivo_leitura.id+1})")
+            escrita.write(f"\n\nArquivo de configuração: {config_file}")
+            escrita.write(f"\n\nParâmetros do algoritmo:")
 
-            escrita.write("\nInstancia: " + arquivo_leitura.nome)
-            escrita.write("\nLinhas: " + str(arquivo_leitura.linhas))
-            escrita.write("\nColunas: " + str(arquivo_leitura.colunas))
+            output_string = ""
+
+            for name, value in vars(parametros[0]).items():
+                output_string += f"\n>  -{name} {value}"
+            for name, value in vars(parametros[1]).items():
+                output_string += f"\n>  -{name} {value}"
+
+            escrita.write(output_string)
+    except FileNotFoundError:
+        print("\nERRO! O arquivo de escrita não foi aberto!")
+        exit(1)
+
+# Função executada para a gravação das execuções do solver no 'arquivo_escrita', definido na main()
+def escreve_teste(arquivo_leitura:Arquivo_scp, subconjuntos: List[Subconjunto], elementos:List[Elemento], arquivo_escrita, padrao_resposta,  media_cobertura_total, tempo_execucao):
+    # Abertura do arquivo de escrita
+    try:
+        with open(arquivo_escrita, "a", encoding="utf-8") as escrita:
+            # Alterna a escrita inicial dependendo se for um teste ou não
+
+            escrita.write(f"\n\n\n\nInstância: {arquivo_leitura.nome}")
+            escrita.write(f'\nElementos = {arquivo_leitura.linhas}')
+            escrita.write(f'\nSubconjutos = {arquivo_leitura.colunas}')
+
+            escrita.write(f"\n\nSeed: {padrao_resposta[0]}")
+            escrita.write(f"\nTempo máximo de execução (s): {tempo_execucao}")
+
+            escrita.write(f"\n\n\nConstruindo solver BRKGA...")
+
+            escrita.write(f"\n\nGenerando sequência inicial...")
+
+            escrita.write(f"\n\nCusto inicial: {padrao_resposta[14][0]}")
+            escrita.write(f"\nCromossomo inicial: {padrao_resposta[14][1]}")
 
             escrita.write(f"\n\nIter | Resp | Temp")
 
@@ -192,17 +215,6 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, subconjuntos: List[Subconjunto], 
                     escrita.write("\n\nSolucao otima encontrada!")
                 else:
                     escrita.write("\n\nUma solucao factivel foi encontrada.")
-
-                escrita.write("\n\nConjuntos selecionados:")
-
-                for j in padrao_resposta[4]:
-                    escrita.write(f"\n- Conjunto S {j+1}\n    Elementos cobertos: {subconjuntos[j-1].elementos_cobertos}")
-
-                escrita.write("\n\nDetalhes da cobertura por elemento:")
-                
-                for e in elementos:
-                    coberto_unicamente = "Sim" if e.var_cobertura_unica == 1 else "Não"
-                    escrita.write(f'\nElemento {str(e.id)}: coberto {str(e.var_cobertura_total)} vez(es). Cobertura unica: {coberto_unicamente}')
 
                 escrita.write(f"\nMelhor resultado:                      {padrao_resposta[1][len(padrao_resposta[1])-1][1]:.0f}")
                 escrita.write(f"\nGAP integralidade:                     {padrao_resposta[10]:.2f}%")
@@ -222,6 +234,17 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, subconjuntos: List[Subconjunto], 
                 escrita.write(f"\nMaior número de iterações sem melhora: {padrao_resposta[6]}")
                 escrita.write(f"\nÚltima iteração de melhora:            {padrao_resposta[7]}")
                 escrita.write(f"\nÚltimo momento de melhora:             {padrao_resposta[8]:.2f}s")
+
+                escrita.write("\n\nConjuntos selecionados:")
+
+                for j in padrao_resposta[4]:
+                    escrita.write(f"\n- Conjunto S {j+1}\n    Elementos cobertos: {subconjuntos[j-1].elementos_cobertos}")
+
+                escrita.write("\n\nDetalhes da cobertura por elemento:")
+                
+                for e in elementos:
+                    coberto_unicamente = "Sim" if e.var_cobertura_unica == 1 else "Não"
+                    escrita.write(f'\nElemento {str(e.id)}: coberto {str(e.var_cobertura_total)} vez(es). Cobertura unica: {coberto_unicamente}')
 
             else:
                 escrita.write('\n\nO problema não tem solução.')
@@ -276,14 +299,14 @@ def Seleciona_conjunto(rcl):
 
 def Busca_Local(subconjuntos, elementos):
     melhorou = True
-    qtd_melhora = 0
-    melhora_10percent = (len(elementos)*0.1)               
+    qtd_melhora = 0            
 
-    while melhorou and qtd_melhora < melhora_10percent:
+    while melhorou:
         
         melhorou = False
         solucao_atual = []
         conjuntos_possiveis = []
+
         for s in subconjuntos:
             if s.var_escolha == 1:
                 solucao_atual.append(s)
@@ -291,7 +314,6 @@ def Busca_Local(subconjuntos, elementos):
                 conjuntos_possiveis.append(s)
 
         conjuntos_possiveis = sorted(conjuntos_possiveis, key=lambda s: s.prioridade, reverse=True) if conjuntos_possiveis is not None else None
-        porcentagem_procura = math.floor(len(conjuntos_possiveis)*0.3) if len(conjuntos_possiveis) > 4 else 1
 
         for s in solucao_atual:
             Atualiza_Pesos(subconjuntos, elementos, 1)
@@ -309,30 +331,30 @@ def Busca_Local(subconjuntos, elementos):
                 continue
 
             # Testa subconjuntos fora da solução que podem cobrir os elementos afetados
-            for s_sub in range(porcentagem_procura):
-                if conjuntos_possiveis[s_sub].var_escolha == 1 or conjuntos_possiveis[s_sub] == s:
+            for s_sub in conjuntos_possiveis:
+                if s_sub.var_escolha == 1 or s_sub == s:
                     continue
                 
-                if all(i in conjuntos_possiveis[s_sub].elementos_cobertos for i in elementos_afetados) and conjuntos_possiveis[s_sub].peso >= s.peso:
+                if all(i in s_sub.elementos_cobertos for i in elementos_afetados) and s_sub.peso >= s.peso:
 
-                    if conjuntos_possiveis[s_sub].peso == s.peso:
-                        if len(s.elementos_cobertos) < len(conjuntos_possiveis[s_sub].elementos_cobertos):
+                    if s_sub.peso == s.peso:
+                        if len(s.elementos_cobertos) < len(s_sub.elementos_cobertos):
                             continue
                         else:
-                            if s.prioridade >= conjuntos_possiveis[s_sub].prioridade:
+                            if s.prioridade >= s_sub.prioridade:
                                 continue
 
                     # Aplica a substituição
                     for i in s.elementos_cobertos:
                         elementos[i - 1].var_cobertura_total -= 1
 
-                    for i in conjuntos_possiveis[s_sub].elementos_cobertos:
+                    for i in s_sub.elementos_cobertos:
                         elementos[i - 1].var_cobertura_total += 1
 
                     #ganho_depois = sum(1 for e in elementos if e.num_coberturas == 1)
                   
                     s.var_escolha = 0
-                    conjuntos_possiveis[s_sub].var_escolha = 1
+                    s_sub.var_escolha = 1
                        
                     # Atualiza as coberturas únicas
                     for e in elementos:
@@ -345,15 +367,15 @@ def Busca_Local(subconjuntos, elementos):
                     break
                 
                 # Avalia se adicionar s_sub melhora a cobertura única
-                if conjuntos_possiveis[s_sub].peso > 0:
+                if s_sub.peso > 0:
         
                     # Simula adição
-                    for i in conjuntos_possiveis[s_sub].elementos_cobertos:
+                    for i in s_sub.elementos_cobertos:
                         elementos[i - 1].var_cobertura_total += 1
                     ganho_depois = sum(1 for e in elementos if e.var_cobertura_total == 1)
                     
                     if ganho_depois > ganho_antes:
-                        conjuntos_possiveis[s_sub].var_escolha = 1
+                        s_sub.var_escolha = 1
                             
                         for e in elementos:
                             z = e.var_cobertura_total
@@ -364,7 +386,7 @@ def Busca_Local(subconjuntos, elementos):
 
                         break
                     else:
-                        for i in conjuntos_possiveis[s_sub].elementos_cobertos:
+                        for i in s_sub.elementos_cobertos:
                             elementos[i - 1].var_cobertura_total -= 1
             if melhorou:
                 break 
@@ -375,6 +397,45 @@ def Busca_Local(subconjuntos, elementos):
             solucao_atual.append(s)
     return solucao_atual
 
+def greedy(subconjuntos, elementos, cromossomos):
+
+    for i, c in enumerate(cromossomos):
+        subconjuntos[i].prioridade = c
+    
+    maximo = 0
+    minimo = len(elementos)
+
+    fim = 0
+    unicos = 0
+    alpha = 0.1
+    Atualiza_Pesos(subconjuntos, elementos, fim)
+
+    while True:
+            
+        maximo, minimo, disponiveis = Encontra_max_min(subconjuntos)
+        if disponiveis == 0:
+            break
+
+        rcl = Constroi_RCL(subconjuntos, maximo, minimo, alpha)
+        escolhido = Seleciona_conjunto(rcl)
+        if escolhido is None:
+            break
+
+        escolhido.var_escolha = 1
+        for i in escolhido.elementos_cobertos:
+            elementos[i-1].var_cobertura_total += 1
+
+        Atualiza_Pesos(subconjuntos, elementos, fim)
+
+    solucao = Busca_Local(subconjuntos, elementos)
+
+    for s in solucao:
+        for i in s.elementos_cobertos:
+            if elementos[i-1].var_cobertura_total == 1:
+                unicos += 1
+
+    return unicos
+
 # Decodificador BRKGA
 class SCPDecoder():
     def __init__(self, subconjuntos: List[Subconjunto], elementos: List[Elemento], M, alpha):
@@ -384,7 +445,7 @@ class SCPDecoder():
         self.alpha = alpha
         self.subconjuntos_resposta = subconjuntos
         self.elementos_resposta = elementos
-        self.melhor_solução = []
+        self.melhor_solucao = []
         self.melhor_solucao_elementos = []
         self.melhor_resultado = 0
         self.media = 0
@@ -487,7 +548,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
                 else:
                     escrita_permitida = 0
             else:
-                escrita_permitida = 0
+                escrita_permitida = 1
         except FileNotFoundError:
             escrita_permitida = 1
     else:
@@ -503,7 +564,25 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
     print("            yᵢ ≤ zᵢ                              ∀i, 1 ≤ i ≤ Linhas")
     print("            (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas")
     print("            y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ")
-    
+
+    configuration_file = "config.conf"
+
+    parametros_brkga, controle_brkga = load_configuration(configuration_file)
+
+    print(f"\nArquivo de configuração: {configuration_file}")
+    print(f"\nParâmetros do algoritmo:")
+    output_string = ""
+
+    for name, value in vars(parametros_brkga).items():
+        output_string += f"\n>  -{name} {value}"
+    for name, value in vars(controle_brkga).items():
+        output_string += f"\n>  -{name} {value}"
+
+    print(output_string.strip())
+
+    if escrita_permitida:
+        escreve_cabecalho(qtd_arquivos, arquivo_escrita, configuration_file, [parametros_brkga, controle_brkga])
+
     # Verifica se a execução é um teste
     if qtd_arquivos == -1:
 
@@ -516,7 +595,6 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
         elementos = [Elemento(id = i+1) for i in range(arquivo_leitura[qtd].linhas)]
     else:
         qtd = 0
-
 
     solucao = [0 for _ in range(qtd_arquivos)]
     solucao_elementos = [0 for _ in range(qtd_arquivos)]    
@@ -547,36 +625,69 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
             
             print(f'\n\n{qtd+1})')
         
-        regras_parada[1] = len(elementos) if alterar_target == 1 else regras_parada[1]
-        
-
-        print(f'Instância = {arquivo_leitura[qtd].nome}')
-        print(f'Linhas = {arquivo_leitura[qtd].linhas}')
-        print(f'Colunas = {arquivo_leitura[qtd].colunas}')
-
         # Definição de M ≥ |U|
         M = arquivo_leitura[qtd].colunas + 1
         alpha = 0.1
-        configuration_file = "config.conf"
         cromossomo_qtd = len(subconjuntos)
         seed=time.time()
+        regras_parada[1] = len(elementos) if alterar_target == 1 else regras_parada[1]
+
+        print(f"Instância: {arquivo_leitura[qtd].nome}")
+        print(f'Elementos = {arquivo_leitura[qtd].linhas}')
+        print(f'Subconjutos = {arquivo_leitura[qtd].colunas}')
+        
+
+        print(f"\nSeed: {seed}")
+        print(f"Tempo máximo de execução (s): {tempo_max}")
+
+        print(f"\n\nConstruindo solver BRKGA...")
         
         decode = SCPDecoder(subconjuntos, elementos, M, alpha)
-
-        parametros_brkga, _ = load_configuration(configuration_file)
 
         solver_brkga = BrkgaMpIpr(
             decoder=decode,
             sense = Sense.MAXIMIZE,
             seed=seed,
             chromosome_size=cromossomo_qtd,
-            params = parametros_brkga,
-            evolutionary_mechanism_on= 1
+            params = parametros_brkga
         )
+
+        print(f"\nGenerando sequência inicial...")
+
+        # Generate a greedy solution to be used as warm start for BRKGA.
+        random.seed(seed)
+        tam_possivel_escolha = math.floor(len(subconjuntos)*0.08)
+        cromossomo = []
+        gera_1 = [random.uniform(0.85,1) for _ in range(tam_possivel_escolha)]
+        gera_2 = [random.uniform(0.01, 0.85) for _ in range(len(subconjuntos)- tam_possivel_escolha)]
+        cromossomo.extend(gera_1)
+        cromossomo.extend(gera_2)
+        random.shuffle(cromossomo)
+
+        resultado_inicial = greedy(subconjuntos, elementos, cromossomo)
+        print(f"Custo inicial: {resultado_inicial}")
+
+        cromossomo = sorted(cromossomo, reverse=True)
+
+        solucao_inicial = sorted(subconjuntos, key=lambda s: s.var_escolha, reverse=True)
+
+        # Then, we visit each node in the tour and assign to it a key.
+        cromossomo_inicial = [0] * len(subconjuntos)
+        for i in range(len(subconjuntos)):
+            cromossomo_inicial[solucao_inicial[i].id-1] = cromossomo[i]
+
+        # Inject the warm start solution in the initial population.
+        solver_brkga.set_initial_population([cromossomo_inicial])
 
         solver_brkga.initialize()
 
-        best_cost = 0
+        bogus_alg = deepcopy(solver_brkga)
+        bogus_alg.evolve(2)
+        bogus_alg.get_best_fitness()
+        bogus_alg.get_best_chromosome()
+        bogus_alg = None
+
+        best_cost = resultado_inicial
         iteracao = 0
         last_update_time = 0.0
         last_update_iteration = 0
@@ -612,7 +723,6 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
             
             iter_without_improvement = iteracao - last_update_iteration
 
-            # Check stop criteria.
             run = not (
                 (time.time()- start_time > tempo_max)
                 or
@@ -630,12 +740,12 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
         tempo_execucao[qtd] = time.time() - start_time
         iteracoes_total[qtd] = iteracao
 
-        solucao[qtd] = decode.melhor_solução
+        solucao[qtd] = decode.melhor_solucao
         solucao_elementos[qtd] = decode.melhor_solucao_elementos
         nos[qtd] = decode.nos
         custo_total[qtd] = decode.melhor_custo
-        gap1 = ((len(elementos) - best_cost)/best_cost) * 100
-        gap2 = ((len(elementos) - best_cost)/len(elementos)) * 100
+        gap1 = ((len(elementos) - best_cost)/len(elementos)) * 100
+        gap2 = ((len(elementos) - best_cost)/best_cost) * 100
         
 
         if best_cost > 0:
@@ -688,7 +798,7 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
             gap1 = 0
             gap2 = 0
 
-        padrao_resposta = [seed, guarda_iteracoes, nos[qtd], custo_total[qtd], solucao[qtd], solucao_elementos[qtd], large_offset, last_update_iteration, last_update_time, iteracoes_total[qtd], gap1, gap2]
+        padrao_resposta = [seed, guarda_iteracoes, nos[qtd], custo_total[qtd], solucao[qtd], solucao_elementos[qtd], large_offset, last_update_iteration, last_update_time, iteracoes_total[qtd], gap1, gap2, configuration_file, [parametros_brkga, controle_brkga], [resultado_inicial, cromossomo_inicial]]
 
         if escrita_permitida:
             # Verifica se o TESTE está ativado
@@ -789,6 +899,7 @@ def main():
 
     else:
         # Define o ID do 'arquivo_leitura' de testes para a 1, utilizado para a automatização da execução.
+        arquivo_escrita = "testesBRKGA.txt"
         arquivo_leitura[qtd_arquivos_leitura].id = -1
 
     # Execução do solver

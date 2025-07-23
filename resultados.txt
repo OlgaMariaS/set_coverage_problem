@@ -22,6 +22,7 @@ Solucao otima encontrada!
 Status: Optimal solution found
 Função Objetivo: 200.00
 Gap de integralidade: 0.00%
+GAP proporcional à solução encontrada: 0.00%
 Número de nós gerados: 525255
 Número de iterações: 46431888
 Time (CPU seconds): 1534.99
@@ -412,6 +413,7 @@ Uma solucao factivel foi encontrada.
 Status: Optimal solution found
 Função Objetivo: 200.00
 Gap de integralidade: 0.00%
+GAP proporcional à solução encontrada: 0.00%
 Número de nós gerados: 90
 Número de iterações: 25200
 Time (CPU seconds): 4.57
@@ -799,6 +801,7 @@ Status: Stopped on time limit
 Função Objetivo: 144.00
 Limitante Superior: 200.00
 Gap de integralidade: 28.00%
+GAP proporcional à solução encontrada: 38.89%
 Número de nós gerados: 992492
 Número de iterações: 57286262
 Time (CPU seconds): 3600.08
@@ -1104,6 +1107,7 @@ Status: Stopped on time limit
 Função Objetivo: 258.00
 Limitante Superior: 300.00
 Gap de integralidade: 14.00%
+GAP proporcional à solução encontrada: 16.28%
 Número de nós gerados: 1179261
 Número de iterações: 64432293
 Time (CPU seconds): 3600.06
@@ -1631,6 +1635,7 @@ Status: Stopped on time limit
 Função Objetivo: 64.00
 Limitante Superior: 300.00
 Gap de integralidade: 79.00%
+GAP proporcional à solução encontrada: 368.75%
 Número de nós gerados: 22157
 Número de iterações: 13816144
 Time (CPU seconds): 3600.24
@@ -2038,6 +2043,7 @@ Status: Stopped on time limit
 Função Objetivo: 261.00
 Limitante Superior: 400.00
 Gap de integralidade: 35.00%
+GAP proporcional à solução encontrada: 52.87%
 Número de nós gerados: 216305
 Número de iterações: 26670178
 Time (CPU seconds): 3600.06
@@ -2641,6 +2647,7 @@ Status: Stopped on time limit
 Função Objetivo: 41.00
 Limitante Superior: 400.00
 Gap de integralidade: 90.00%
+GAP proporcional à solução encontrada: 875.61%
 Número de nós gerados: 11872
 Número de iterações: 6179090
 Time (CPU seconds): 3601.61
@@ -3164,6 +3171,7 @@ Status: Stopped on time limit
 Função Objetivo: 44.00
 Limitante Superior: 49.98
 Gap de integralidade: 12.00%
+GAP proporcional à solução encontrada: 13.64%
 Número de nós gerados: 3258618
 Número de iterações: 67697562
 Time (CPU seconds): 3600.17
