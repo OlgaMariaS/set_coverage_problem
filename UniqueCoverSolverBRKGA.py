@@ -156,7 +156,7 @@ def escreve_cabecalho(qtd_arquivos, arquivo_escrita, config_file, parametros):
             # Alterna a escrita inicial dependendo se for um teste ou não
             
             if qtd_arquivos == -1:
-                escrita.write(f"\t*****TESTE*****")
+                escrita.write(f"\t*****TESTE*****\n\n")
 
 
             escrita.write("Função Objetiva:")
@@ -202,8 +202,7 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, subconjuntos: List[Subconjunto], 
 
             escrita.write(f"\n\nGenerando sequência inicial...")
 
-            escrita.write(f"\n\nCusto inicial: {padrao_resposta[14][0]}")
-            escrita.write(f"\nCromossomo inicial: {padrao_resposta[14][1]}")
+            escrita.write(f"\n\nCusto inicial: {padrao_resposta[14]}")
 
             escrita.write(f"\n\nIter | Resp | Temp")
 
@@ -216,7 +215,7 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, subconjuntos: List[Subconjunto], 
                 else:
                     escrita.write("\n\nUma solucao factivel foi encontrada.")
 
-                escrita.write(f"\nMelhor resultado:                      {padrao_resposta[1][len(padrao_resposta[1])-1][1]:.0f}")
+                escrita.write(f"\nMelhor resultado:                      {padrao_resposta[1][len(padrao_resposta[1])-1 if len(padrao_resposta[1]) != 0 else 0][1]:.0f}")
                 escrita.write(f"\nGAP integralidade:                     {padrao_resposta[10]:.2f}%")
                 escrita.write(f"\nGAP proporcional à solução encontrada: {padrao_resposta[11]:.2f}%")
                 escrita.write(f"\nPeso total:                           {padrao_resposta[3]}")
@@ -235,10 +234,10 @@ def escreve_teste(arquivo_leitura:Arquivo_scp, subconjuntos: List[Subconjunto], 
                 escrita.write(f"\nÚltima iteração de melhora:            {padrao_resposta[7]}")
                 escrita.write(f"\nÚltimo momento de melhora:             {padrao_resposta[8]:.2f}s")
 
-                escrita.write("\n\nConjuntos selecionados:")
+                escrita.write("\n\n\nConjuntos selecionados:")
 
                 for j in padrao_resposta[4]:
-                    escrita.write(f"\n- Conjunto S {j+1}\n    Elementos cobertos: {subconjuntos[j-1].elementos_cobertos}")
+                    escrita.write(f"\n- Conjunto S {j.id}\n    Elementos cobertos: {j.elementos_cobertos}")
 
                 escrita.write("\n\nDetalhes da cobertura por elemento:")
                 
@@ -490,9 +489,9 @@ class SCPDecoder():
             Atualiza_Pesos(self.subconjuntos, self.elementos, fim)
     
 
-        solução = Busca_Local(self.subconjuntos, self.elementos)
+        solucao = Busca_Local(self.subconjuntos, self.elementos)
 
-        for s in solução:
+        for s in solucao:
             custo_total += s.peso
             for i in s.elementos_cobertos:
                 if i not in elementos_cobertos:
@@ -502,15 +501,15 @@ class SCPDecoder():
                 media += self.elementos[i-1].var_cobertura_total
         
         if unicos > self.melhor_resultado:
-            self.melhor_solução = []
-            for s in solução:
-                self.melhor_solução.append(s.id)
+            self.melhor_solucao = []
+            for s in solucao:
+                self.melhor_solucao.append(s)
             self.subconjuntos_resposta = self.subconjuntos
             self.elementos_resposta = self.elementos
             self.media = media/len(self.elementos)
             self.melhor_solucao_elementos = elementos_cobertos
             self.melhor_resultado = unicos
-            self.nos = len(self.melhor_solução)
+            self.nos = len(self.melhor_solucao)
             self.melhor_custo = custo_total
 
         return unicos
@@ -733,6 +732,8 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
                 ((2 if regras_parada[2] != None else None) == StopRule.IMPROVEMENT.value and iter_without_improvement >= regras_parada[2])
                 
             )
+        if len(guarda_iteracoes) == 0:
+            guarda_iteracoes.append([1, best_cost, 1])
 
         subconjuntos = decode.subconjuntos_resposta
         elementos = decode.elementos_resposta
@@ -777,11 +778,11 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
 
                 print('\nConjuntos selecionados:')
                 for j in solucao[qtd]:
-                    print(f'- Conjunto S{j}\n    Elementos cobertos: {subconjuntos[j].elementos_cobertos}')
+                    print(f'- Conjunto S{j.id}\n    Elementos cobertos: {j.elementos_cobertos}')
 
                 print(f'\nDetalhes da cobertura por elemento da instancia {arquivo_leitura[qtd].nome}:')
                 for i in range(len(elementos)):
-                    coberto_unicamente = "Sim" if (i+1) in solucao_elementos else "Não"
+                    coberto_unicamente = "Sim" if (i+1) in solucao_elementos[qtd] else "Não"
                     print(f'Elemento {i+1}: coberto {int(elementos[i].var_cobertura_total)} vez(es). Cobertura única: {coberto_unicamente}')
 
             
@@ -798,12 +799,9 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
             gap1 = 0
             gap2 = 0
 
-        padrao_resposta = [seed, guarda_iteracoes, nos[qtd], custo_total[qtd], solucao[qtd], solucao_elementos[qtd], large_offset, last_update_iteration, last_update_time, iteracoes_total[qtd], gap1, gap2, configuration_file, [parametros_brkga, controle_brkga], [resultado_inicial, cromossomo_inicial]]
+        padrao_resposta = [seed, guarda_iteracoes, nos[qtd], custo_total[qtd], solucao[qtd], solucao_elementos[qtd], large_offset, last_update_iteration, last_update_time, iteracoes_total[qtd], gap1, gap2, configuration_file, [parametros_brkga, controle_brkga], resultado_inicial]
 
         if escrita_permitida:
-            # Verifica se o TESTE está ativado
-            if qtd == len(arquivo_leitura) - 1:
-                arquivo_escrita = "testes.txt"
                 
             # Grava o retorno do solver no 'arquivo_escrita'
             escreve_teste(arquivo_leitura[qtd], subconjuntos, elementos, arquivo_escrita, padrao_resposta, media_cobertura, tempo_execucao[qtd])
@@ -871,13 +869,13 @@ def main():
     regras_parada = [regra_parada_geracao, regra_parada_valor_alvo, regra_parada_sem_melhora]   
     
     # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "matriz" (teste=1).
-    teste = 0
+    teste = 1
 
     # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
     escrita = 1
 
     # Define a saida de uma descrição detalhada, no terminal, dos subconjuntos escolhidos e elementos cobertos (opicional)
-    output_padrao_completo = 0
+    output_padrao_completo = 1
 
     # Total de linhas da matriz (calculado automaticamente para as instancias, uso predefinido apenas para testes)   
     arquivo_leitura[qtd_arquivos_leitura].linhas = 5
