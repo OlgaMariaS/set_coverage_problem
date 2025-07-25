@@ -169,7 +169,7 @@ def escreve_cabecalho(qtd_arquivos, arquivo_escrita, config_file, parametros):
             escrita.write("\n                   (M - 1)yᵢ + zᵢ ≤ M                   ∀i, 1 ≤ i ≤ Linhas")
             escrita.write("\n                   y ∈ {0,1}ⁿ, z ∈ ℤⁿ, x ∈ {0,1}ᵐ")
 
-            escrita.write(f"\n\nArquivo de configuração: {config_file}")
+            escrita.write(f"\n\n\nArquivo de configuração: {config_file}")
             escrita.write(f"\n\nParâmetros do algoritmo:")
 
             output_string = ""
@@ -772,9 +772,9 @@ def executa_solver(arquivo_leitura: List[Arquivo_scp], matriz, tempo_max, regras
             # Descreve todos os subconjuntos selecionados e seus respectivos elementos cobertos
             if output_padrao_completo == 1:
                 
-                print(f"\nMaior número de iterações sem melhora: {large_offset};")
-                print(f"Última iteração de melhora:            {last_update_iteration};")
-                print(f"Último momento de melhora:               {last_update_time:.2f}s;")
+                print(f"\nMaior número de iterações sem melhora: {large_offset}")
+                print(f"Última iteração de melhora:            {last_update_iteration}")
+                print(f"Último momento de melhora:             {last_update_time:.2f}s")
 
                 print('\nConjuntos selecionados:')
                 for j in solucao[qtd]:
@@ -869,13 +869,13 @@ def main():
     regras_parada = [regra_parada_geracao, regra_parada_valor_alvo, regra_parada_sem_melhora]   
     
     # Avalia se o programa lerá o arquivo especificado em "nome" (teste=0) ou executará um teste com a matriz "matriz" (teste=1).
-    teste = 1
+    teste = 0
 
     # Avalia se o resultado do solver será escrito no 'arquivo_escrita'.
     escrita = 1
 
     # Define a saida de uma descrição detalhada, no terminal, dos subconjuntos escolhidos e elementos cobertos (opicional)
-    output_padrao_completo = 1
+    output_padrao_completo = 0
 
     # Total de linhas da matriz (calculado automaticamente para as instancias, uso predefinido apenas para testes)   
     arquivo_leitura[qtd_arquivos_leitura].linhas = 5
